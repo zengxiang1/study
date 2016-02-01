@@ -1,0 +1,412 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="reset.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../jquery-1.4.js"></script>
+<!--图片列表边框start-->
+<link href="skins/style.css" rel="stylesheet" type="text/css"/>
+<script>
+	$(function(){
+		$(".picItem").hover(function(){
+			$(this).addClass("picItemOver")
+		},function(){
+			$(this).removeClass("picItemOver")
+		})
+	})
+	$(function(){
+		$('.framegrid.caption').each(function(){
+			$(".framegrid_cover", this).css({
+				top:"103px",
+				height:"25px"
+			})
+			$(".framegrid_con", this).hide()
+		})
+		$('.framegrid.caption').hover(function(){
+			$(".framegrid_cover", this).stop().animate({top:'68px',height:'60px'},{queue:false,duration:160});
+			$(".framegrid_con", this).show()
+		}, function() {
+			$(".framegrid_cover", this).stop().animate({top:'103px',height:'25px'},{queue:false,duration:160});
+			$(".framegrid_con", this).hide()
+		});
+	})
+	$(function(){
+		$('.framegrid.nocaption').each(function(){
+			$(".framegrid_cover", this).css({
+				top:"128px",
+				height:"0px"
+			})
+			$(".framegrid_title", this).hide()
+			$(".framegrid_con", this).hide()
+		})
+		$('.framegrid.nocaption').hover(function(){
+			$(".framegrid_cover", this).stop().animate({top:'68px',height:'60px'},{queue:false,duration:160});
+			$(".framegrid_title", this).show()
+			$(".framegrid_con", this).show()
+		}, function() {
+			$(".framegrid_cover", this).stop().animate({top:'125px',height:'0px'},{queue:false,duration:160});
+			$(".framegrid_title", this).hide()
+			$(".framegrid_con", this).hide()
+		});
+	})
+</script>
+<!--图片列表边框end-->
+<body>
+	首先引入CSS
+<textarea class="code">
+<link href="skins/style.css" rel="stylesheet" type="text/css"/>
+</textarea>
+<pre></pre>	
+	<div class="box2" >
+	<div class="picItem">
+		<div class="picItem_title">
+			该项标题
+		</div>
+		<div class="details">
+			<img src="demo/img13.jpg"/>
+			<div class="picItem_con">该项详细说明<br />该项详细说明</div>
+		</div>
+	</div>
+	
+	<div class="picItem">
+		<div class="picItem_title">
+			该项标题
+		</div>
+		<div class="details">
+			<img src="demo/img14.jpg"/>
+			<div class="picItem_con">该项详细说明<br />该项详细说明</div>
+		</div>
+	</div>
+	
+	<div class="picItem">
+		<div class="picItem_title">
+			该项标题
+		</div>
+		<div class="details">
+			<img src="demo/img13.jpg"/>
+			<div class="picItem_con">该项详细说明<br />该项详细说明</div>
+		</div>
+	</div>
+	
+	<div class="picItem">
+		<div class="picItem_title">
+			该项标题
+		</div>
+		<div class="details">
+			<img src="demo/img14.jpg"/>
+			<div class="picItem_con">该项详细说明<br />该项详细说明</div>
+		</div>
+	</div>
+	
+	<div class="picItem">
+		<div class="picItem_title">
+			该项标题
+		</div>
+		<div class="details">
+			<img src="demo/img13.jpg"/>
+			<div class="picItem_con">该项详细说明<br />该项详细说明</div>
+		</div>
+	</div>
+	<div class="clear"></div>
+	</div>
+HTML部分：
+<textarea class="code">
+<div class="picItem">
+	<div class="picItem_title">
+		该项标题
+	</div>
+	<div class="details">
+		<img src="demo/img13.jpg"/>
+		<div class="picItem_con">该项详细说明<br />该项详细说明</div>
+	</div>
+</div>
+
+<div class="picItem">
+	<div class="picItem_title">
+		该项标题
+	</div>
+	<div class="details">
+		<img src="demo/img14.jpg"/>
+		<div class="picItem_con">该项详细说明<br />该项详细说明</div>
+	</div>
+</div>
+
+<div class="picItem">
+	<div class="picItem_title">
+		该项标题
+	</div>
+	<div class="details">
+		<img src="demo/img13.jpg"/>
+		<div class="picItem_con">该项详细说明<br />该项详细说明</div>
+	</div>
+</div>
+
+<div class="picItem">
+	<div class="picItem_title">
+		该项标题
+	</div>
+	<div class="details">
+		<img src="demo/img14.jpg"/>
+		<div class="picItem_con">该项详细说明<br />该项详细说明</div>
+	</div>
+</div>
+
+<div class="picItem">
+	<div class="picItem_title">
+		该项标题
+	</div>
+	<div class="details">
+		<img src="demo/img13.jpg"/>
+		<div class="picItem_con">该项详细说明<br />该项详细说明</div>
+	</div>
+</div>
+<div class="clear"></div>
+</textarea>
+<pre></pre>	
+
+	JS部分：
+<textarea class="code">
+$(function(){
+	$(".picItem").hover(function(){
+		$(this).addClass("picItemOver")
+	},function(){
+		$(this).removeClass("picItemOver")
+	})
+})
+</textarea>
+<pre></pre>	
+
+
+如果觉得图片边距有些过大，并且不需要在图片上显示标题和说明文字，可以采用下面的简单模式：
+<div class="box2" >
+	<div class="picItem2"><img src="demo/img13.jpg"/></div>
+	<div class="picItem2"><img src="demo/img14.jpg"/></div>
+	<div class="picItem2"><img src="demo/img13.jpg"/></div>
+	<div class="picItem2"><img src="demo/img14.jpg"/></div>
+	<div class="picItem2"><img src="demo/img13.jpg"/></div>
+	<div class="picItem2"><img src="demo/img14.jpg"/></div>
+	<div class="picItem2"><img src="demo/img13.jpg"/></div>
+	<div class="picItem2"><img src="demo/img14.jpg"/></div>
+	<div class="clear"></div>
+</div>
+代码如下：
+<textarea class="code">
+<div class="box2" >
+	<div class="picItem2"><img src="demo/img13.jpg"/></div>
+	<div class="picItem2"><img src="demo/img14.jpg"/></div>
+	<div class="picItem2"><img src="demo/img13.jpg"/></div>
+	<div class="picItem2"><img src="demo/img14.jpg"/></div>
+	<div class="picItem2"><img src="demo/img13.jpg"/></div>
+	<div class="picItem2"><img src="demo/img14.jpg"/></div>
+	<div class="picItem2"><img src="demo/img13.jpg"/></div>
+	<div class="picItem2"><img src="demo/img14.jpg"/></div>
+	<div class="clear"></div>
+</div>
+</textarea>
+<pre></pre>	
+
+这种边框也可以同标题特效合用
+<div class="box2" >
+	<div class="framegrid caption">
+		<div class="picItem3"><img src="demo/img13.jpg"/></div>	
+		<div class="framegrid_cover">
+			<div class="framegrid_title">图片标题</div>
+			<div class="framegrid_con">这里是图片文字说明部分<br />这里是图片文字说明部分</div>
+		</div>	
+	</div>
+	
+	<div class="framegrid caption">
+		<div class="picItem3"><img src="demo/img14.jpg"/></div>	
+		<div class="framegrid_cover">
+			<div class="framegrid_title">图片标题</div>
+			<div class="framegrid_con">这里是图片文字说明部分<br />这里是图片文字说明部分</div>
+		</div>
+	</div>
+	<div class="framegrid caption">
+		<div class="picItem3"><img src="demo/img13.jpg"/></div>	
+		<div class="framegrid_cover">
+			<div class="framegrid_title">图片标题</div>
+			<div class="framegrid_con">这里是图片文字说明部分<br />这里是图片文字说明部分</div>
+		</div>	
+	</div>
+	
+	<div class="framegrid caption">
+		<div class="picItem3"><img src="demo/img14.jpg"/></div>	
+		<div class="framegrid_cover">
+			<div class="framegrid_title">图片标题</div>
+			<div class="framegrid_con">这里是图片文字说明部分<br />这里是图片文字说明部分</div>
+		</div>
+	</div>
+	<div class="clear"></div>
+</div>
+代码如下：
+<textarea class="code">
+<div class="box2" >
+	<div class="framegrid caption">
+		<div class="picItem3"><img src="demo/img13.jpg"/></div>	
+		<div class="framegrid_cover">
+			<div class="framegrid_title">图片标题</div>
+			<div class="framegrid_con">这里是图片文字说明部分<br />这里是图片文字说明部分</div>
+		</div>	
+	</div>
+	
+	<div class="framegrid caption">
+		<div class="picItem3"><img src="demo/img14.jpg"/></div>	
+		<div class="framegrid_cover">
+			<div class="framegrid_title">图片标题</div>
+			<div class="framegrid_con">这里是图片文字说明部分<br />这里是图片文字说明部分</div>
+		</div>
+	</div>
+	<div class="framegrid caption">
+		<div class="picItem3"><img src="demo/img13.jpg"/></div>	
+		<div class="framegrid_cover">
+			<div class="framegrid_title">图片标题</div>
+			<div class="framegrid_con">这里是图片文字说明部分<br />这里是图片文字说明部分</div>
+		</div>	
+	</div>
+	
+	<div class="framegrid caption">
+		<div class="picItem3"><img src="demo/img14.jpg"/></div>	
+		<div class="framegrid_cover">
+			<div class="framegrid_title">图片标题</div>
+			<div class="framegrid_con">这里是图片文字说明部分<br />这里是图片文字说明部分</div>
+		</div>
+	</div>
+	<div class="clear"></div>
+</div>
+</textarea>
+<pre></pre>	
+JS代码
+<textarea class="code">
+$(function(){
+	$('.framegrid.caption').each(function(){
+		$(".framegrid_cover", this).css({
+			top:"103px",
+			height:"25px"
+		})
+		$(".framegrid_con", this).hide()
+	})
+	$('.framegrid.caption').hover(function(){
+		$(".framegrid_cover", this).stop().animate({top:'68px',height:'60px'},{queue:false,duration:160});
+		$(".framegrid_con", this).show()
+	}, function() {
+		$(".framegrid_cover", this).stop().animate({top:'103px',height:'25px'},{queue:false,duration:160});
+		$(".framegrid_con", this).hide()
+	});
+})
+</textarea>
+<pre></pre>	
+下面的是初始时没有标题：
+<div class="box2" >
+	<div class="framegrid nocaption">
+		<div class="picItem3"><img src="demo/img13.jpg"/></div>	
+		<div class="framegrid_cover">
+			<div class="framegrid_title">图片标题</div>
+			<div class="framegrid_con">这里是图片文字说明部分<br />这里是图片文字说明部分</div>
+		</div>	
+	</div>
+	
+	<div class="framegrid nocaption">
+		<div class="picItem3"><img src="demo/img14.jpg"/></div>	
+		<div class="framegrid_cover">
+			<div class="framegrid_title">图片标题</div>
+			<div class="framegrid_con">这里是图片文字说明部分<br />这里是图片文字说明部分</div>
+		</div>
+	</div>
+	<div class="framegrid nocaption">
+		<div class="picItem3"><img src="demo/img13.jpg"/></div>	
+		<div class="framegrid_cover">
+			<div class="framegrid_title">图片标题</div>
+			<div class="framegrid_con">这里是图片文字说明部分<br />这里是图片文字说明部分</div>
+		</div>	
+	</div>
+	
+	<div class="framegrid nocaption">
+		<div class="picItem3"><img src="demo/img14.jpg"/></div>	
+		<div class="framegrid_cover">
+			<div class="framegrid_title">图片标题</div>
+			<div class="framegrid_con">这里是图片文字说明部分<br />这里是图片文字说明部分</div>
+		</div>
+	</div>
+	<div class="clear"></div>
+</div>
+代码如下：
+<textarea class="code">
+<div class="box2" >
+	<div class="framegrid nocaption">
+		<div class="picItem3"><img src="demo/img13.jpg"/></div>	
+		<div class="framegrid_cover">
+			<div class="framegrid_title">图片标题</div>
+			<div class="framegrid_con">这里是图片文字说明部分<br />这里是图片文字说明部分</div>
+		</div>	
+	</div>
+	
+	<div class="framegrid nocaption">
+		<div class="picItem3"><img src="demo/img14.jpg"/></div>	
+		<div class="framegrid_cover">
+			<div class="framegrid_title">图片标题</div>
+			<div class="framegrid_con">这里是图片文字说明部分<br />这里是图片文字说明部分</div>
+		</div>
+	</div>
+	<div class="framegrid nocaption">
+		<div class="picItem3"><img src="demo/img13.jpg"/></div>	
+		<div class="framegrid_cover">
+			<div class="framegrid_title">图片标题</div>
+			<div class="framegrid_con">这里是图片文字说明部分<br />这里是图片文字说明部分</div>
+		</div>	
+	</div>
+	
+	<div class="framegrid nocaption">
+		<div class="picItem3"><img src="demo/img14.jpg"/></div>	
+		<div class="framegrid_cover">
+			<div class="framegrid_title">图片标题</div>
+			<div class="framegrid_con">这里是图片文字说明部分<br />这里是图片文字说明部分</div>
+		</div>
+	</div>
+	<div class="clear"></div>
+</div>
+</textarea>
+<pre></pre>	
+JS代码
+<textarea class="code">
+$(function(){
+	$('.framegrid.nocaption').each(function(){
+		$(".framegrid_cover", this).css({
+			top:"128px",
+			height:"0px"
+		})
+		$(".framegrid_title", this).hide()
+		$(".framegrid_con", this).hide()
+	})
+	$('.framegrid.nocaption').hover(function(){
+		$(".framegrid_cover", this).stop().animate({top:'68px',height:'60px'},{queue:false,duration:160});
+		$(".framegrid_title", this).show()
+		$(".framegrid_con", this).show()
+	}, function() {
+		$(".framegrid_cover", this).stop().animate({top:'125px',height:'0px'},{queue:false,duration:160});
+		$(".framegrid_title", this).hide()
+		$(".framegrid_con", this).hide()
+	});
+})
+</textarea>
+<pre></pre>	
+</body>
+<!--代码高亮start-->
+<script type="text/javascript" src="../hl/highlight.js"></script>
+<script type="text/javascript" src="../hl/lang-xml.js"></script>
+<script type="text/javascript" src="../hl/lang-html.js"></script>
+<link href="../hl/style.css" rel="stylesheet" type="text/css"/>
+<script>
+	$(function(){
+			showCode()
+	})
+	function showCode(){
+		$(".code").each(function(){
+			var code =$(this).val()
+			var hl = new DlHighlight({lang: "html",lineNumbers :false });
+			var formatted = hl.doItNow(code);
+			$(this).next().addClass("DlHighlight").html("<pre>" + formatted + "</pre>")
+		})
+	}
+</script>
+<!--代码高亮end-->
+</html>

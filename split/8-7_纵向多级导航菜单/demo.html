@@ -1,0 +1,189 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="reset.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../jquery-1.4.js"></script>
+<!--纵向多级导航菜单(分离版)start-->
+<style type="text/css">.imcm ul,.imcm li,.imcm div,.imcm span,.imcm a{text-align:left;vertical-align:top;padding:0px;margin:0;list-style:none outside none;border-style:none;background-image:none;clear:none;float:none;display:block;position:static;overflow:visible;line-height:normal;}.imcm li a img{display:inline;border-width:0px;}.imcm span{display:inline;}.imcm .imclear,.imclear{clear:both;height:0px;visibility:hidden;line-height:0px;font-size:1px;}.imcm .imsc{position:relative;}.imcm .imsubc{position:absolute;visibility:hidden;}.imcm li{list-style:none;font-size:1px;float:left;}.imcm ul ul li{width:100%;float:none !important;}.imcm a{display:block;position:relative;}.imcm ul .imsc,.imcm ul .imsubc {z-index:10;}.imcm ul ul .imsc,.imcm ul ul .imsubc{z-index:20;}.imcm ul ul ul .imsc,.imcm ul ul ul .imsubc{z-index:30;}.imde ul li:hover .imsubc{visibility:visible;}.imde ul ul li:hover  .imsubc{visibility:visible;}.imde ul ul ul li:hover  .imsubc{visibility:visible;}.imde li:hover ul  .imsubc{visibility:hidden;}.imde li:hover ul ul .imsubc{visibility:hidden;}.imde li:hover ul ul ul  .imsubc{visibility:hidden;}.imcm .imea{display:block;position:relative;left:0px;font-size:1px;line-height:1px;height:0px;width:1px;float:right;}.imcm .imea span{display:block;position:relative;font-size:1px;line-height:0px;}.dvs,.dvm{border-width:0px}/*\*//*/.imcm .imea{visibility:hidden;}/**/</style><!--[if IE]><style type="text/css">.imcm .imea span{position:absolute;}.imcm .imclear,.imclear{display:none;}.imcm{zoom:1;} .imcm li{curosr:hand;} .imcm ul{zoom:1}.imcm a{zoom:1;}</style><![endif]--><!--[if gte IE 7]><style type="text/css">.imcm .imsubc{background-image:url(ie_css_fix);}</style><![endif]--><!--end-->
+<link href="skins/white/style.css" rel="stylesheet" type="text/css" id="compStyle"/>
+<!--纵向多级导航菜单(分离版)end-->
+
+<!--去除虚线start-->
+<style>
+a {
+	behavior:url(js/focus.htc)
+}
+</style>
+<!--去除虚线end-->
+
+<!--修正IE6支持透明png图片start-->
+<script type="text/javascript" src="js/pngFix/supersleight.js"></script>
+<!--修正IE6支持透明png图片end-->
+
+
+
+<!--获取值函数start-->
+<script>
+	function getTextValue(){
+		var msg=$(".editable").html()
+		alert(msg);
+	}
+</script>
+<!--获取值函数end-->
+<body>
+	<script>
+		function changeSkin(){
+			$("#compStyle").attr("href","skins/"+$("#changeSkin").val()+"/style.css");
+		}
+	</script>
+	更换风格
+	<select  onchange='changeSkin()' id="changeSkin">
+	    <option value="white">白色</option>
+		<option value="blue">蓝色</option>
+	    <option value="lightBlue">亮蓝色</option>
+	    <option value="black">黑色</option>
+		
+	</select>
+	<div class="menu_v_bg">
+	<div class="imrcmain0 imgl imenus_v_main" ><div class="imcm imde" id="imouter0" class="imouter_v"><ul id="imenus0" class="imenus_v">
+<li class="imatm"  style="width:100%;"><a class="" href="javascript:;"><span class="imea imeam"><span></span></span><span class="imea imeam_icon1"><span></span></span>一级栏目1</a>
+
+	<div class="imsc"><div class="imsubc" style="width:145px;top:-40px;left:149px;"><div class="imunder"></div><div></div><ul style="">
+	<li><a href="javascript:;">二级栏目1</a></li>
+	<li><a href="javascript:;"><span class="imea imeas"><span></span></span>二级栏目2</a>
+
+		<div class="imsc"><div class="imsubc" style="width:140px;top:-23px;left:138px;"><div class="imunder"></div><div></div><ul style="">
+		<li><a href="javascript:;">三级栏目1</a></li>
+		<li><a href="javascript:;">三级栏目2</a></li>
+		<li><a href="javascript:;">三级栏目3</a></li>
+		<li><a href="javascript:;">三级栏目4</a></li>
+		<li><a href="javascript:;">三级栏目5</a></li>
+		<li><a href="javascript:;">三级栏目6</a></li>
+		</ul></div></div></li>
+
+	<li><a href="javascript:;">二级栏目3</a></li>
+	</ul></div></div></li>
+
+
+<li class="imatm"  style="width:100%;"><a href="javascript:;"><span class="imea imeam"><span></span></span><span class="imea imeam_icon2"><span></span></span>一级栏目2</a>
+
+	<div class="imsc"><div class="imsubc" style="width:146px;top:-40px;left:149px;"><div class="imunder"></div><div></div><ul style="">
+	<li><a href="javascript:;">二级栏目4</a></li>
+	<li><a href="javascript:;">二级栏目5</a></li>
+	<li><a href="javascript:;">二级栏目6</a></li>
+	<li><a href="javascript:;">二级栏目7</a></li>
+	<li><a href="javascript:;">二级栏目8</a></li>
+	</ul></div></div></li>
+
+
+<li class="imatm"  style="width:100%;"><a href="javascript:;"><span class="imea imeam"><span></span></span><span class="imea imeam_icon3"><span></span></span>一级栏目3</a>
+
+	<div class="imsc"><div class="imsubc" style="width:146px;top:-40px;left:149px;"><div class="imunder"></div><div></div><ul style="">
+	<li><a href="javascript:;">二级栏目9</a></li>
+	<li><a href="javascript:;">二级栏目10</a></li>
+	<li><a href="javascript:;">二级栏目11</a></li>
+	<li><a href="javascript:;">二级栏目12</a></li>
+	<li><a href="javascript:;">二级栏目13</a></li>
+	</ul></div></div></li>
+
+
+<li class="imatm"  style="width:100%;"><a href="javascript:;"><span class="imea imeam"><span></span></span><span class="imea imeam_icon4"><span></span></span>一级栏目4</a>
+
+	<div class="imsc"><div class="imsubc" style="width:146px;top:-40px;left:149px;"><div class="imunder"></div><div></div><ul style="">
+	<li><a href="javascript:;">二级栏目14</a></li>
+	<li><a href="javascript:;">二级栏目15</a></li>
+	</ul></div></div></li>
+	
+</ul><div class="imclear">&nbsp;</div></div></div>
+	</div>
+
+	菜单理论上支持无限级分类<br />
+
+<div class="box2" panelTitle="用法">
+在页面底部引入脚本	
+<textarea class="code">
+<script language="JavaScript" src="../js/ocscript_v.js" type="text/javascript"></script>
+</textarea>
+<pre></pre>	
+HTML部分
+<textarea class="code">
+<div class="padding_top10">
+	<div class="imrcmain0 imgl" style="width:150px;z-index:8;position:absolute;left:20px;"><div class="imcm imde" id="imouter0" class="imouter_v"><ul id="imenus0" class="imenus_v">
+<li class="imatm"  style="width:100%;"><a class="" href="javascript:;"><span class="imea imeam"><span></span></span><span class="imea imeam_icon1"><span></span></span>一级栏目1</a>
+
+	<div class="imsc"><div class="imsubc" style="width:145px;top:-40px;left:149px;"><div class="imunder"></div><div></div><ul style="">
+	<li><a href="javascript:;">二级栏目1</a></li>
+	<li><a href="javascript:;"><span class="imea imeas"><span></span></span>二级栏目2</a>
+
+		<div class="imsc"><div class="imsubc" style="width:140px;top:-23px;left:138px;"><div class="imunder"></div><div></div><ul style="">
+		<li><a href="javascript:;">三级栏目1</a></li>
+		<li><a href="javascript:;">三级栏目2</a></li>
+		<li><a href="javascript:;">三级栏目3</a></li>
+		<li><a href="javascript:;">三级栏目4</a></li>
+		<li><a href="javascript:;">三级栏目5</a></li>
+		<li><a href="javascript:;">三级栏目6</a></li>
+		</ul></div></div></li>
+
+	<li><a href="javascript:;">二级栏目3</a></li>
+	</ul></div></div></li>
+
+
+<li class="imatm"  style="width:100%;"><a href="javascript:;"><span class="imea imeam"><span></span></span><span class="imea imeam_icon2"><span></span></span>一级栏目2</a>
+
+	<div class="imsc"><div class="imsubc" style="width:146px;top:-40px;left:149px;"><div class="imunder"></div><div></div><ul style="">
+	<li><a href="javascript:;">二级栏目4</a></li>
+	<li><a href="javascript:;">二级栏目5</a></li>
+	<li><a href="javascript:;">二级栏目6</a></li>
+	<li><a href="javascript:;">二级栏目7</a></li>
+	<li><a href="javascript:;">二级栏目8</a></li>
+	</ul></div></div></li>
+
+
+<li class="imatm"  style="width:100%;"><a href="javascript:;"><span class="imea imeam"><span></span></span><span class="imea imeam_icon3"><span></span></span>一级栏目3</a>
+
+	<div class="imsc"><div class="imsubc" style="width:146px;top:-40px;left:149px;"><div class="imunder"></div><div></div><ul style="">
+	<li><a href="javascript:;">二级栏目9</a></li>
+	<li><a href="javascript:;">二级栏目10</a></li>
+	<li><a href="javascript:;">二级栏目11</a></li>
+	<li><a href="javascript:;">二级栏目12</a></li>
+	<li><a href="javascript:;">二级栏目13</a></li>
+	</ul></div></div></li>
+
+
+<li class="imatm"  style="width:100%;"><a href="javascript:;"><span class="imea imeam"><span></span></span><span class="imea imeam_icon4"><span></span></span>一级栏目4</a>
+
+	<div class="imsc"><div class="imsubc" style="width:146px;top:-40px;left:149px;"><div class="imunder"></div><div></div><ul style="">
+	<li><a href="javascript:;">二级栏目14</a></li>
+	<li><a href="javascript:;">二级栏目15</a></li>
+	</ul></div></div></li>
+	
+</ul><div class="imclear">&nbsp;</div></div></div>
+</div>
+</textarea>
+<pre></pre>
+
+	
+<!--纵向导航菜单脚本start-->
+<script language="JavaScript" src="js/ocscript_v_split.js" type="text/javascript"></script>
+<!--纵向导航菜单脚本end-->
+</body>
+<!--代码高亮start-->
+<script type="text/javascript" src="../hl/highlight.js"></script>
+<script type="text/javascript" src="../hl/lang-xml.js"></script>
+<script type="text/javascript" src="../hl/lang-html.js"></script>
+<link href="../hl/style.css" rel="stylesheet" type="text/css"/>
+<script>
+	$(function(){
+			showCode()
+	})
+	function showCode(){
+		$(".code").each(function(){
+			var code =$(this).val()
+			var hl = new DlHighlight({lang: "html",lineNumbers :false });
+			var formatted = hl.doItNow(code);
+			$(this).next().addClass("DlHighlight").html("<pre>" + formatted + "</pre>")
+		})
+	}
+</script>
+<!--代码高亮end-->
+</html>

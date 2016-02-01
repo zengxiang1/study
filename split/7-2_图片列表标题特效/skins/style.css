@@ -1,0 +1,75 @@
+ /*图片列表标题特效*/
+.boxgrid img{ 
+	position: absolute; 
+	top: 0; 
+	left: 0; 
+	border: 0; 
+}
+.boxcaption{ 
+	float: left; 
+	position: absolute; 
+	background: #000; 
+	height: 100px; 
+	width: 100%; 
+	opacity: .8; 
+	/* For IE 5-7 */
+	filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+	/* For IE 8 */
+	-MS-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+}
+.captionfull .boxcaption {
+	top: 260;
+	left: 0;
+}
+.caption .boxcaption {
+	top: 220;
+	left: 0;
+}
+.boxgrid_title{
+	font-size:14px;
+	font-weight:bold;
+	padding:4px 5px 0 10px;
+	color:white;
+}
+.boxgrid_con{
+	font-size:12px;
+	padding:4px 5px 0 10px;
+	color:white;
+}
+
+.framegrid_cover{
+	position:absolute;
+	width:200px;
+	background-color:#343434;
+	color:white;
+	opacity: .8; 
+	filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+	-MS-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+	left:8px;
+}
+.framegrid a{
+	text-decoration:none;
+	color:white;
+}
+.framegrid a:hover{
+	text-decoration:none;
+	color:white;
+}
+.framegrid{
+	position:relative;
+	float:left;
+}
+.framegrid_title{
+	font-size:14px;
+	font-weight:bold;
+	padding:3px 5px 0 10px;
+	color:white;
+	overflow:hidden;
+}
+.framegrid_con{
+	font-size:12px;
+	padding:2px 5px 0 10px;
+	color:white;
+	overflow:hidden;
+}
+ /*图片列表标题特效*/

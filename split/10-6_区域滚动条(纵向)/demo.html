@@ -1,0 +1,140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="reset.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../jquery-1.4.js"></script>
+<!--纵向区域滚动条(分离版)start-->
+<link href="skins/style.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="js/jquery.mousewheel.js"></script>
+<script type="text/javascript" src="js/jScrollPane_split.js"></script>
+<!--纵向区域滚动条(分离版)end-->
+<script>
+	function changeScoller(){
+		$("#s01").jScrollPaneRemove()
+		$("#s01").attr("scrollerHeight",300)
+		$("#s01").jScrollPane({showArrows:true, scrollbarWidth: 15, arrowSize: 16});
+	}
+</script>
+<body>
+	<div class="box2" panelTitle="基本用法">
+	<div class="osX" style="width:200px;border:solid 1px #cccccc;">
+		<div class="scroller" style="width:200px;height:200px;" scrollerHeight="200">
+			文字内容<br />文字内容<br />文字内容<br />文字内容<br />文字内容<br />文字内容<br />
+			文字内容<br />文字内容<br />文字内容<br />文字内容<br />文字内容<br />文字内容<br />
+			文字内容<br />文字内容<br />文字内容<br />文字内容<br />文字内容<br />文字内容<br />
+			文字内容<br />文字内容<br />文字内容<br />文字内容<br />文字内容<br />文字内容<br />
+
+		</div>
+	</div>
+	
+	要实现区域滚动条，首先引入脚本和CSS
+<textarea class="code">
+<script type="text/javascript" src="../jquery-1.4.js"></script>
+<!--纵向区域滚动条(分离版)start-->
+<link href="skins/style.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="js/jquery.mousewheel.js"></script>
+<script type="text/javascript" src="js/jScrollPane_split.js"></script>
+<!--纵向区域滚动条(分离版)end-->
+</textarea>
+<pre></pre>	
+	
+	body中写如下代码
+<textarea class="code">
+<div class="osX" style="width:200px;border:solid 1px #cccccc;">
+	<div class="scroller" style="width:200px;" scrollerHeight="200">
+		文字内容<br />文字内容<br />文字内容<br />文字内容<br />文字内容<br />文字内容<br />
+		文字内容<br />文字内容<br />文字内容<br />文字内容<br />文字内容<br />文字内容<br />
+		文字内容<br />文字内容<br />文字内容<br />文字内容<br />文字内容<br />文字内容<br />
+		文字内容<br />文字内容<br />文字内容<br />文字内容<br />文字内容<br />文字内容<br />
+
+	</div>
+</div>
+</textarea>
+<pre></pre>		
+
+	第一个div的class设置为osX表示采用macOS风格，第二个div的class必须要设置为scroller。两个div的宽度设置保持一致。<br />
+	设置第二个容器的scrollHeight属性来限定高度。<br />
+	</div>
+	
+	<div class="box2" panelTitle="动态更改容器高度">
+	如果要动态改变滚动条所在容器高度，见下面：
+	<div class="osX" style="width:200px;border:solid 1px #cccccc;">
+		<div class="scroller" id="s01" style="width:200px;" scrollerHeight="200">
+			文字内容<br />文字内容<br />文字内容<br />文字内容<br />文字内容<br />文字内容<br />
+			文字内容<br />文字内容<br />文字内容<br />文字内容<br />文字内容<br />文字内容<br />
+			文字内容<br />文字内容<br />文字内容<br />文字内容<br />文字内容<br />文字内容<br />
+			文字内容<br />文字内容<br />文字内容<br />文字内容<br />文字内容<br />文字内容<br />
+		</div>
+	</div>
+	<input type="button" onclick="changeScoller()" value="点击变高"/>
+	<br />代码如下：
+<textarea class="code">
+<div class="osX" style="width:200px;border:solid 1px #cccccc;">
+	<div class="scroller" id="s01" style="width:200px;" scrollerHeight="200">
+		文字内容<br />文字内容<br />文字内容<br />文字内容<br />文字内容<br />文字内容<br />
+		文字内容<br />文字内容<br />文字内容<br />文字内容<br />文字内容<br />文字内容<br />
+		文字内容<br />文字内容<br />文字内容<br />文字内容<br />文字内容<br />文字内容<br />
+		文字内容<br />文字内容<br />文字内容<br />文字内容<br />文字内容<br />文字内容<br />
+	</div>
+</div>
+<input type="button" onclick="changeScoller()" value="点击变高"/>
+</textarea>
+<pre></pre>	
+	
+	changeScoller()代码
+<textarea class="code">
+function changeScoller(){
+	$("#s01").jScrollPaneRemove()
+	$("#s01").attr("scrollerHeight",300)
+	$("#s01").jScrollPane({showArrows:true, scrollbarWidth: 15, arrowSize: 16});
+}
+</textarea>
+<pre></pre>		
+	</div>
+	
+	<div class="box2" panelTitle="另一种风格">
+	第一个div的class还可设为winXP，表示采用XP风格。效果如下：
+	<div class="winXP" style="height:200px;width:200px;border:solid 1px #cccccc;">
+		<div class="scroller" style="width:200px;" scrollerHeight="200">
+			文字内容<br />文字内容<br />文字内容<br />文字内容<br />文字内容<br />文字内容<br />
+			文字内容<br />文字内容<br />文字内容<br />文字内容<br />文字内容<br />文字内容<br />
+			文字内容<br />文字内容<br />文字内容<br />文字内容<br />文字内容<br />文字内容<br />
+			文字内容<br />文字内容<br />文字内容<br />文字内容<br />文字内容<br />文字内容<br />
+			文字内容<br />文字内容<br />文字内容<br />文字内容<br />文字内容<br />文字内容<br />
+		</div>
+	</div>
+	代码如下：
+<textarea class="code">
+<div class="winXP" style="height:200px;width:200px;border:solid 1px #cccccc;">
+	<div class="scroller" style="width:200px;" scrollerHeight="200">
+		文字内容<br />文字内容<br />文字内容<br />文字内容<br />文字内容<br />文字内容<br />
+		文字内容<br />文字内容<br />文字内容<br />文字内容<br />文字内容<br />文字内容<br />
+		文字内容<br />文字内容<br />文字内容<br />文字内容<br />文字内容<br />文字内容<br />
+		文字内容<br />文字内容<br />文字内容<br />文字内容<br />文字内容<br />文字内容<br />
+		文字内容<br />文字内容<br />文字内容<br />文字内容<br />文字内容<br />文字内容<br />
+	</div>
+</div>
+</textarea>
+<pre></pre>	
+	</div>
+</body>
+<!--代码高亮start-->
+<script type="text/javascript" src="../hl/highlight.js"></script>
+<script type="text/javascript" src="../hl/lang-xml.js"></script>
+<script type="text/javascript" src="../hl/lang-html.js"></script>
+<link href="../hl/style.css" rel="stylesheet" type="text/css"/>
+<script>
+	$(function(){
+			showCode()
+	})
+	function showCode(){
+		$(".code").each(function(){
+			var code =$(this).val()
+			var hl = new DlHighlight({lang: "html",lineNumbers :false });
+			var formatted = hl.doItNow(code);
+			$(this).next().addClass("DlHighlight").html("<pre>" + formatted + "</pre>")
+		})
+	}
+</script>
+<!--代码高亮end-->
+</html>

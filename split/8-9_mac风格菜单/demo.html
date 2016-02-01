@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="reset.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../jquery-1.4.js"></script>
+<!--让ie6支持透明png图start-->
+<script type="text/javascript" src="js/pngFix/supersleight.js"></script>
+<!--让ie6支持透明png图end-->
+
+<!--苹果风格菜单(分离版)start-->
+<link href="skins/style.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="js/jqDock_split.js"></script>
+<!--苹果风格菜单(分离版)end-->
+<script type="text/javascript">
+	$(function(){
+		var jqDockOpts = {align: 'left', duration: 200, labels: 'tc', size: 48, distance: 85};
+		$('#jqDock').jqDock(jqDockOpts);
+	});
+</script>
+<body>
+	<div id="dockContainer">
+		<ul id="jqDock">
+			<li><a href="javascript:;"><img src="dock/home-sm.png" title="首页" defaultTip="false"/></a></li>
+			<li><a href="javascript:;"><img src="dock/email-sm.png" title="邮件" defaultTip="false"/></a></li>
+			<li><a href="javascript:;"><img src="dock/portfolio-sm.png" title="工具" defaultTip="false"/></a></li>
+			<li><a href="javascript:;"><img src="dock/music-sm.png" title="音乐" defaultTip="false"/></a></li>
+			<li><a href="javascript:;"><img src="dock/video-sm.png" title="视频" defaultTip="false"/></a></li>
+			<li><a href="javascript:;"><img src="dock/history-sm.png" title="历史" defaultTip="false"/></a></li>
+			<li><a href="javascript:;"><img src="dock/calendar-sm.png" title="日历" defaultTip="false"/></a></li>
+			<li><a href="javascript:;"><img src="dock/link-sm.png" title="链接" defaultTip="false"/></a></li>
+			<li><a href="javascript:;"><img src="dock/rss-sm.png" title="RSS" defaultTip="false"/></a></li>
+			<li><a href="javascript:;"><img src="dock/rss2-sm.png" title="RSS" defaultTip="false"/></a></li>
+		</ul>
+	</div>
+	首先引入脚本和CSS
+<textarea class="code">
+<!--让ie6支持透明png图start-->
+<script type="text/javascript" src="js/pngFix/supersleight.js"></script>
+<!--让ie6支持透明png图end-->
+
+<!--苹果风格菜单(分离版)start-->
+<link href="skins/style.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="js/jqDock_split.js"></script>
+<!--苹果风格菜单(分离版)end-->
+</textarea>
+<pre></pre>	
+
+	HTML部分
+<textarea class="code">
+<div id="dockContainer">
+	<ul id="jqDock">
+		<li><a href="javascript:;"><img src="dock/home-sm.png" title="首页" defaultTip="false"/></a></li>
+		<li><a href="javascript:;"><img src="dock/email-sm.png" title="邮件" defaultTip="false"/></a></li>
+		<li><a href="javascript:;"><img src="dock/portfolio-sm.png" title="工具" defaultTip="false"/></a></li>
+		<li><a href="javascript:;"><img src="dock/music-sm.png" title="音乐" defaultTip="false"/></a></li>
+		<li><a href="javascript:;"><img src="dock/video-sm.png" title="视频" defaultTip="false"/></a></li>
+		<li><a href="javascript:;"><img src="dock/history-sm.png" title="历史" defaultTip="false"/></a></li>
+		<li><a href="javascript:;"><img src="dock/calendar-sm.png" title="日历" defaultTip="false"/></a></li>
+		<li><a href="javascript:;"><img src="dock/link-sm.png" title="链接" defaultTip="false"/></a></li>
+		<li><a href="javascript:;"><img src="dock/rss-sm.png" title="RSS" defaultTip="false"/></a></li>
+		<li><a href="javascript:;"><img src="dock/rss2-sm.png" title="RSS" defaultTip="false"/></a></li>
+	</ul>
+</div>
+</textarea>
+<pre></pre>		
+
+	JS部分：
+<textarea class="code">
+$(function(){
+	var jqDockOpts = {align: 'left', duration: 200, labels: 'tc', size: 48, distance: 85};
+	$('#jqDock').jqDock(jqDockOpts);
+});
+</textarea>
+<pre></pre>	
+	通过上述参数来自定义排列方式、菜单大小等。
+</body>
+<!--代码高亮start-->
+<script type="text/javascript" src="../hl/highlight.js"></script>
+<script type="text/javascript" src="../hl/lang-xml.js"></script>
+<script type="text/javascript" src="../hl/lang-html.js"></script>
+<link href="../hl/style.css" rel="stylesheet" type="text/css"/>
+<script>
+	$(function(){
+			showCode()
+	})
+	function showCode(){
+		$(".code").each(function(){
+			var code =$(this).val()
+			var hl = new DlHighlight({lang: "html",lineNumbers :false });
+			var formatted = hl.doItNow(code);
+			$(this).next().addClass("DlHighlight").html("<pre>" + formatted + "</pre>")
+		})
+	}
+</script>
+<!--代码高亮end-->
+</html>

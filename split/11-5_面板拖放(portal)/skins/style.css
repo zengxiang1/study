@@ -1,0 +1,28 @@
+ /*拖拽面板portal*/
+.widget-place {
+  margin: 0;
+  padding: 0;
+  width: 33%;
+  list-style: none;
+  height: auto!important;
+  >height:150px; 
+  min-height:150px;
+  float:left;
+}
+.widget-placeholder {
+  border: #000 dashed 1px;
+}
+.widget {}
+.widget-header {}
+.widget-menu {
+}
+.widget-menu a {
+  margin: 0 0 0 0.5em;
+}
+.widget-editbox {}
+.widget-content {}
+ /*拖拽面板portal*/
+.clear{
+	clear:both;
+	line-height:1px;
+}

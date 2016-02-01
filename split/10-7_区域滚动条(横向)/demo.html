@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="reset.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../jquery-1.4.js"></script>
+<!--横向滚动条start-->
+<link rel="stylesheet" type="text/css" href="js/hscroller/style.css" />
+<link rel="stylesheet" type="text/css" href="js/hscroller/jquery-ui-1.7.2.custom.css" />
+<script type="text/javascript" src="js/hscroller/ui.core.js"></script>
+<script type="text/javascript" src="js/hscroller/ui.slider.js"></script>
+<!--横向滚动条end-->
+<script type="text/javascript">
+$(function() {
+	// 列表1：
+	//获取元素
+	var $contain = $(".drag_ul", $("#drag"));
+	var $items = $("li",  $("#drag .drag_ul") );
+	var $dragCont = $(".drag_cont", $("#drag"));
+	var $button  = $(".drag_cont_btn", $("#drag"));
+	//给容器设置宽度
+	var width = ($items.length * parseInt($items.outerWidth(true))) + 10 ;
+	$contain.css("width", width);	
+	// slider将要用到的参数:
+	// (1)max:最大值
+	// (2)slide:滑动时动态改变容器的left.
+	var sliderOpts = {
+		max: width - parseInt($dragCont.css("width")),
+		slide: function(e, ui) { 
+			$contain.css("left", "-" + ui.value + "px");
+		}
+	};
+	//创建slider
+	$button.slider(sliderOpts);
+
+	/**********************************/
+	// 列表2：
+	//获取元素
+	var $contain_02 = $(".drag_ul", $("#drag_02"));
+	var $items_02 = $("li",  $("#drag_02 .drag_ul") );
+	var $dragCont_02 = $(".drag_cont", $("#drag_02"));
+	var $button_02  = $(".drag_cont_btn", $("#drag_02"));
+	//给容器设置宽度
+	var len =  $items_02.length ;
+	if($items_02.length/2){len = $items_02.length+1; }else{}
+	var width_02 = ((len * parseInt($items_02.outerWidth(true))) / 2 )  + 10;
+	$contain_02.css("width", width_02);	
+	// slider将要用到的参数:
+	// (1)max:最大值
+	// (2)slide:滑动时动态改变容器的left.
+	var sliderOpts_02 = {
+		max: width_02 - parseInt($dragCont_02.css("width")),
+		slide: function(e, ui) { 
+			$contain_02.css("left", "-" + ui.value + "px");
+		}
+	};
+	//创建slider
+	$button_02.slider(sliderOpts_02);
+
+});
+</script>
+
+<body>
+	<div id="drag" class="drag">
+	<h3>列表1</h3>
+	<div class="wrap">
+		<div class="drag_cont">
+			<ul class="drag_ul clearfix">
+				<li><a href="javascript:;"><img src="demo/1s.jpg" alt="第1张" /></a></li>
+				<li><a href="javascript:;"><img src="demo/2s.jpg" alt="第1张" /></a></li>
+				<li><a href="javascript:;"><img src="demo/3s.jpg" alt="第1张" /></a></li>
+				<li><a href="javascript:;"><img src="demo/4s.jpg" alt="第1张" /></a></li>
+				<li><a href="javascript:;"><img src="demo/1s.jpg" alt="第1张" /></a></li>
+				<li><a href="javascript:;"><img src="demo/2s.jpg" alt="第1张" /></a></li>
+				<li><a href="javascript:;"><img src="demo/3s.jpg" alt="第1张" /></a></li>
+				<li><a href="javascript:;"><img src="demo/4s.jpg" alt="第1张" /></a></li>
+				<li><a href="javascript:;"><img src="demo/1s.jpg" alt="第1张" /></a></li>
+				<li><a href="javascript:;"><img src="demo/2s.jpg" alt="第1张" /></a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="drag_cont_btn"></div>
+</div>
+
+
+
+<br/>
+
+
+<div id="drag_02" class="drag">
+	<h3>列表2</h3>
+	<div class="wrap" style="height:210px;">
+		<div class="drag_cont" style="height:190px;">
+			<ul class="drag_ul clearfix" >
+				<li><a href="javascript:;"><img src="demo/1s.jpg" alt="第1张" /></a></li>
+				<li><a href="javascript:;"><img src="demo/2s.jpg" alt="第1张" /></a></li>
+				<li><a href="javascript:;"><img src="demo/3s.jpg" alt="第1张" /></a></li>
+				<li><a href="javascript:;"><img src="demo/4s.jpg" alt="第1张" /></a></li>
+				<li><a href="javascript:;"><img src="demo/1s.jpg" alt="第1张" /></a></li>
+				<li><a href="javascript:;"><img src="demo/2s.jpg" alt="第1张" /></a></li>
+				<li><a href="javascript:;"><img src="demo/3s.jpg" alt="第1张" /></a></li>
+				<li><a href="javascript:;"><img src="demo/4s.jpg" alt="第1张" /></a></li>
+				<li><a href="javascript:;"><img src="demo/1s.jpg" alt="第1张" /></a></li>
+				<li><a href="javascript:;"><img src="demo/2s.jpg" alt="第1张" /></a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="drag_cont_btn"></div>
+</div>
+</body>
+<!--代码高亮start-->
+<script type="text/javascript" src="../hl/highlight.js"></script>
+<script type="text/javascript" src="../hl/lang-xml.js"></script>
+<script type="text/javascript" src="../hl/lang-html.js"></script>
+<link href="../hl/style.css" rel="stylesheet" type="text/css"/>
+<script>
+	$(function(){
+			showCode()
+	})
+	function showCode(){
+		$(".code").each(function(){
+			var code =$(this).val()
+			var hl = new DlHighlight({lang: "html",lineNumbers :false });
+			var formatted = hl.doItNow(code);
+			$(this).next().addClass("DlHighlight").html("<pre>" + formatted + "</pre>")
+		})
+	}
+</script>
+<!--代码高亮end-->
+</html>

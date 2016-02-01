@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="reset.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../jquery-1.4.js"></script>
+<!--文字放大（分离版）start-->
+<script type="text/javascript" src="js/jquery.easing1.js"></script>
+<!--文字放大（分离版）end-->
+<script>
+	$(function(){
+		$("#start2").click(function(){
+			if ( !$("#text2 span").length )
+				$("#text2").html(jQuery.map( $("#text2").html().split(""), function(letter){
+					return "<span>" + letter + "</span>";
+				}).join(""));
+	
+			$("#text2 span").each(function(i, letter){
+				setTimeout(function(){
+					$(letter)
+						.animate({ fontSize: "4em" }, 1000, "elasinout")
+						.animate({ fontSize: "1em" }, 1000, "elasinout");
+				}, i * 100);
+			});
+		})
+	})
+</script>
+<body>
+	
+	<div class="box2" panelTitle="文字尺寸变化动画">
+	<br /><div id="text2">欢迎使用WEB前台界面集成框架!</div>
+	<input type="button" id="start2" value="开始">
+	
+	<br />引入脚本
+<textarea class="code">
+<!--文字放大（分离版）start-->
+<script type="text/javascript" src="js/jquery.easing1.js"></script>
+<!--文字放大（分离版）end-->
+</textarea>
+<pre></pre>	
+HTML部分：
+<textarea class="code">
+<div id="text2">欢迎使用WEB前台界面集成框架!</div>
+</textarea>
+<pre></pre>
+
+JS部分
+<textarea class="code">
+$(function(){
+	$("#start2").click(function(){
+		if ( !$("#text2 span").length )
+			$("#text2").html(jQuery.map( $("#text2").html().split(""), function(letter){
+				return "<span>" + letter + "</span>";
+			}).join(""));
+
+		$("#text2 span").each(function(i, letter){
+			setTimeout(function(){
+				$(letter)
+					.animate({ fontSize: "4em" }, 1000, "elasinout")
+					.animate({ fontSize: "1em" }, 1000, "elasinout");
+			}, i * 100);
+		});
+	})
+})
+</textarea>
+<pre></pre>
+		</div>
+</body>
+<!--代码高亮start-->
+<script type="text/javascript" src="../hl/highlight.js"></script>
+<script type="text/javascript" src="../hl/lang-xml.js"></script>
+<script type="text/javascript" src="../hl/lang-html.js"></script>
+<link href="../hl/style.css" rel="stylesheet" type="text/css"/>
+<script>
+	$(function(){
+			showCode()
+	})
+	function showCode(){
+		$(".code").each(function(){
+			var code =$(this).val()
+			var hl = new DlHighlight({lang: "html",lineNumbers :false });
+			var formatted = hl.doItNow(code);
+			$(this).next().addClass("DlHighlight").html("<pre>" + formatted + "</pre>")
+		})
+	}
+</script>
+<!--代码高亮end-->
+</html>

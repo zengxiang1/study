@@ -1,0 +1,64 @@
+/*控制按钮*/
+.ctrl { width:348px; text-align:center; padding:5px 0; }
+.play, .pause, .stop {
+	width:20px;
+	height:20px;
+	border:none;
+	cursor:pointer;
+}
+.play { background:url(tab/ctrl.gif) 0 0 no-repeat; }
+.pause { background:url(tab/ctrl.gif) 0 -20px no-repeat; }
+.stop { background:url(tab/ctrl.gif) 0 -40px no-repeat; }
+ /*控制按钮*/
+
+ /*JS版图片幻灯*/
+.slide-trigger {
+	position:relative;
+	top:-25px;
+	width:465px;
+	text-align:right;
+	padding-right:5px;
+}
+.slide-trigger a {
+	display:inline-block;
+	margin-right:3px;
+	width:16px;
+	height:16px;
+	line-height:16px;
+	text-align:center;
+	color:#d94b01;
+	background-color:#fff5e1;
+	border:1px solid #f47500;
+	outline:none;
+	overflow:hidden;
+}
+.slide-trigger a:hover { text-decoration:none; }
+.slide-trigger a.current {
+	width:18px;
+	height:18px;
+	line-height:18px;
+	font-weight:bold;
+	color:#FFF;
+	background:url(tab/t-bg.png) repeat-x;
+}
+
+.slide-panel {
+	/* 下面四项必须设置 */
+	position:relative;
+	width:470px;
+	height:150px;
+	overflow:hidden;
+	
+	border:1px solid #B6D1E6;
+}
+.slide-panel div { position:absolute; }
+.slide-panel div img {
+	display:block; /* fix img's 3px bug in ie6*/
+	width:470px;
+	height:150px;
+}
+
+/* Horizontal Special */
+#slide1 div { width:2010em; /* 设置足够的宽度 */ }
+#slide1 div img { float:left; }
+ /*JS版图片幻灯*/

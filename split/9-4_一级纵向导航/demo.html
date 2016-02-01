@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="reset.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../jquery-1.4.js"></script>
+<!--一级纵向导航(分离版)start-->
+<link href="skins/blue_whiteBg/style.css" rel="stylesheet" type="text/css" id="compStyle"/>
+<script type="text/javascript" src="js/listNav_split.js"></script>
+<!---一级纵向导航(分离版)end-->
+
+<!--去除虚线链接start-->
+<style>
+a {
+	behavior:url(js/focus.htc)
+}
+</style>
+<!--去除虚线链接end-->
+<body>
+	<script>
+		function changeSkin(){
+			$("#compStyle").attr("href","skins/"+$("#changeSkin").val()+"/style.css");
+		}
+	</script>
+	更换风格
+	<select  onchange='changeSkin()' id="changeSkin">
+	     <option value="blue_whiteBg">蓝色(白色背景)</option>
+		<option value="blue_blueBg">蓝色(浅蓝色背景)</option>
+		<option value="green">绿色</option>
+	    <option value="armyGreen">军绿色</option>
+		<option value="red">红色</option>
+	</select>
+	<div class="list_menu3">
+		<div class="list_menu3_cur"><span><a href="javascript:;">选项1</a></span></div>
+		<div><span><a href="javascript:;">选项2</a></span></div>
+		<div><span><a href="javascript:;">选项3</a></span></div>
+		<div><span><a href="javascript:;">选项4</a></span></div>
+		<div><span><a href="javascript:;">选项5</a></span></div>
+	</div>
+	
+<div class="box2" panelWidth="800" panelTitle="用法">		
+	首先引入脚本和CSS
+<textarea class="code">
+<script type="text/javascript" src="../jquery-1.4.js"></script>
+<!--一级纵向导航(分离版)start-->
+<link href="skins/blue/style.css" rel="stylesheet" type="text/css" id="compStyle"/>
+<script type="text/javascript" src="js/listNav_split.js"></script>
+<!---一级纵向导航(分离版)end-->
+</textarea>
+<pre></pre>
+HTML代码：
+<textarea class="code">
+<div class="list_menu3">
+	<div class="list_menu3_cur"><span><a href="javascript:;">选项1</a></span></div>
+	<div><span><a href="javascript:;">选项2</a></span></div>
+	<div><span><a href="javascript:;">选项3</a></span></div>
+	<div><span><a href="javascript:;">选项4</a></span></div>
+	<div><span><a href="javascript:;">选项5</a></span></div>
+</div>
+</textarea>
+<pre></pre>
+可以引入去掉链接虚线的htc文件达到更好的效果：
+<textarea class="code">
+<!--去除虚线链接start-->
+<style>
+a {
+	behavior:url(js/focus.htc)
+}
+</style>
+<!--去除虚线链接end-->
+</textarea>
+<pre></pre>
+</div>
+</body>
+<!--代码高亮start-->
+<script type="text/javascript" src="../hl/highlight.js"></script>
+<script type="text/javascript" src="../hl/lang-xml.js"></script>
+<script type="text/javascript" src="../hl/lang-html.js"></script>
+<link href="../hl/style.css" rel="stylesheet" type="text/css"/>
+<script>
+	$(function(){
+			showCode()
+	})
+	function showCode(){
+		$(".code").each(function(){
+			var code =$(this).val()
+			var hl = new DlHighlight({lang: "html",lineNumbers :false });
+			var formatted = hl.doItNow(code);
+			$(this).next().addClass("DlHighlight").html("<pre>" + formatted + "</pre>")
+		})
+	}
+</script>
+<!--代码高亮end-->
+</html>

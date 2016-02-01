@@ -1,0 +1,131 @@
+.padding_bottom3{
+	padding-bottom:3px;
+}
+.padding_top5{
+	padding-top:5px;
+}
+.padding_right5{
+	padding-right:5px;
+}
+.padding_top8{
+	padding-top:8px;
+}
+.padding_left10{
+	padding-left:10px;
+}
+.padding_top2{
+	padding-top:2px;
+}
+.padding_bottom2{
+	padding-bottom:2px;
+}
+/*图标工具栏*/
+.box_tool{
+	height:58px;
+	color:#000000;
+}
+.box_tool .center{
+	background-image: url(box/box_tool_center.gif);
+	background-repeat:repeat-x;
+	width:100%;
+	height:100%;
+}
+.box_tool .left{
+	background-image: url(box/box_tool_left.gif);
+	background-repeat: no-repeat; 
+	width:100%;
+	height:100%;
+}
+.box_tool .right{
+	background-image: url(box/box_tool_right.gif);
+	background-repeat: no-repeat; 
+	background-position:100% 0%;
+	width:100%;
+	height:100%;
+}
+.box_tool a:hover .navIconTool{
+	color:red;
+	text-decoration:none;
+}
+.navIconTool{
+	width:50px;
+	margin:5px 10px 0 0;
+	display:inline;
+	text-align:center;
+	color:#000000; /*标题文字颜色*/
+	cursor:pointer;
+	cursor:hand;
+	float:left;
+}
+.navIconTool img{
+	width:30px;
+	height:30px;
+}
+
+.box_tool_mid{
+	height:45px;
+	color:#000000;
+}
+.box_tool_mid .center{
+	background-image: url(box/box_tool_center2.gif);
+	background-repeat:repeat-x;
+	width:100%;
+	height:100%;
+}
+.box_tool_mid .left{
+	background-image: url(box/box_tool_left2.gif);
+	background-repeat: no-repeat; 
+	width:100%;
+	height:100%;
+}
+.box_tool_mid .right{
+	background-image: url(box/box_tool_right2.gif);
+	background-repeat: no-repeat; 
+	background-position:100% 0%;
+	width:100%;
+	height:100%;
+	color:#000000;
+}
+
+.box_tool_min{
+	height:29px;
+	color:#000000;
+	overflow:hidden;
+}
+.box_tool_min .center{
+	background-image: url(box/box_tool_center3.gif);
+	background-repeat:repeat-x;
+	width:100%;
+	height:100%;
+}
+.box_tool_min .left{
+	background-image: url(box/box_tool_left3.gif);
+	background-repeat: no-repeat; 
+	width:100%;
+	height:100%;
+}
+.box_tool_min .right{
+	background-image: url(box/box_tool_right3.gif);
+	background-repeat: no-repeat; 
+	background-position:100% 0%;
+	width:100%;
+	height:100%;
+	color:#000000;
+}
+
+.box_tool_min a:hover span{
+	background-color:#c8e4fa;/*鼠标悬停背景色*/
+	color:red;
+	text-decoration:none;
+}
+.box_tool_line{
+	float:left;
+	width:15px;
+	display:block;
+	height:19px;
+	overflow:hidden;
+	background-image: url(box/box_tool_line.gif);
+	background-repeat: no-repeat; 
+	background-position:5px 4px;
+}
+ /*图标工具栏*/

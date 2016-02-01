@@ -1,0 +1,395 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="reset.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../jquery-1.4.js"></script>
+<!--拖放面板(分离版)start-->
+<link href="skins/style.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="js/jquery-ui-1.7.2.custom.min.js"></script>
+<script type="text/javascript" src="js/easywidgets_split.js"></script>
+<!--拖放面板(分离版)end-->
+<script>
+$(function(){
+  $.fn.EasyWidgets();
+});
+</script>
+<style>
+.widget-place {
+	/*设置每列宽度。默认33%*/
+}
+.widget-placeholder {
+	color: #000;
+	margin: 1em;
+	background-color: #ebebeb;
+}
+.widget {
+	margin: 10px 10px 0 0;
+	border: #ebebeb solid 1px;
+}
+.widget-header {
+	color: #000;
+	padding: 0.2em;
+	background-color: #ebebeb;
+	display:block;
+	height:25px;;
+}
+.widget-content {
+	padding: 0.5em;
+	background-color:#ffffff;
+}
+</style>
+<body>
+	<div style="width:100%;">
+ <div class="widget-place">
+   <div class="widget movable">
+    <div class="widget-header">
+     <strong>可拖放面板1</strong>
+    </div>
+    <div class="widget-content">
+   内容区域<br />内容区域
+    </div>
+   </div>
+  
+  <div class="widget movable">
+    <div class="widget-header">
+     <strong>可拖放面板3</strong>
+    </div>
+    <div class="widget-content">
+    内容区域<br />内容区域
+    </div>
+   </div>
+ </div>
+  
+  <div class="widget-place">
+   <div class="widget movable">
+    <div class="widget-header">
+     <strong>可拖放面板2</strong>
+    </div>
+    <div class="widget-content">
+     内容区域<br />内容区域
+    </div>
+   </div>    
+  </div>
+
+  <div class="widget-place">
+   <div class="widget">
+    <div class="widget-header">
+     <strong>不可拖放面板</strong>
+    </div>
+    <div class="widget-content">
+    内容区域<br />内容区域
+    </div>
+   </div>
+  </div>
+  
+  <div class="clear"></div>
+</div> 
+  <div class="box2" panelTitle="基本用法">
+  首先引入脚本
+<textarea class="code">
+<script type="text/javascript" src="../jquery-1.4.js"></script>	
+<!--拖放面板(分离版)start-->
+<link href="skins/style.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="js/jquery-ui-1.7.2.custom.min.js"></script>
+<script type="text/javascript" src="js/easywidgets_split.js"></script>
+<!--拖放面板(分离版)end-->
+</textarea>
+<pre></pre>
+
+	HTML部分，每一列的所有面板放在class="widget-place"的容器中：
+<textarea class="code">
+<div style="width:100%;">
+ <div class="widget-place">
+   <div class="widget movable">
+    <div class="widget-header">
+     <strong>可拖放面板1</strong>
+    </div>
+    <div class="widget-content">
+   内容区域<br />内容区域
+    </div>
+   </div>
+  
+  <div class="widget movable">
+    <div class="widget-header">
+     <strong>可拖放面板3</strong>
+    </div>
+    <div class="widget-content">
+    内容区域<br />内容区域
+    </div>
+   </div>
+ </div>
+  
+  <div class="widget-place">
+   <div class="widget movable">
+    <div class="widget-header">
+     <strong>可拖放面板2</strong>
+    </div>
+    <div class="widget-content">
+     内容区域<br />内容区域
+    </div>
+   </div>    
+  </div>
+
+  <div class="widget-place">
+   <div class="widget">
+    <div class="widget-header">
+     <strong>不可拖放面板</strong>
+    </div>
+    <div class="widget-content">
+    内容区域<br />内容区域
+    </div>
+   </div>
+  </div>
+  <div class="clear"></div>
+</div>
+</textarea>
+<pre></pre>	
+
+	添加CSS设置面板样式，这里设置一个最简单的样式
+<textarea class="code">
+<style>
+.widget-place {
+	/*设置每列宽度。默认33%*/
+}
+.widget-placeholder {
+	color: #000;
+	margin: 1em;
+	background-color: #ebebeb;
+}
+.widget {
+	margin: 10px 10px 0 0;
+	border: #ebebeb solid 1px;
+}
+.widget-header {
+	color: #000;
+	padding: 0.2em;
+	background-color: #ebebeb;
+	display:block;
+	height:25px;;
+}
+.widget-content {
+	padding: 0.5em;
+	background-color:#ffffff;
+}
+</style>
+</textarea>
+<pre></pre>	
+	最后添加JS代码
+<textarea class="code">
+$(function(){
+  $.fn.EasyWidgets();
+});
+</textarea>
+<pre></pre>
+  	</div>
+	
+	<div class="box2" panelTitle="面板功能设置">
+		为面板的class="widget"的容器添加class来设置面板具有的功能。例如如下代码是将所有设置参数都加上了，并增加了修改区域：
+<textarea class="code">
+<div class="widget-place" style="width:400px;">
+   <div class="widget movable editable collapse collapsable removable closeconfirm">
+    <div class="widget-header">
+     <strong>初始时关闭</strong>
+    </div>
+	 <div class="widget-editbox">
+  		修改区域
+ 	</div>
+    <div class="widget-content">
+    内容区域<br />内容区域
+    </div>
+   </div>
+</div>
+<div class="clear"></div>
+</textarea>
+<pre></pre>	
+	</div>
+	效果：
+	<div class="clear"></div>
+<div class="widget-place" style="width:400px;">
+   <div class="widget movable editable collapse collapsable removable closeconfirm">
+    <div class="widget-header">
+     <strong>初始时关闭</strong>
+    </div>
+	 <div class="widget-editbox">
+  		修改区域
+ 	</div>
+    <div class="widget-content">
+    内容区域<br />内容区域
+    </div>
+   </div>
+</div>
+<div class="clear"></div>
+
+	<div class="box2" panelTitle="添加回调函数">
+		JS的$.fn.EasyWidgets()中可以添加回调函数，代码如下：
+<textarea class="code">
+$(function(){
+  $.fn.EasyWidgets({
+    callbacks : {
+      onClose : function(link, widget){
+      },
+      onCloseQuery : function(link, widget){
+      },
+      onEdit : function(link, widget){
+      },
+      onEditQuery : function(link, widget){
+      },
+      onCancelEdit : function(link, widget){
+      },
+      onCancelEditQuery : function(link, widget){
+      },
+      onCollapse : function(link, widget){
+      },
+      onCollapseQuery : function(link, widget){
+      },
+      onExtend : function(link, widget){
+      },
+      onExtendQuery : function(link, widget){
+      },
+      onDragStop : function(event, ui){
+      }
+    }
+  });
+});
+</textarea>
+<pre></pre>	
+其他事件还有：onAdd、onShow、onHide、onDisable、onEnable、onAddQuery、onShowQuery、onHideQuery、onCloseQuery、onEnableQuery、onDisableQuery、onChangePositions、onRefreshPositions
+	</div>
+
+	<div class="box2" panelTitle="自定义标题栏按钮">
+		可自定义标题栏的操作链接的显示文字，或者换成图片。代码如下：
+<textarea class="code">
+$(function(){
+  $.fn.EasyWidgets({
+    i18n : {
+      editText : '<img src="./edit.png" alt="修改" width="16" height="16" />',
+      closeText : '<img src="./close.png" alt="关闭" width="16" height="16" />',
+      collapseText : '<img src="./collapse.png" alt="收缩" width="16" height="16" />',
+      cancelEditText : '<img src="./edit.png" alt="编辑" width="16" height="16" />',
+      extendText : '<img src="./extend.png" alt="展开" width="16" height="16" />'
+    }
+  });
+});
+</textarea>
+<pre></pre>			
+	</div>
+	
+	<div class="box2" panelTitle="动态操作">
+	隐藏某一面板
+<textarea class="code">
+$.fn.HideEasyWidget('面板id名', WidgetOptions);
+</textarea>
+<pre></pre>	
+	隐藏所有面板
+<textarea class="code">
+$.fn.HideEasyWidgets();
+</textarea>
+<pre></pre>	
+	显示某一隐藏面板
+<textarea class="code">
+$.fn.ShowEasyWidget('面板id名', WidgetOptions);
+</textarea>
+<pre></pre>
+	显示所有隐藏面板
+<textarea class="code">
+$.fn.ShowEasyWidgets();
+</textarea>
+<pre></pre>
+	禁用拖放
+<textarea class="code">
+$.fn.DisableEasyWidgets();
+</textarea>
+<pre></pre>
+	启用拖放
+<textarea class="code">
+$.fn.EnableEasyWidgets();
+</textarea>
+<pre></pre>
+<br />
+	动态创建一个面板
+<textarea class="code">
+AddWidget('widget1.html', 'widget-place-3');
+</textarea>
+<pre></pre>
+AddWidget方法
+<textarea class="code">
+function AddWidget(url, placeId){
+  $.get(url, function(html){
+    $.fn.AddEasyWidget(html, placeId, EASettings);
+  });
+}
+</textarea>
+<pre></pre>
+widget1.html代码
+<textarea class="code">
+<div class="widget movable collapsable removable editable closeconfirm">
+ <div class="widget-header">
+  <strong>新面板</strong>
+ </div>
+ <div class="widget-content">
+  内容
+ </div>
+</div>
+</textarea>
+<pre></pre>
+
+		
+	
+	</div>
+	
+	<div class="box2" panelTitle="启用cookie">
+	可以设置启用cookie，这样拖拽后再刷新则不会还原。代码如下：
+<textarea class="code">
+$(function(){
+  $.fn.EasyWidgets({
+    behaviour : {
+      useCookies : true
+    }
+  });
+});
+</textarea>
+<pre></pre>	
+	</div>
+	
+	<div class="box2" panelTitle="自定义效果">
+	可以设置面板在进行一些操作时的效果，可设置fade或slide。代码如下：
+<textarea class="code">
+$(function(){
+  $.fn.EasyWidgets({
+    effects : {
+      effectDuration : 200,
+      widgetShow : 'fade',
+      widgetHide : 'fade',
+      widgetClose : 'fade',
+      widgetExtend : 'fade',
+      widgetCollapse : 'fade',
+      widgetOpenEdit : 'fade',
+      widgetCloseEdit : 'fade',
+      widgetCancelEdit : 'fade'
+    }
+  });
+});
+</textarea>
+<pre></pre>	
+	</div>
+</body>
+<!--代码高亮start-->
+<script type="text/javascript" src="../hl/highlight.js"></script>
+<script type="text/javascript" src="../hl/lang-xml.js"></script>
+<script type="text/javascript" src="../hl/lang-html.js"></script>
+<link href="../hl/style.css" rel="stylesheet" type="text/css"/>
+<script>
+	$(function(){
+			showCode()
+	})
+	function showCode(){
+		$(".code").each(function(){
+			var code =$(this).val()
+			var hl = new DlHighlight({lang: "html",lineNumbers :false });
+			var formatted = hl.doItNow(code);
+			$(this).next().addClass("DlHighlight").html("<pre>" + formatted + "</pre>")
+		})
+	}
+</script>
+<!--代码高亮end-->
+</html>

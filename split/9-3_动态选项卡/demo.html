@@ -1,0 +1,215 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="reset.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../jquery-1.4.js"></script>
+<!--动态选项卡(分离版)start-->
+<link href="skins/blue/style.css" rel="stylesheet" type="text/css" id="compStyle"/>
+<script type="text/javascript" src="js/tab_split.js"></script>
+<!---动态选项卡(分离版)end-->
+<script>
+$( function() {
+	 var tab = new TabView( {
+		containerId :'tab_menu',
+		pageid :'page',
+		cid :'tab1',
+		position :"top"
+	});
+	tab.add( {
+		id :'tab1_index1',
+		title :"选项卡1",
+		url :"include/chapter9-1-1-content1.html",
+		isClosed :false
+	});
+	tab.add( {
+		id :'tab1_index2',
+		title :"选项卡2",
+		url :"include/chapter9-1-1-content2.html",
+		isClosed :false
+	});
+	tab.add( {
+		id :'tab1_index3',
+		title :"选项卡3",
+		url :"include/chapter9-1-1-content3.html",
+		isClosed :true
+	});
+	tab.activate("tab1_index1")
+	
+	 var tab2 = new TabView( {
+		containerId :'tab_menu2',
+		pageid :'page2',
+		cid :'tab2',
+		position :"bottom"
+	});
+	tab2.add( {
+		id :'tab2_index1',
+		title :"选项卡1",
+		url :"include/chapter9-1-1-content1.html",
+		isClosed :false
+	});
+	tab2.add( {
+		id :'tab2_index2',
+		title :"选项卡2",
+		url :"include/chapter9-1-1-content2.html",
+		isClosed :false
+	});
+	tab.activate("tab2_index1")
+});
+</script>
+<body>
+	<script>
+		function changeSkin(){
+			$("#compStyle").attr("href","skins/"+$("#changeSkin").val()+"/style.css");
+		}
+	</script>
+	更换风格
+	<select  onchange='changeSkin()' id="changeSkin">
+	    <option value="blue">蓝色</option>
+	    <option value="lightBlue">亮蓝色</option>
+	    <option value="green">绿色</option>
+		<option value="red">红色</option>
+		<option value="darkYellow">棕黄色</option>
+		<option value="armyGreen">军绿色</option>
+	</select>
+	<div class="box2" panelTitle="效果">
+	<div id="tab_menu"></div>
+	<div id="page" style="width:600px;height:300px;border:solid 1px #cccccc;"></div>
+</div>	
+	<div class="box2" panelTitle="用法">
+	要实现上面的选项卡首先引入脚本和CSS
+<textarea class="code">
+<!--动态选项卡(分离版)start-->
+<link href="skins/blue/style.css" rel="stylesheet" type="text/css" id="compStyle"/>
+<script type="text/javascript" src="js/tab_split.js"></script>
+<!---动态选项卡(分离版)end-->
+</textarea>
+<pre></pre>	
+
+	然后创建两个div，分别设置id，一个用来放标签，一个用来放内容，并对内容div设置尺寸和边框<br />
+	如果要让选项卡内容充满整个页面，见“多功能选项卡模板”
+<textarea class="code">
+<div id="tab_menu"></div>
+<div id="page" style="width:600px;height:300px;border:solid 1px #cccccc;"></div>
+</textarea>
+<pre></pre>	
+	
+	最后在初始化函数中写如下代码：
+<textarea class="code">
+$( function() {
+	 var tab = new TabView( {
+		containerId :'tab_menu',
+		pageid :'page',
+		cid :'tab1',
+		position :"top"
+	});
+	tab.add( {
+		id :'tab1_index1',
+		title :"选项卡1",
+		url :"include/chapter9-1-1-content1.html",
+		isClosed :false
+	});
+	tab.add( {
+		id :'tab1_index2',
+		title :"选项卡2",
+		url :"include/chapter9-1-1-content2.html",
+		isClosed :false
+	});
+	tab.add( {
+		id :'tab1_index3',
+		title :"选项卡3",
+		url :"include/chapter9-1-1-content3.html",
+		isClosed :true
+	});
+	tab.activate("tab1_index1")
+});
+</textarea>
+<pre></pre>		
+上面代码首先创建一个选项卡对象，并使用add方法添加tab页。<br />
+	在创建选项卡时，如果position参数设为"bottom"并将标签与内容容器顺序对调，则会变为下方选项卡，效果如下：
+	</div>
+	
+<div class="box2" panelTitle="标签在底部">
+	<div id="page2" style="width:600px;height:300px;border:solid 1px #cccccc;"></div>
+	<div id="tab_menu2"></div>
+</div>
+	
+	<div class="box2" panelTitle="用法">
+	代码如下
+<textarea class="code">
+<div id="page2" style="width:600px;height:300px;border:solid 1px #cccccc;"></div>
+<div id="tab_menu2"></div>
+</textarea>
+<pre></pre>	
+
+创建选项卡代码
+<textarea class="code">
+var tab2 = new TabView( {
+	containerId :'tab_menu2',
+	pageid :'page2',
+	cid :'tab2',
+	position :"bottom"
+});
+tab2.add( {
+	id :'tab2_index1',
+	title :"选项卡1",
+	url :"include/chapter9-1-1-content1.html",
+	isClosed :false
+});
+tab2.add( {
+	id :'tab2_index2',
+	title :"选项卡2",
+	url :"include/chapter9-1-1-content2.html",
+	isClosed :false
+});
+tab.activate("tab2_index1")
+</textarea>
+<pre></pre>	
+
+另外，使用add方法还可以动态添加标签页，见“导航与布局>>综合布局>>综合布局模板”。
+	</div>
+	
+<div class="box2" panelTitle="方法表">
+<table class="tableStyle">
+	<tr>
+		<th>方法名称</th><th>方法说明</th>
+	</tr>
+	<tr>
+		<td>add(option)</td>
+		<td>添加一个新标签</td>
+	</tr>
+	<tr>
+		<td>update(option)</td>
+		<td>更新标签</td>
+	</tr>
+	<tr>
+		<td>activate(id)</td>
+		<td>激活一个标签，例如：tab.activate(tab_id)；</td>
+	</tr>
+	<tr>
+		<td>close(id)</td>
+		<td>关闭一个标签，例如：tab.close(tab_id);</td>
+	</tr>
+	
+</table>
+</div>
+</body>
+<!--代码高亮start-->
+<script type="text/javascript" src="../hl/highlight.js"></script>
+<script type="text/javascript" src="../hl/lang-xml.js"></script>
+<script type="text/javascript" src="../hl/lang-html.js"></script>
+<link href="../hl/style.css" rel="stylesheet" type="text/css"/>
+<script>
+	$(function(){
+			showCode()
+	})
+	function showCode(){
+		$(".code").each(function(){
+			var code =$(this).val()
+			var hl = new DlHighlight({lang: "html",lineNumbers :false });
+			var formatted = hl.doItNow(code);
+			$(this).next().addClass("DlHighlight").html("<pre>" + formatted + "</pre>")
+		})
+	}
+</script>
+<!--代码高亮end-->
+</html>

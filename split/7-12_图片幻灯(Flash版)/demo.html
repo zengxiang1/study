@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="reset.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../jquery-1.4.js"></script>
+<!--引入Flash的脚本start-->
+<script type="text/javascript" src="js/swfobject.js"></script>
+<!--引入Flash的脚本end-->
+
+<!--图片幻灯(Flash版)start-->
+<link href="skins/style.css" rel="stylesheet" type="text/css"/>
+<!--图片幻灯(Flash版)end-->
+<script>
+$(function(){
+	var interval_time=4 //图片停顿时间，单位为秒，为0则停止自动切换
+	var flawidth=document.getElementById('flashcontent').offsetWidth;
+	var flaheight=document.getElementById('flashcontent').offsetHeight;
+	var focus_width=flawidth //宽度
+	var focus_height=flaheight //高度
+	var text_height=0 //标题高度
+	var text_align= 'center' //标题文字对齐方式(left、center、right)
+	var swf_height = focus_height+text_height //相加之和最好是偶数,否则数字会出现模糊失真的问题
+	
+	var pics= 'demo/slider3.jpg|demo/slider2.jpg|demo/slider1.jpg'//图片地址
+	var links='http://www.uur.cn|http://www.uur.cn|http://www.uur.cn'//相对于图片的链接地址
+	var texts='标题1|标题2|标题3'//标题文字
+	
+	var so = new SWFObject("flash/slider.swf", "focus", "100%", "100%", "7", "#ffffff");
+	so.addParam('wmode','opaque');
+	so.addParam('quality','high');
+	so.addParam("scale", "noscale" );
+	so.addParam("menu", "false" );
+	so.addVariable("pics",pics);
+	so.addVariable("links",links);
+	so.addVariable("texts",texts);
+	so.addVariable("textheight",text_height);
+	so.addVariable("borderwidth",focus_width);
+	so.addVariable("borderheight",focus_height);
+	so.addVariable("text_align",text_align);
+	so.addVariable("interval_time",interval_time);
+	so.addVariable("textheight",text_height);
+	so.addVariable("width",focus_width);
+	so.addVariable("height",swf_height);
+	so.write("flashcontent");
+})
+</script>
+<body>
+<div id="flashcontent" style="width:400px;height:200px;"> 
+    <div class="flash_install">
+		<div class="msg_icon3"></div>
+		<div class="flash_install_con" >
+		您需要升级Flash播放器，<span class="forIE"><a href="flash/flash_IE.exe">点击这里</a>安装</span>
+		<span class="forFF"><a href="flash/flash_FF.exe">点击这里</a>进行安装</span>。
+		<br />安装后请关闭浏览器再重新打开
+		</div>
+	</div>
+</div>
+
+<div class="box2" panelTitle="用法">
+	首先引入脚本
+<textarea class="code">
+<script type="text/javascript" src="../jquery-1.4.js"></script>
+<!--引入Flash的脚本start-->
+<script type="text/javascript" src="js/swfobject.js"></script>
+<!--引入Flash的脚本end-->
+
+<!--图片幻灯(Flash版)start-->
+<link href="skins/style.css" rel="stylesheet" type="text/css"/>
+<!--图片幻灯(Flash版)end--> 
+</textarea>
+<pre></pre>
+	HTML部分
+<textarea class="code">
+<div id="flashcontent" style="width:400px;height:200px;"> 
+    <div class="flash_install">
+		<div class="msg_icon3"></div>
+		<div class="flash_install_con" >
+		您需要升级Flash播放器，<span class="forIE"><a href="flash/flash_IE.exe">点击这里</a>安装</span>
+		<span class="forFF"><a href="flash/flash_FF.exe">点击这里</a>进行安装</span>。
+		<br />安装后请关闭浏览器再重新打开
+		</div>
+	</div>
+</div>
+</textarea>
+<pre></pre>	
+	JS部分
+<textarea class="code">
+$(function(){
+	var interval_time=4 //图片停顿时间，单位为秒，为0则停止自动切换
+	var flawidth=document.getElementById('flashcontent').offsetWidth;
+	var flaheight=document.getElementById('flashcontent').offsetHeight;
+	var focus_width=flawidth //宽度
+	var focus_height=flaheight //高度
+	var text_height=0 //标题高度
+	var text_align= 'center' //标题文字对齐方式(left、center、right)
+	var swf_height = focus_height+text_height //相加之和最好是偶数,否则数字会出现模糊失真的问题
+	
+	var pics= 'demo/slider3.jpg|demo/slider2.jpg|demo/slider1.jpg'//图片地址
+	var links='http://www.uur.cn|http://www.uur.cn|http://www.uur.cn'//相对于图片的链接地址
+	var texts='标题1|标题2|标题3'//标题文字
+	
+	var so = new SWFObject("flash/slider.swf", "focus", "100%", "100%", "7", "#ffffff");
+	so.addParam('wmode','opaque');
+	so.addParam('quality','high');
+	so.addParam("scale", "noscale" );
+	so.addParam("menu", "false" );
+	so.addVariable("pics",pics);
+	so.addVariable("links",links);
+	so.addVariable("texts",texts);
+	so.addVariable("textheight",text_height);
+	so.addVariable("borderwidth",focus_width);
+	so.addVariable("borderheight",focus_height);
+	so.addVariable("text_align",text_align);
+	so.addVariable("interval_time",interval_time);
+	so.addVariable("textheight",text_height);
+	so.addVariable("width",focus_width);
+	so.addVariable("height",swf_height);
+	so.write("flashcontent");
+})
+</textarea>
+<pre></pre>	
+	</div>
+
+</body>
+<!--代码高亮start-->
+<script type="text/javascript" src="../hl/highlight.js"></script>
+<script type="text/javascript" src="../hl/lang-xml.js"></script>
+<script type="text/javascript" src="../hl/lang-html.js"></script>
+<link href="../hl/style.css" rel="stylesheet" type="text/css"/>
+<script>
+	$(function(){
+			showCode()
+	})
+	function showCode(){
+		$(".code").each(function(){
+			var code =$(this).val()
+			var hl = new DlHighlight({lang: "html",lineNumbers :false });
+			var formatted = hl.doItNow(code);
+			$(this).next().addClass("DlHighlight").html("<pre>" + formatted + "</pre>")
+		})
+	}
+</script>
+<!--代码高亮end-->
+</html>

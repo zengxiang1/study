@@ -1,0 +1,282 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="reset.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../jquery-1.4.js"></script>
+<!--多选下拉框（分离版）start-->
+<link href="skins/style.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="js/multiselect_split.js"></script>
+<!--上传控件（分离版）end-->
+
+<!--信息提示（分离版）start-->
+<script type="text/javascript" src="js/tooltip_split.js"></script>
+<!--信息提示（分离版）end-->
+<script>
+	 function changeFunc(){
+	 	var msg;
+		msg=$("#slect1").val()
+		if(msg=="点击进行多选"){
+			msg="无选择"
+		}
+		alert(msg);
+	 }
+</script>
+<body>
+	
+	<div class="box2" panelWidth="700" panelTitle="基本用法" roller="true">
+	默认多选下拉框样式如下：<br />
+	<select id="slect1" onchange="changeFunc()" multiple>
+			<option value="1">新增图片</option>
+		    <option value="2">维护图片</option>
+		    <option value="3">新增新闻</option>
+            <option value="4">发起投票活动</option>
+            <option value="5">更新相册</option>
+            <option value="6">新增用户</option>
+            <option value="7">用户列表</option>
+            <option value="8">权限维护</option>
+            <option value="9">轨迹日志</option>
+			<option value="10">天气预报</option>
+			<option value="11">论坛维护</option>
+			<option value="12">留言维护</option>
+		</select>
+<br />要实现多选下拉框，先引入脚本和CSS：
+<textarea class="code">
+<script type="text/javascript" src="../jquery-1.4.js"></script>
+<!--多选下拉框（分离版）start-->
+<link href="skins/style.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="js/multiselect_split.js"></script>
+<!--上传控件（分离版）end-->
+
+<!--信息提示（分离版）start-->
+<script type="text/javascript" src="js/tooltip_split.js"></script>
+<!--信息提示（分离版）end-->
+</textarea>
+<pre></pre>
+
+然后写一个普通的多选下拉框（注意多选下拉框要有multiple属性）并加id即可。<span class="font_bold">注意一定要加上id</span>
+<textarea class="code">
+<select id="slect1" onchange="changeFunc()" multiple>
+	<option value="1">新增图片</option>
+	<option value="2">维护图片</option>
+	<option value="3">新增新闻</option>
+	<option value="4">发起投票活动</option>
+	<option value="5">更新相册</option>
+	<option value="6">新增用户</option>
+	<option value="7">用户列表</option>
+	<option value="8">权限维护</option>
+	<option value="9">轨迹日志</option>
+	<option value="10">天气预报</option>
+	<option value="11">论坛维护</option>
+	<option value="12">留言维护</option>
+</select>
+</textarea>
+<pre></pre>
+	多选下拉框支持onchange事件。获取所选值代码如下：<br />
+<textarea class="code">
+ function changeFunc(){
+ 	var msg;
+	msg=$("#slect1").val()
+	if(msg=="点击进行多选"){
+		msg="无选择"
+	}
+	alert(msg);
+ }
+</textarea>
+<pre></pre>
+	</div>
+	
+	<div class="box2" panelWidth="700" panelTitle="宽度设置" roller="true">
+		多选下拉框默认有一个宽度。如果要自定义宽度，在select标签上加autoWidth="true",并使用style设置宽度，如下：<br />
+		<select multiple id="slect5" autoWidth="true" style="width:250px;">
+			<option value="1">新增图片</option>
+		    <option value="2">维护图片</option>
+		    <option value="3">新增新闻</option>
+		    <option value="4">发起投票活动</option>
+		    <option value="5">更新相册</option>
+		    <option value="6">新增用户</option>
+		    <option value="7">用户列表</option>
+		    <option value="8">权限维护</option>
+		    <option value="9">轨迹日志</option>
+			<option value="10">天气预报</option>
+			<option value="11">论坛维护</option>
+			<option value="12">留言维护</option>
+		</select>
+		代码如下：
+<textarea class="code">
+<select multiple id="slect5" autoWidth="true" style="width:250px;">
+	<option value="1">新增图片</option>
+	<option value="2">维护图片</option>
+	<option value="3">新增新闻</option>
+	<option value="4">发起投票活动</option>
+	<option value="5">更新相册</option>
+	<option value="6">新增用户</option>
+	<option value="7">用户列表</option>
+	<option value="8">权限维护</option>
+	<option value="9">轨迹日志</option>
+	<option value="10">天气预报</option>
+	<option value="11">论坛维护</option>
+	<option value="12">留言维护</option>
+</select>
+</textarea>
+<pre></pre>	
+
+	</div>
+
+	<div class="box2" panelWidth="700" panelTitle="最大选择数" roller="true">
+		对select可设置maxSelection属性来限制最大选择个数。下面的多选框最大可选3项：<br />
+		<select multiple maxSelection="3" id="slect2">
+			<option value="1">新增图片</option>
+		    <option value="2">维护图片</option>
+		    <option value="3">新增新闻</option>
+            <option value="4">发起投票活动</option>
+            <option value="5">更新相册</option>
+            <option value="6">新增用户</option>
+            <option value="7">用户列表</option>
+            <option value="8">权限维护</option>
+            <option value="9">轨迹日志</option>
+			<option value="10">天气预报</option>
+			<option value="11">论坛维护</option>
+			<option value="12">留言维护</option>
+		</select>	代码如下：	
+<textarea class="code">
+<select multiple maxSelection="3" id="slect2">
+	<option value="1">新增图片</option>
+	<option value="2">维护图片</option>
+	<option value="3">新增新闻</option>
+	<option value="4">发起投票活动</option>
+	<option value="5">更新相册</option>
+	<option value="6">新增用户</option>
+	<option value="7">用户列表</option>
+	<option value="8">权限维护</option>
+	<option value="9">轨迹日志</option>
+	<option value="10">天气预报</option>
+	<option value="11">论坛维护</option>
+	<option value="12">留言维护</option>
+</select>
+</textarea>
+<pre></pre>		
+		</div>
+		
+		
+		<div class="box2" panelWidth="700" panelTitle="rel属性设置" roller="true">
+		对option可设置rel属性实现一些配置，属性说明如下:<br />
+		
+		<table class="tableStyle">
+			<thead>
+			<tr>
+				<th width="100">rel值</th><th>说明</th>
+			</tr>
+			</thead>
+			<tbody>
+			<tr>
+				<td>hidden</td><td>隐藏该项</td>
+			</tr>
+			<tr>
+				<td>sticky</td><td>该项始终处于最顶</td>
+			</tr>
+			<tr>
+				<td>exclusive</td><td>如果该项被选中，则其他项都取消选择;如果选择了其他某项，则该项会取消选中</td>
+			</tr>
+			<tr>
+				<td>headernocb</td><td>不显示checkbox</td>
+			</tr>
+			<tr>
+				<td colspan="2">rel值可叠加，如rel="sticky exclusive"</td>
+			</tr>
+			</tbody>
+		</table>
+		下面的效果是使用rel做了配置：隐藏了第7项，将第8项置顶，将第9项设为不可用：<br />
+		<select multiple id="slect3">
+			<option value="1">新增图片</option>
+		    <option value="2">维护图片</option>
+		    <option value="3">新增新闻</option>
+            <option value="4">发起投票活动</option>
+            <option value="5">更新相册</option>
+            <option value="6">新增用户</option>
+            <option value="7" rel="hidden">用户列表</option>
+            <option value="8" rel="sticky">权限维护</option>
+            <option value="9" rel="headernocb">轨迹日志</option>
+			<option value="10">天气预报</option>
+			<option value="11">论坛维护</option>
+			<option value="12">留言维护</option>
+		</select>
+		<br />
+		代码如下：
+<textarea class="code">
+<select multiple id="slect3">
+	<option value="1">新增图片</option>
+	<option value="2">维护图片</option>
+	<option value="3">新增新闻</option>
+	<option value="4">发起投票活动</option>
+	<option value="5">更新相册</option>
+	<option value="6">新增用户</option>
+	<option value="7" rel="hidden">用户列表</option>
+	<option value="8" rel="sticky">权限维护</option>
+	<option value="9" rel="headernocb">轨迹日志</option>
+	<option value="10">天气预报</option>
+	<option value="11">论坛维护</option>
+	<option value="12">留言维护</option>
+</select>
+</textarea>
+<pre></pre>	
+	</div>
+	
+	
+	
+	<div class="box2" panelWidth="700" panelTitle="恢复系统默认" roller="true">
+	如果想使用系统默认的多选下拉框，则加class<br />
+	<select multiple class="default">
+	    <option value="1">1新增图片</option>
+	    <option value="2">2维护图片</option>
+	    <option value="3">3新增新闻</option>
+	    <option value="4">4发起投票活动</option>
+	    <option value="5">5更新相册</option>
+	    <option value="6">6新增用户</option>
+	    <option value="7">7用户列表</option>
+	    <option value="8"">8权限维护</option>
+	    <option value="9">9轨迹日志</option>
+	    <option value="10">10天气预报</option>
+	    <option value="11">11论坛维护</option>
+	    <option value="12">12留言维护</option>
+	</select>
+			<br />
+		代码如下：
+<textarea class="code">
+<select  multiple class="default">
+    <option value="1">1新增图片</option>
+    <option value="2">2维护图片</option>
+    <option value="3">3新增新闻</option>
+    <option value="4">4发起投票活动</option>
+    <option value="5">5更新相册</option>
+    <option value="6">6新增用户</option>
+    <option value="7">7用户列表</option>
+    <option value="8">8权限维护</option>
+    <option value="9">9轨迹日志</option>
+    <option value="10">10天气预报</option>
+    <option value="11">11论坛维护</option>
+    <option value="12">12留言维护</option>
+</select>
+</textarea>
+<pre></pre>	
+	</div>
+</body>
+<!--代码高亮start-->
+<script type="text/javascript" src="../hl/highlight.js"></script>
+<script type="text/javascript" src="../hl/lang-xml.js"></script>
+<script type="text/javascript" src="../hl/lang-html.js"></script>
+<link href="../hl/style.css" rel="stylesheet" type="text/css"/>
+<script>
+	$(function(){
+			showCode()
+	})
+	function showCode(){
+		$(".code").each(function(){
+			var code =$(this).val()
+			var hl = new DlHighlight({lang: "html",lineNumbers :false });
+			var formatted = hl.doItNow(code);
+			$(this).next().addClass("DlHighlight").html("<pre>" + formatted + "</pre>")
+		})
+	}
+</script>
+<!--代码高亮end-->
+</html>

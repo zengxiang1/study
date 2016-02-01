@@ -1,0 +1,239 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="reset.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../jquery-1.4.js"></script>
+<!--鼠标移入换图start-->
+<script>
+	$(function(){
+		  var fadeSpeed = ($.browser.safari ? 400 : 250);          
+		$('.changePic .hover').css('opacity', 0);
+		
+		$('.hover').parent().hover(function() {
+			$('.hover', this).stop().animate({
+				'opacity': 1
+			}, fadeSpeed);
+		}, function() {
+			$('.hover', this).stop().animate({
+				'opacity': 0
+			}, fadeSpeed);
+		});
+	})
+</script>
+<style>
+	.demo1{
+		 background: url(demo/img6.jpg) no-repeat bottom left; 
+		 width:222px;
+		 height:122px;
+		 display:block;
+		 cursor:pointer;
+		 cursor:hand; 
+	}
+	.demo1 .hover{
+		background: url(demo/img6.jpg) no-repeat top left;
+		width:100%;
+		height:100%;
+		display:block;
+		 cursor:pointer;
+		 cursor:hand; 
+	}	
+	.demo2{
+		 background: url(demo/img7.jpg) no-repeat bottom left; 
+		 width:222px;
+		 height:122px;
+		 display:block;
+		 cursor:pointer;
+		 cursor:hand; 
+	}
+	.demo2 .hover{
+		background: url(demo/img7.jpg) no-repeat top left;
+		width:100%;
+		height:100%;
+		display:block;
+		 cursor:pointer;
+		 cursor:hand; 
+	}
+	.demo4{
+		 background: url(demo/img9.jpg) no-repeat bottom left; 
+		 width:222px;
+		 height:122px;
+		 display:block;
+		 cursor:pointer;
+		 cursor:hand; 
+	}
+	.demo4 .hover{
+		background: url(demo/img9.jpg) no-repeat top left;
+		width:100%;
+		height:100%;
+		display:block;
+		 cursor:pointer;
+		 cursor:hand; 
+	}
+	.demo5{
+		 background: url(demo/img10.jpg) no-repeat bottom left; 
+		 width:222px;
+		 height:122px;
+		 display:block;
+		 cursor:pointer;
+		 cursor:hand; 
+	}
+	.demo5 .hover{
+		background: url(demo/img10.jpg) no-repeat top left;
+		width:100%;
+		height:100%;
+		display:block;
+		 cursor:pointer;
+		 cursor:hand; 
+	}
+	.changePic li{
+		float:left;
+		padding:10px 0 0 10px;
+	}
+</style>
+<!--鼠标移入换图end-->
+<body>
+	
+	<div class="box2" panelTitle="效果">
+	<div class="changePic">
+		<ul>
+			<li><a href="javascript:;" class="demo1"><span class="hover"></span></a></li>
+			<li><a href="javascript:;" class="demo2"><span class="hover"></span></a></li>
+			<li><a href="javascript:;" class="demo4"><span class="hover"></span></a></li>
+			<li><a href="javascript:;" class="demo5"><span class="hover"></span></a></li>
+			<div class="clear"></div>
+		</ul>
+		<div class="clear"></div>
+	</div>
+ </div>
+ 	<div class="box2" panelTitle="用法">
+	HTML部分：
+<textarea class="code">
+<div class="changePic">
+	<ul>
+		<li><a href="javascript:;" class="demo1"><span class="hover"></span></a></li>
+		<li><a href="javascript:;" class="demo2"><span class="hover"></span></a></li>
+		<li><a href="javascript:;" class="demo3"><span class="hover"></span></a></li>
+		<li><a href="javascript:;" class="demo4"><span class="hover"></span></a></li>
+		<li><a href="javascript:;" class="demo5"><span class="hover"></span></a></li>
+		<div class="clear"></div>
+	</ul>
+	<div class="clear"></div>
+</div>
+</textarea>
+<pre></pre>
+
+	CSS部分
+<textarea class="code">
+<style>
+	.demo1{
+		 background: url(demo/img6.jpg) no-repeat bottom left; 
+		 width:222px;
+		 height:122px;
+		 display:block;
+		 cursor:pointer;
+		 cursor:hand; 
+	}
+	.demo1 .hover{
+		background: url(demo/img6.jpg) no-repeat top left;
+		width:100%;
+		height:100%;
+		display:block;
+		 cursor:pointer;
+		 cursor:hand; 
+	}	
+	.demo2{
+		 background: url(demo/img7.jpg) no-repeat bottom left; 
+		 width:222px;
+		 height:122px;
+		 display:block;
+		 cursor:pointer;
+		 cursor:hand; 
+	}
+	.demo2 .hover{
+		background: url(demo/img7.jpg) no-repeat top left;
+		width:100%;
+		height:100%;
+		display:block;
+		 cursor:pointer;
+		 cursor:hand; 
+	}
+	.demo4{
+		 background: url(demo/img9.jpg) no-repeat bottom left; 
+		 width:222px;
+		 height:122px;
+		 display:block;
+		 cursor:pointer;
+		 cursor:hand; 
+	}
+	.demo4 .hover{
+		background: url(demo/img9.jpg) no-repeat top left;
+		width:100%;
+		height:100%;
+		display:block;
+		 cursor:pointer;
+		 cursor:hand; 
+	}
+	.demo5{
+		 background: url(demo/img10.jpg) no-repeat bottom left; 
+		 width:222px;
+		 height:122px;
+		 display:block;
+		 cursor:pointer;
+		 cursor:hand; 
+	}
+	.demo5 .hover{
+		background: url(demo/img10.jpg) no-repeat top left;
+		width:100%;
+		height:100%;
+		display:block;
+		 cursor:pointer;
+		 cursor:hand; 
+	}
+	.changePic li{
+		float:left;
+		padding:10px 0 0 10px;
+	}
+</style>
+</textarea>
+<pre></pre>
+
+	JS部分
+<textarea class="code">
+$(function(){
+	 var fadeSpeed = ($.browser.safari ? 400 : 250);           
+	$('.changePic .hover').css('opacity', 0);
+	
+	$('.hover').parent().hover(function() {
+		$('.hover', this).stop().animate({
+			'opacity': 1
+		}, fadeSpeed);
+	}, function() {
+		$('.hover', this).stop().animate({
+			'opacity': 0
+		}, fadeSpeed);
+	});
+})
+</textarea>
+<pre></pre>
+	 </div>
+</body>
+<!--代码高亮start-->
+<script type="text/javascript" src="../hl/highlight.js"></script>
+<script type="text/javascript" src="../hl/lang-xml.js"></script>
+<script type="text/javascript" src="../hl/lang-html.js"></script>
+<link href="../hl/style.css" rel="stylesheet" type="text/css"/>
+<script>
+	$(function(){
+			showCode()
+	})
+	function showCode(){
+		$(".code").each(function(){
+			var code =$(this).val()
+			var hl = new DlHighlight({lang: "html",lineNumbers :false });
+			var formatted = hl.doItNow(code);
+			$(this).next().addClass("DlHighlight").html("<pre>" + formatted + "</pre>")
+		})
+	}
+</script>
+<!--代码高亮end-->
+</html>

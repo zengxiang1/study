@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="reset.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../jquery-1.4.js"></script>
+<!--图片预览（分离版）start-->
+<link href="skins/style.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="js/jqzoom_split.js"></script>
+<!--图片预览（分离版）end-->
+<body>
+	默认的区域放大：<br />
+	<a href="demo/img4.jpg" class="zoomView" > 
+		<img src="demo/smallimg1.jpg"> 
+	</a> 
+	
+	<br />自定义放大区域：<br />
+	<a href="demo/img4.jpg" class="zoomView" zoomWidth="300" zoomHeight="300" > 
+		<img src="demo/smallimg1.jpg"> 
+	</a>
+	
+	<br />遮罩模式：<br />
+	<a href="demo/img4.jpg" class="zoomView" zoomType="reverse"> 
+		<img src="demo/smallimg1.jpg"> 
+	</a> 
+	
+	<div style="display:none;">
+	首先引入脚本
+<textarea class="code">
+<script type="text/javascript" src="../jquery-1.4.js"></script>
+<!--图片预览（分离版）start-->
+<link href="skins/style.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="js/jqzoom_split.js"></script>
+<!--图片预览（分离版）end-->
+</textarea>
+<pre></pre>
+
+	要创建一个默认的图片区域放大，对图片设置链接，链接的href指定为大图路径，设置链接的class为zoomView
+<textarea class="code">
+<a href="demo/img4.jpg" class="zoomView"> 
+	<img src="demo/smallimg1.jpg"> 
+</a>
+</textarea>
+<pre></pre>	
+
+	要自定义放大区域的尺寸，为链接增加zoomWidth和zoomHeight属性
+<textarea class="code">
+<a href="demo/img4.jpg" class="zoomView" zoomWidth="300" zoomHeight="300"> 
+	<img src="demo/smallimg1.jpg"> 
+</a>
+</textarea>
+<pre></pre>	
+
+	为链接设置zoomType可自定义放大模式。默认为standard，还可以设置为reverse，表示出现遮罩
+<textarea class="code">
+<a href="demo/img4.jpg" class="zoomView" zoomType="reverse"> 
+	<img src="demo/smallimg1.jpg"> 
+</a> 
+</textarea>
+<pre></pre>	
+	</div>
+</body>
+<!--代码高亮start-->
+<script type="text/javascript" src="../hl/highlight.js"></script>
+<script type="text/javascript" src="../hl/lang-xml.js"></script>
+<script type="text/javascript" src="../hl/lang-html.js"></script>
+<link href="../hl/style.css" rel="stylesheet" type="text/css"/>
+<script>
+	$(function(){
+			showCode()
+	})
+	function showCode(){
+		$(".code").each(function(){
+			var code =$(this).val()
+			var hl = new DlHighlight({lang: "html",lineNumbers :false });
+			var formatted = hl.doItNow(code);
+			$(this).next().addClass("DlHighlight").html("<pre>" + formatted + "</pre>")
+		})
+	}
+</script>
+<!--代码高亮end-->
+</html>

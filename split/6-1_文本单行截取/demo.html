@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="reset.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../jquery-1.4.js"></script>
+<!--文本单行截取（分离版）start-->
+<link href="skins/style.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="js/text-overflow_split.js"></script>
+<!--文本单行截取（分离版）end-->
+
+<!--信息提示（分离版）start-->
+<script type="text/javascript" src="js/tooltip_split.js"></script>
+<!--信息提示（分离版）end-->
+
+<!--截取文字例子start-->
+<script>
+	 $(document).ready(function(){
+	 	$("#testBtn1").click(function(){
+			$('.text_slice').eq(0).css({
+				"width":"400px"
+			})
+		})
+		$("#testBtn2").click(function(){
+			$('.text_slice').eq(0).css({
+				"width":"200px"
+			})
+		})
+	 })
+</script>
+<!--截取文字例子end-->
+<body>
+	
+	<div class="box2" panelTitle="基本用法">
+		首先引入截取脚本和样式
+<textarea class="code">
+<!--文本单行截取（分离版）start-->
+<link href="skins/style.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="js/text-overflow_split.js"></script>
+<!--文本单行截取（分离版）end-->
+</textarea>
+<pre></pre>		
+	
+将要截取的文字放入一个容器，该容器可以是div、span或其他容器，然后使用class="text_slice"。最后使用style对容器设置宽度，即是要截取的宽度。代码如下：
+<textarea class="code">
+<div class="text_slice" style="width:80px;">要截取的文字</div>
+</textarea>
+<pre></pre>	
+	</div>
+		
+		<div class="box2" panelTitle="尺寸改变动态截取">
+		<div class="text_slice" style="width:180px;border:solid 1px #cccccc;">这是一段很长的文字，当容器放不下则会出现省略号。这是一段很长的文字，当容器放不下则会出现省略号。这是一段很长的文字，当容器放不下则会出现省略号。</div>
+		<br />当容器尺寸改变时会自动重新截取。（FireFox下无法实现尺寸改变动态截取，只有刷新才生效）<br />
+		<input type="button" id="testBtn1" value="动态增大容器尺寸"/>
+		<input type="button" id="testBtn2" value="动态减小容器尺寸"/>
+		</div>
+		
+		<div class="box2" panelTitle="与信息提示合用">
+		如果再与信息提示结合会取得更好的效果<br />
+		<span class="text_slice" style="width:280px;border:solid 1px #cccccc;" title="这是一段很长的文字，当容器放不下则会出现省略号。这是一段很长的文字，当容器放不下则会出现省略号。这是一段很长的文字，当容器放不下则会出现省略号。">这是一段很长的文字，当容器放不下则会出现省略号。这是一段很长的文字，当容器放不下则会出现省略号。这是一段很长的文字，当容器放不下则会出现省略号。</span>
+	代码如下：
+<textarea class="code">
+<span class="text_slice" style="width:280px;" title="提示信息">要截取的文字</span>
+</textarea>
+<pre></pre>	
+		</div>
+		
+		<div class="box2" panelTitle="注意事项">
+	注意：理论上任何容器加上class="text_slice"都会截取，但建议尽量使用span加class="text_slice"。否则在FireFox下可能导致提示信息无法显示。例如：
+<textarea class="code">
+<ul>
+<li class="text_slice" style="width:160px;"><a href="javascript:;" title="这是一段很长的文字，当容器放不下则会出现省略号。">
+	这是一段很长的文字，当容器放不下则会出现省略号。</a></li>
+</ul>
+</textarea>
+<pre></pre>	
+这段代码在FireFox下无法显示出提示信息。效果：<br />
+<ul>
+<li class="text_slice" style="width:160px;"><a href="javascript:;" title="这是一段很长的文字，当容器放不下则会出现省略号。">这是一段很长的文字，当容器放不下则会出现省略号。</a></li>
+</ul>	
+应改为：
+<textarea class="code">
+<ul>
+	<li>
+		<a href="javascript:;" title="这是一段很长的文字，当容器放不下则会出现省略号。">
+		<span class="text_slice" style="width:160px;">这是一段很长的文字，当容器放不下则会出现省略号。</span>
+		</a>
+	</li>
+</ul>
+</textarea>
+<pre></pre>	
+效果：<br />
+<ul>
+	<li><a href="javascript:;" title="这是一段很长的文字，当容器放不下则会出现省略号。">
+		<span class="text_slice" style="width:160px;">这是一段很长的文字，当容器放不下则会出现省略号。</span></a></li>
+</ul>
+</div>
+<br /><br /><br /><br /><br /><br />	
+</body>
+<!--代码高亮start-->
+<script type="text/javascript" src="../hl/highlight.js"></script>
+<script type="text/javascript" src="../hl/lang-xml.js"></script>
+<script type="text/javascript" src="../hl/lang-html.js"></script>
+<link href="../hl/style.css" rel="stylesheet" type="text/css"/>
+<script>
+	$(function(){
+			showCode()
+	})
+	function showCode(){
+		$(".code").each(function(){
+			var code =$(this).val()
+			var hl = new DlHighlight({lang: "html",lineNumbers :false });
+			var formatted = hl.doItNow(code);
+			$(this).next().addClass("DlHighlight").html("<pre>" + formatted + "</pre>")
+		})
+	}
+</script>
+<!--代码高亮end-->
+</html>

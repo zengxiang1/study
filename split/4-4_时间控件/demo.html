@@ -1,0 +1,191 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="reset.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../jquery-1.4.js"></script>
+<!--时间选择器(分离版)start-->
+<link href="js/timePicker/ui.theme.css" rel="stylesheet" type="text/css"/>
+<link href="js/timePicker/ui.slider.css" rel="stylesheet" type="text/css"/>
+<link href="js/timePicker/jquery.timepicker.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="js/timePicker/ui.core.js"></script>
+<script type="text/javascript" src="js/timePicker/ui.slider.js"></script>
+<script type="text/javascript" src="js/timePicker/jquery.jtimepicker.js"></script>
+<!--时间选择器(分离版)end-->
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#timepicker').jtimepicker({
+            // 自定义设置
+        });
+    });
+</script>
+<body>
+<div class="box2" panelTitle="基本用法">
+	<div id="timepicker"></div>
+	<div class="clear"></div>
+	<br />
+	首先引入脚本
+<textarea class="code">
+<script type="text/javascript" src="../jquery-1.4.js"></script>	
+<!--时间选择器(分离版)start-->
+<link href="js/timePicker/ui.theme.css" rel="stylesheet" type="text/css"/>
+<link href="js/timePicker/ui.slider.css" rel="stylesheet" type="text/css"/>
+<link href="js/timePicker/jquery.timepicker.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="js/timePicker/ui.core.js"></script>
+<script type="text/javascript" src="js/timePicker/ui.slider.js"></script>
+<script type="text/javascript" src="js/timePicker/jquery.jtimepicker.js"></script>
+<!--时间选择器(分离版)end-->
+</textarea>
+<pre></pre>	
+
+	HTML代码：
+<textarea class="code">
+<div id="timepicker"></div><div class="clear"></div>
+</textarea>
+<pre></pre>	
+
+	JS代码：
+<textarea class="code">
+ $(document).ready(function() {
+    $('#timepicker').jtimepicker({
+        // 自定义设置
+    });
+});
+</textarea>
+<pre></pre>	
+</div>
+
+	<div class="box2"   panelTitle="参数表">
+			<table class="tableStyle" > 
+                <tr>
+                    <th>参数名</th>
+                    <th>默认值</th>
+                    <th>参数说明</th>
+                </tr>
+                <tr>
+                    <td>clockIcon</td>
+                    <td>"skins/icon_clock_2.gif"</td>
+                    <td>图标存放位置</td>
+                </tr>
+                <tr>
+                    <td>orientation</td>
+                    <td>"horizontal"</td>
+                    <td>排列方式(horizontal 或 vertical)</td>
+                </tr>
+                <tr>
+                    <td>hourCombo</td>
+                    <td>"hourcombo"</td>
+                    <td>小时slect的样式名</td>
+                </tr>
+                <tr>
+                    <td>hourMode</td>
+                    <td>24</td>
+                    <td>小时的格式</td>
+                </tr>
+                <tr>
+                    <td>hourInterval</td>
+                    <td>1</td>
+                    <td>小时间隔</td>
+                </tr>
+                <tr>
+                    <td>hourDefaultValue</td>
+                    <td>0</td>
+                    <td>小时默认值</td>
+                </tr>
+                <tr>
+                    <td>hourSlider</td>
+                    <td>"hourSlider"</td>
+                    <td>小时滑动条的样式名</td>
+                </tr>
+                <tr>
+                    <td>hourLabel</td>
+                    <td>"时"</td>
+                    <td>小时滑动条前面显示的名称</td>
+                </tr>
+                <tr>
+                    <td>minCombo</td>
+                    <td>"mincombo"</td>
+                    <td>分钟slect的样式名</td>
+                </tr>
+                <tr>
+                    <td>minLength</td>
+                    <td>60</td>
+                    <td>分钟长度</td>
+                </tr>
+                <tr>
+                    <td>minInterval</td>
+                    <td>5</td>
+                    <td>分钟间隔</td>
+                </tr>
+                <tr>
+                    <td>minDefaultValue</td>
+                    <td>0</td>
+                    <td>分钟默认值</td>
+                </tr>
+                <tr>
+                    <td>minSlider</td>
+                    <td>"minSlider"</td>
+                    <td>分钟滑动条的样式名</td>
+                </tr>
+                <tr>
+                    <td>minLabel</td>
+                    <td>"分"</td>
+                    <td>分钟滑动条前面显示的名称</td>
+                </tr>
+                <tr>
+                    <td>secView</td>
+                    <td>true</td>
+                    <td>是否显示秒选项</td>
+                </tr>
+                <tr>
+                    <td>secCombo</td>
+                    <td>"seccombo"</td>
+                    <td>秒slect的样式名</td>
+                </tr>
+                <tr>
+                    <td>secLength</td>
+                    <td>60</td>
+                    <td>秒长度</td>
+                </tr>
+                <tr>
+                    <td>secInterval</td>
+                    <td>5</td>
+                    <td>秒间隔</td>
+                </tr>
+                <tr>
+                    <td>secDefaultValue</td>
+                    <td>0</td>
+                    <td>秒默认值</td>
+                </tr>
+                <tr>
+                    <td>secSlider</td>
+                    <td>"secSlider"</td>
+                    <td>秒滑动条的样式名</td>
+                </tr>
+                <tr>
+                    <td>secLabel</td>
+                    <td>"秒"</td>
+                    <td>秒滑动条前面显示的名称</td>
+                </tr>
+            </table>	
+	</div>
+</body>
+<!--代码高亮start-->
+<script type="text/javascript" src="../hl/highlight.js"></script>
+<script type="text/javascript" src="../hl/lang-xml.js"></script>
+<script type="text/javascript" src="../hl/lang-html.js"></script>
+<link href="../hl/style.css" rel="stylesheet" type="text/css"/>
+<script>
+	$(function(){
+			showCode()
+	})
+	function showCode(){
+		$(".code").each(function(){
+			var code =$(this).val()
+			var hl = new DlHighlight({lang: "html",lineNumbers :false });
+			var formatted = hl.doItNow(code);
+			$(this).next().addClass("DlHighlight").html("<pre>" + formatted + "</pre>")
+		})
+	}
+</script>
+<!--代码高亮end-->
+</html>

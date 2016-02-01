@@ -1,0 +1,63 @@
+/*树形表格*/
+.acts_as_tree_table tr td .expander {
+	background-image: url(table/bullet_toggle_minus.png);
+	background-position: left center;
+	background-repeat: no-repeat;
+	cursor: pointer;
+	padding: 0;
+	zoom: 1; 
+}
+
+.acts_as_tree_table tr.collapsed td .expander {
+	background-image: url(table/bullet_toggle_plus.gif);
+}
+
+.acts_as_tree_table tr.expanded td .expander {
+	background-image: url(table/bullet_toggle_minus.gif);
+}
+.treeTable {
+	border: 1px solid #ccc;
+	border-collapse: collapse;
+	background-color: White;
+	width: 100%;
+}
+.treeTable th{
+	border-left: 1.0pt solid windowtext;
+	border-right: 1.0pt solid windowtext;
+	word-wrap: normal;
+	word-break: keep-all;
+	overflow:hidden;
+	border-color: #cccccc;
+	height:28px; 
+	padding: 0 2px 0 4px;
+	color:#000000;
+	background-image: url(table/th_bg.jpg);
+	background-repeat: repeat-x;
+	font-weight: normal;
+	line-height:28px; 
+}
+.treeTable td{
+	border-left: 1.0pt solid windowtext;
+	border-right: 1.0pt solid windowtext;
+	border-bottom: 1.0pt solid windowtext;
+	word-wrap: normal;
+	word-break: keep-all;
+	border-color: #cccccc;
+	height:24px; 
+	padding: 1px 2px 1px 4px;
+	color:#333333;
+}
+.treeTable span {
+	background-position: center left;
+	background-repeat: no-repeat;
+	padding: .2em 0 .2em 1.5em;
+}
+
+.treeTable span.file {
+	background-image: url(table/page.gif);
+}
+
+.treeTable span.folder {
+	background-image: url(table/folder.gif);
+}
+ /*树形表格*/

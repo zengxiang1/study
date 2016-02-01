@@ -1,0 +1,404 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="reset.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../jquery-1.4.js"></script>
+<!--列表标题特效start-->
+<link href="skins/style.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('.boxgrid.captionfull').each(function(){
+			$(".cover", this).css({
+				top:"160px"
+			})
+		})
+		$('.boxgrid.captionfull').hover(function(){
+			$(".cover", this).stop().animate({top:'80px'},{queue:false,duration:160});
+		}, function() {
+			$(".cover", this).stop().animate({top:'160px'},{queue:false,duration:160});
+		});
+	})	
+	
+	$(document).ready(function(){
+		$('.boxgrid.caption').each(function(){
+			$(".cover", this).css({
+				top:"125px"
+			})
+		})
+		$('.boxgrid.caption').hover(function(){
+			$(".cover", this).stop().animate({top:'80px'},{queue:false,duration:160});
+		}, function() {
+			$(".cover", this).stop().animate({top:'125px'},{queue:false,duration:160});
+		});
+	})	
+	
+	$(document).ready(function(){
+		$('.boxgrid.slideright').hover(function(){
+			$(".cover", this).stop().animate({left:'325px'},{queue:false,duration:300});
+		}, function() {
+			$(".cover", this).stop().animate({left:'0px'},{queue:false,duration:300});
+		});
+	})
+	
+	$(document).ready(function(){
+		$('.boxgrid.thecombo').hover(function(){
+			$(".cover", this).stop().animate({top:'260px', left:'325px'},{queue:false,duration:300});
+		}, function() {
+			$(".cover", this).stop().animate({top:'0px', left:'0px'},{queue:false,duration:300});
+		});
+	})
+	
+	$(document).ready(function(){
+		$('.boxgrid.slidedown').hover(function(){
+			$(".cover", this).stop().animate({top:'-260px'},{queue:false,duration:300});
+		}, function() {
+			$(".cover", this).stop().animate({top:'0px'},{queue:false,duration:300});
+		});
+	})
+</script>
+<style>
+.boxgrid{ 
+	width: 200px; 
+	height: 150px; 
+	margin:10px; 
+	float:left; 
+	background:#161613; 
+	border: solid 2px #8399AF; 
+	overflow: hidden; 
+	position: relative; 
+}
+</style>
+<!--列表标题特效end-->
+<body>
+	首先引入CSS
+<textarea class="code">
+<link href="skins/style.css" rel="stylesheet" type="text/css"/>
+</textarea>
+<pre></pre>		
+	在页面添加CSS用于设置图片列表格式：
+<textarea class="code">
+<style>
+.boxgrid{ 
+	width: 200px; 
+	height: 150px; 
+	margin:10px; 
+	float:left; 
+	background:#161613; 
+	border: solid 2px #8399AF; 
+	overflow: hidden; 
+	position: relative; 
+}
+</style>
+</textarea>
+<pre></pre>	
+	
+	<div class="box2" panelWidth="920" panelTitle="列表效果1">
+	<div class="boxgrid captionfull">
+		<img src="demo/smallimg1.jpg"/>
+		<div class="cover boxcaption">
+			<div class="boxgrid_title">图片标题</div>
+			<div class="boxgrid_con">这里是图片文字说明部分<br />这里是图片文字说明部分</div>
+		</div>		
+	</div>
+	<div class="boxgrid captionfull">
+		<img src="demo/smallimg1.jpg"/>
+		<div class="cover boxcaption">
+			<div class="boxgrid_title">图片标题</div>
+			<div class="boxgrid_con">这里是图片文字说明部分<br />这里是图片文字说明部分</div>
+		</div>		
+	</div>
+	<div class="boxgrid captionfull">
+		<img src="demo/smallimg1.jpg"/>
+		<div class="cover boxcaption">
+			<div class="boxgrid_title">图片标题</div>
+			<div class="boxgrid_con">这里是图片文字说明部分<br />这里是图片文字说明部分</div>
+		</div>		
+	</div>
+	<div class="boxgrid captionfull">
+		<img src="demo/smallimg1.jpg"/>
+		<div class="cover boxcaption">
+			<div class="boxgrid_title">图片标题</div>
+			<div class="boxgrid_con">这里是图片文字说明部分<br />这里是图片文字说明部分</div>
+		</div>		
+	</div>
+	<div class="clear"></div>
+	HTML部分
+<textarea class="code">
+列表效果1：
+<div class="boxgrid captionfull">
+	<img src="demo/smallimg1.jpg"/>
+	<div class="cover boxcaption">
+		<div class="boxgrid_title">图片标题</div>
+		<div class="boxgrid_con">这里是图片文字说明部分<br />这里是图片文字说明部分</div>
+	</div>		
+</div>
+<div class="boxgrid captionfull">
+	<img src="demo/smallimg1.jpg"/>
+	<div class="cover boxcaption">
+		<div class="boxgrid_title">图片标题</div>
+		<div class="boxgrid_con">这里是图片文字说明部分<br />这里是图片文字说明部分</div>
+	</div>		
+</div>
+<div class="clear"></div>
+</textarea>
+<pre></pre>	
+	JS部分：
+<textarea class="code">
+$(document).ready(function(){
+	$('.boxgrid.captionfull').each(function(){
+		$(".cover", this).css({
+			top:"160px"
+		})
+	})
+	$('.boxgrid.captionfull').hover(function(){
+		$(".cover", this).stop().animate({top:'80px'},{queue:false,duration:160});
+	}, function() {
+		$(".cover", this).stop().animate({top:'160px'},{queue:false,duration:160});
+	});
+})	
+</textarea>
+<pre></pre>	
+	</div>	
+	
+	<div class="box2" panelWidth="920" panelTitle="列表效果2">
+	<div class="boxgrid caption">
+		<img src="demo/smallimg1.jpg"/>
+		<div class="cover boxcaption">
+			<div class="boxgrid_title">图片标题</div>
+			<div class="boxgrid_con">这里是图片文字说明部分<br />这里是图片文字说明部分</div>
+		</div>		
+	</div>
+	<div class="boxgrid caption">
+		<img src="demo/smallimg1.jpg"/>
+		<div class="cover boxcaption">
+			<div class="boxgrid_title">图片标题</div>
+			<div class="boxgrid_con">这里是图片文字说明部分<br />这里是图片文字说明部分</div>
+		</div>		
+	</div>
+	<div class="boxgrid caption">
+		<img src="demo/smallimg1.jpg"/>
+		<div class="cover boxcaption">
+			<div class="boxgrid_title">图片标题</div>
+			<div class="boxgrid_con">这里是图片文字说明部分<br />这里是图片文字说明部分</div>
+		</div>		
+	</div>
+	<div class="boxgrid caption">
+		<img src="demo/smallimg1.jpg"/>
+		<div class="cover boxcaption">
+			<div class="boxgrid_title">图片标题</div>
+			<div class="boxgrid_con">这里是图片文字说明部分<br />这里是图片文字说明部分</div>
+		</div>		
+	</div>
+	<div class="clear"></div>
+	HTML部分
+<textarea class="code">
+列表效果2：
+<div class="boxgrid caption">
+	<img src="demo/smallimg1.jpg"/>
+	<div class="cover boxcaption">
+		<div class="boxgrid_title">图片标题</div>
+		<div class="boxgrid_con">这里是图片文字说明部分<br />这里是图片文字说明部分</div>
+	</div>		
+</div>
+<div class="boxgrid caption">
+	<img src="demo/smallimg1.jpg"/>
+	<div class="cover boxcaption">
+		<div class="boxgrid_title">图片标题</div>
+		<div class="boxgrid_con">这里是图片文字说明部分<br />这里是图片文字说明部分</div>
+	</div>		
+</div>
+<div class="clear"></div>
+</textarea>
+<pre></pre>	
+	JS部分：
+<textarea class="code">
+$(document).ready(function(){
+	$('.boxgrid.caption').each(function(){
+		$(".cover", this).css({
+			top:"125px"
+		})
+	})
+	$('.boxgrid.caption').hover(function(){
+		$(".cover", this).stop().animate({top:'80px'},{queue:false,duration:160});
+	}, function() {
+		$(".cover", this).stop().animate({top:'125px'},{queue:false,duration:160});
+	});
+})	
+</textarea>
+<pre></pre>	
+	</div>		
+	
+	
+	<div class="box2" panelWidth="920" panelTitle="列表效果3">
+	<div class="boxgrid slideright">
+		<img class="cover" src="demo/smallimg1.jpg"/>
+		<div class="boxgrid_title">图片标题</div>
+		<div class="boxgrid_con">这里是图片文字说明部分<br />这里是图片文字说明部分</div>
+	</div>
+	<div class="boxgrid slideright">
+		<img class="cover" src="demo/smallimg1.jpg"/>
+		<div class="boxgrid_title">图片标题</div>
+		<div class="boxgrid_con">这里是图片文字说明部分<br />这里是图片文字说明部分</div>
+	</div>
+	<div class="boxgrid slideright">
+		<img class="cover" src="demo/smallimg1.jpg"/>
+		<div class="boxgrid_title">图片标题</div>
+		<div class="boxgrid_con">这里是图片文字说明部分<br />这里是图片文字说明部分</div>
+	</div>
+	<div class="boxgrid slideright">
+		<img class="cover" src="demo/smallimg1.jpg"/>
+		<div class="boxgrid_title">图片标题</div>
+		<div class="boxgrid_con">这里是图片文字说明部分<br />这里是图片文字说明部分</div>
+	</div>
+	<div class="clear"></div>
+	HTML部分
+<textarea class="code">
+列表效果3：
+<div class="boxgrid slideright">
+	<img class="cover" src="demo/smallimg1.jpg"/>
+	<div class="boxgrid_title">图片标题</div>
+	<div class="boxgrid_con">这里是图片文字说明部分<br />这里是图片文字说明部分</div>
+</div>
+<div class="boxgrid slideright">
+	<img class="cover" src="demo/smallimg1.jpg"/>
+	<div class="boxgrid_title">图片标题</div>
+	<div class="boxgrid_con">这里是图片文字说明部分<br />这里是图片文字说明部分</div>
+</div>
+<div class="clear"></div>
+</textarea>
+<pre></pre>	
+	JS部分：
+<textarea class="code">
+$(document).ready(function(){
+	$('.boxgrid.slideright').hover(function(){
+		$(".cover", this).stop().animate({left:'325px'},{queue:false,duration:300});
+	}, function() {
+		$(".cover", this).stop().animate({left:'0px'},{queue:false,duration:300});
+	});
+})
+</textarea>
+<pre></pre>		
+	</div>	
+	
+	<div class="box2" panelWidth="920" panelTitle="列表效果4">
+	<div class="boxgrid thecombo">
+		<img class="cover" src="demo/smallimg1.jpg"/>
+		<div class="boxgrid_title">图片标题</div>
+		<div class="boxgrid_con">这里是图片文字说明部分<br />这里是图片文字说明部分</div>
+	</div>
+	<div class="boxgrid thecombo">
+		<img class="cover" src="demo/smallimg1.jpg"/>
+		<div class="boxgrid_title">图片标题</div>
+		<div class="boxgrid_con">这里是图片文字说明部分<br />这里是图片文字说明部分</div>
+	</div>
+	<div class="boxgrid thecombo">
+		<img class="cover" src="demo/smallimg1.jpg"/>
+		<div class="boxgrid_title">图片标题</div>
+		<div class="boxgrid_con">这里是图片文字说明部分<br />这里是图片文字说明部分</div>
+	</div>
+	<div class="boxgrid thecombo">
+		<img class="cover" src="demo/smallimg1.jpg"/>
+		<div class="boxgrid_title">图片标题</div>
+		<div class="boxgrid_con">这里是图片文字说明部分<br />这里是图片文字说明部分</div>
+	</div>
+	<div class="clear"></div>
+	HTML部分
+<textarea class="code">
+列表效果4：
+<div class="boxgrid thecombo">
+	<img class="cover" src="demo/smallimg1.jpg"/>
+	<div class="boxgrid_title">图片标题</div>
+	<div class="boxgrid_con">这里是图片文字说明部分<br />这里是图片文字说明部分</div>
+</div>
+<div class="boxgrid thecombo">
+	<img class="cover" src="demo/smallimg1.jpg"/>
+	<div class="boxgrid_title">图片标题</div>
+	<div class="boxgrid_con">这里是图片文字说明部分<br />这里是图片文字说明部分</div>
+</div>
+<div class="clear"></div>
+</textarea>
+<pre></pre>	
+	JS部分：
+<textarea class="code">
+$(document).ready(function(){
+	$('.boxgrid.thecombo').hover(function(){
+		$(".cover", this).stop().animate({top:'260px', left:'325px'},{queue:false,duration:300});
+	}, function() {
+		$(".cover", this).stop().animate({top:'0px', left:'0px'},{queue:false,duration:300});
+	});
+})
+</textarea>
+<pre></pre>	
+	</div>			
+			
+	<div class="box2" panelWidth="920" panelTitle="列表效果5">		
+	<div class="boxgrid slidedown">
+		<img class="cover" src="demo/smallimg1.jpg"/>
+		<div class="boxgrid_title">图片标题</div>
+		<div class="boxgrid_con">这里是图片文字说明部分<br />这里是图片文字说明部分</div>
+	</div>
+	<div class="boxgrid slidedown">
+		<img class="cover" src="demo/smallimg1.jpg"/>
+		<div class="boxgrid_title">图片标题</div>
+		<div class="boxgrid_con">这里是图片文字说明部分<br />这里是图片文字说明部分</div>
+	</div>
+	<div class="boxgrid slidedown">
+		<img class="cover" src="demo/smallimg1.jpg"/>
+		<div class="boxgrid_title">图片标题</div>
+		<div class="boxgrid_con">这里是图片文字说明部分<br />这里是图片文字说明部分</div>
+	</div>
+	<div class="boxgrid slidedown">
+		<img class="cover" src="demo/smallimg1.jpg"/>
+		<div class="boxgrid_title">图片标题</div>
+		<div class="boxgrid_con">这里是图片文字说明部分<br />这里是图片文字说明部分</div>
+	</div>
+	<div class="clear"></div>
+	HTML部分
+<textarea class="code">
+列表效果5：
+<div class="boxgrid slidedown">
+	<img class="cover" src="demo/smallimg1.jpg"/>
+	<div class="boxgrid_title">图片标题</div>
+	<div class="boxgrid_con">这里是图片文字说明部分<br />这里是图片文字说明部分</div>
+</div>
+<div class="boxgrid slidedown">
+	<img class="cover" src="demo/smallimg1.jpg"/>
+	<div class="boxgrid_title">图片标题</div>
+	<div class="boxgrid_con">这里是图片文字说明部分<br />这里是图片文字说明部分</div>
+</div>
+<div class="clear"></div>
+</textarea>
+<pre></pre>	
+	JS部分：
+<textarea class="code">
+$(document).ready(function(){
+	$('.boxgrid.slidedown').hover(function(){
+		$(".cover", this).stop().animate({top:'-260px'},{queue:false,duration:300});
+	}, function() {
+		$(".cover", this).stop().animate({top:'0px'},{queue:false,duration:300});
+	});
+})
+</textarea>
+<pre></pre>	
+	</div>
+</body>
+<!--代码高亮start-->
+<script type="text/javascript" src="../hl/highlight.js"></script>
+<script type="text/javascript" src="../hl/lang-xml.js"></script>
+<script type="text/javascript" src="../hl/lang-html.js"></script>
+<link href="../hl/style.css" rel="stylesheet" type="text/css"/>
+<script>
+	$(function(){
+			showCode()
+	})
+	function showCode(){
+		$(".code").each(function(){
+			var code =$(this).val()
+			var hl = new DlHighlight({lang: "html",lineNumbers :false });
+			var formatted = hl.doItNow(code);
+			$(this).next().addClass("DlHighlight").html("<pre>" + formatted + "</pre>")
+		})
+	}
+</script>
+<!--代码高亮end-->
+</html>

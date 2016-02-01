@@ -1,0 +1,5 @@
+qq授权获取流程
+用appid 拼接url 获取登录网站 用户登录成功后获取code
+使用 用code 获取access token 用access token 获取openid
+
+用openid 和access token 获取请求api

@@ -1,0 +1,159 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="reset.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../jquery-1.4.js"></script>
+<!--多级抽屉型导航(分离版)start-->
+<link href="skins/blue/style.css" rel="stylesheet" type="text/css" id="compStyle"/>
+<script type="text/javascript" src="js/ddaccordion_split.js"></script>
+<!---多级抽屉型导航(分离版)end-->
+
+<!--去除链接虚线start-->
+<style>
+a {
+	behavior:url(js/focus.htc)
+}
+</style>
+<!--去除链接虚线end-->
+<body>
+	<script>
+		function changeSkin(){
+			$("#compStyle").attr("href","skins/"+$("#changeSkin").val()+"/style.css");
+		}
+	</script>
+	更换风格
+	<select  onchange='changeSkin()' id="changeSkin">
+	    <option value="blue">蓝色</option>
+	    <option value="bigBlue">大蓝色</option>
+	    <option value="lightBlue">亮蓝色</option>
+	    <option value="darkBlue">深蓝色</option>
+	    <option value="green">绿色</option>
+		<option value="red">红色</option>
+		<option value="darkYellow">棕黄色</option>
+		<option value="armyGreen">军绿色</option>
+	</select>
+	<div class="box2" panelWidth="800" panelTitle="效果">
+	<div class="accMain">
+		<div class="arrowlistmenu">
+		<div class="menuheader expandable">二级导航示例</div>
+		<ul class="categoryitems">
+		<li><a href="javascript:;" target="frmright"><span>第二级1</span></a></li>
+		<li><a href="javascript:;" target="frmright"><span>第二级2</span></a></li>
+		</ul>
+		<div class="menuheader expandable">三级导航示例</div>
+		<ul class="categoryitems">
+		<li><a target="frmright"><span>第二级1</span></a>
+			<ul>
+				<li><a target="frmright"><span>第三极1</span></a></li>
+				<li><a href="javascript:;" target="frmright"><span>第三极2</span></a></li>
+				<li><a href="javascript:;" target="frmright"><span>第三极3</span></a></li>
+			</ul>
+		</li>
+		<li><a href="javascript:;" target="frmright"><span>第二级2</span></a></li>
+		<li><a href="javascript:;" target="frmright"><span>第二级3</span></a></li>
+		</ul>
+		<div class="menuheader expandable">四级导航示例</div>
+		<ul class="categoryitems">
+		<li><a target="frmright"><span>第二级1</span></a>
+			<ul>
+				<li><a target="frmright"><span>第三极1</span></a>
+					<ul>
+						<li><a href="javascript:;" target="frmright"><span>第四级1</span></a></li>
+						<li><a href="javascript:;" target="frmright"><span>第四级2</span></a></li>
+					</ul>
+				</li>
+				<li><a href="javascript:;" target="frmright"><span>第三极2</span></a></li>
+				<li><a href="javascript:;" target="frmright"><span>第三极3</span></a></li>
+			</ul>
+		</li>
+		<li><a href="javascript:;" target="frmright"><span>第二级2</span></a></li>
+		<li><a href="javascript:;" target="frmright"><span>第二级3</span></a></li>
+		</ul>
+		</div>
+	</div>
+</div>
+	
+<div class="box2" panelWidth="800" panelTitle="用法">	
+	首先引入脚本 CSS和去掉链接虚线的htc文件：
+<textarea class="code">
+<script type="text/javascript" src="../jquery-1.4.js"></script>
+<!--多级抽屉型导航(分离版)start-->
+<link href="skins/blue/style.css" rel="stylesheet" type="text/css" id="compStyle"/>
+<script type="text/javascript" src="js/ddaccordion_split.js"></script>
+<!---多级抽屉型导航(分离版)end-->
+
+<!--去除链接虚线start-->
+<style>
+a {
+	behavior:url(js/focus.htc)
+}
+</style>
+<!--去除链接虚线end-->
+</textarea>
+<pre></pre>		
+	
+	HTML代码如下：
+<textarea class="code">
+<div style="width:200px;">
+	<div class="arrowlistmenu">
+	<div class="menuheader"><a href="javascript:;" target="frmright">一级导航示例</a></div>
+	<div class="menuheader expandable">二级导航示例</div>
+	<ul class="categoryitems">
+	<li><a href="javascript:;" target="frmright"><span>第二级1</span></a></li>
+	<li><a href="javascript:;" target="frmright"><span>第二级2</span></a></li>
+	</ul>
+	<div class="menuheader expandable">三级导航示例</div>
+	<ul class="categoryitems">
+	<li><a target="frmright"><span>第二级1</span></a>
+		<ul>
+			<li><a target="frmright"><span>第三极1</span></a></li>
+			<li><a href="javascript:;" target="frmright"><span>第三极2</span></a></li>
+			<li><a href="javascript:;" target="frmright"><span>第三极3</span></a></li>
+		</ul>
+	</li>
+	<li><a href="javascript:;" target="frmright"><span>第二级2</span></a></li>
+	<li><a href="javascript:;" target="frmright"><span>第二级3</span></a></li>
+	</ul>
+	<div class="menuheader expandable">四级导航示例</div>
+	<ul class="categoryitems">
+	<li><a target="frmright"><span>第二级1</span></a>
+		<ul>
+			<li><a target="frmright"><span>第三极1</span></a>
+				<ul>
+					<li><a href="javascript:;" target="frmright"><span>第四级1</span></a></li>
+					<li><a href="javascript:;" target="frmright"><span>第四级2</span></a></li>
+				</ul>
+			</li>
+			<li><a href="javascript:;" target="frmright"><span>第三极2</span></a></li>
+			<li><a href="javascript:;" target="frmright"><span>第三极3</span></a></li>
+		</ul>
+	</li>
+	<li><a href="javascript:;" target="frmright"><span>第二级2</span></a></li>
+	<li><a href="javascript:;" target="frmright"><span>第二级3</span></a></li>
+	</ul>
+	</div>
+</div>
+</textarea>
+<pre></pre>	
+</div>
+</body>
+<!--代码高亮start-->
+<script type="text/javascript" src="../hl/highlight.js"></script>
+<script type="text/javascript" src="../hl/lang-xml.js"></script>
+<script type="text/javascript" src="../hl/lang-html.js"></script>
+<link href="../hl/style.css" rel="stylesheet" type="text/css"/>
+<script>
+	$(function(){
+			showCode()
+	})
+	function showCode(){
+		$(".code").each(function(){
+			var code =$(this).val()
+			var hl = new DlHighlight({lang: "html",lineNumbers :false });
+			var formatted = hl.doItNow(code);
+			$(this).next().addClass("DlHighlight").html("<pre>" + formatted + "</pre>")
+		})
+	}
+</script>
+<!--代码高亮end-->
+</html>

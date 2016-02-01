@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="reset.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../jquery-1.4.js"></script>
+<!--基本树结构(分离版)start-->
+<script type="text/javascript" src="js/dtree_split/dtree.js"></script>
+<link href="js/dtree_split/dtree.css" rel="stylesheet" type="text/css"/>
+<!--基本树结构(分离版)end-->
+<body>
+	<div>
+	<a href="javascript: d.openAll();">展开所有</a> | <a href="javascript: d.closeAll();">关闭所有</a>
+	</div>
+	<script type="text/javascript">
+		d = new dTree('d');
+
+		d.add(0,-1,'根目录');
+		d.add(100,0,'一级目录1',null,'','');
+		d.add(1,100,'一级1-子项1','#','子项1','frmright');
+		d.add(2,100,'二级目录',null,'','');
+		d.add(5,2,'二级-子项1','#','子项1','frmright');
+		
+		d.add(101,0,'一级目录2',null,'','');
+		d.add(3,101,'一级2-子项1','#','子项1','frmright');
+		d.add(4,101,'一级2-子项2','#','子项2','frmright');
+		
+		document.write(d);
+	</script>
+	
+	<div class="box2" panelTitle="用法">
+	首先引入脚本和CSS：
+<textarea class="code">
+<!--基本树结构(分离版)start-->
+<script type="text/javascript" src="js/dtree_split/dtree.js"></script>
+<link href="js/dtree_split/dtree.css" rel="stylesheet" type="text/css"/>
+<!--基本树结构(分离版)end-->
+</textarea>
+<pre></pre>
+	生成树代码（要在哪里生成树就把该代码放在哪里）：
+<textarea class="code">
+d = new dTree('d');
+
+d.add(0,-1,'根目录');
+d.add(100,0,'一级目录1',null,'','');
+d.add(1,100,'一级1-子项1','#','子项1','frmright');
+d.add(2,100,'二级目录',null,'','');
+d.add(5,2,'二级-子项1','#','子项1','frmright');
+
+d.add(101,0,'一级目录2',null,'','');
+d.add(3,101,'一级2-子项1','#','子项1','frmright');
+d.add(4,101,'一级2-子项2','#','子项2','frmright');
+
+document.write(d);
+</textarea>
+<pre></pre>
+add方法有6个参数，分别是：自身节点id、父节点id、节点显示名称、链接地址、链接的title属性值、链接打开方式。<br />
+该树结构使用了cookie记录当前状态。这样刷新后仍然保持原状态。<br />
+该树结构有两个方法：展开所有和关闭所有。代码如下：
+<textarea class="code">
+<a href="javascript: d.openAll();">展开所有</a> | <a href="javascript: d.closeAll();">关闭所有</a>
+</textarea>
+<pre></pre>
+	</div>
+
+
+</body>
+<!--代码高亮start-->
+<script type="text/javascript" src="../hl/highlight.js"></script>
+<script type="text/javascript" src="../hl/lang-xml.js"></script>
+<script type="text/javascript" src="../hl/lang-html.js"></script>
+<link href="../hl/style.css" rel="stylesheet" type="text/css"/>
+<script>
+	$(function(){
+			showCode()
+	})
+	function showCode(){
+		$(".code").each(function(){
+			var code =$(this).val()
+			var hl = new DlHighlight({lang: "html",lineNumbers :false });
+			var formatted = hl.doItNow(code);
+			$(this).next().addClass("DlHighlight").html("<pre>" + formatted + "</pre>")
+		})
+	}
+</script>
+<!--代码高亮end-->
+</html>

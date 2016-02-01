@@ -1,0 +1,130 @@
+/*文本框样式*/
+.textinput{
+	width:120px;
+	font-size: 12px;
+	background:url(form/textinput_bg.jpg) repeat-x scroll left top #ffffff;
+	border-color:#a2b3bd;
+	border-style:solid;
+	border-width:1px;
+	color:#336699;
+	height: 18px;
+	line-height: 18px;
+}
+.textinput_hover{
+	width:120px;
+	font-size: 12px;
+	background:url(form/textinput_bg.jpg) repeat-x scroll left top #ffffff;
+	border-color:#00ccff;/*鼠标移入边框颜色*/
+	border-style:solid;
+	border-width:1px;
+	color:#336699;
+	height: 18px;
+	line-height: 18px;
+}
+.textinput_click{
+	width:120px;
+	font-size: 12px;
+	background:url(form/textinput_bg.jpg) repeat-x scroll left top #ffffff;
+	border-color:#fbd45c;
+	border-style:solid;
+	border-width:1px;
+	color:#336699;
+	height: 18px;
+	line-height: 18px;
+}
+/*文本框样式*/
+
+/*文本域样式*/
+.textarea{
+	background:url(form/textarea_bg.jpg) repeat-x scroll left top #ffffff;
+	overflow: auto;
+	width: 250px;
+	height: 80px;
+	color: #000000;
+	border-color:#a2b3bd;
+	border-style:solid;
+	border-width:1px;
+	font-size:12px;
+}
+.textarea_hover{
+	background:url(form/textarea_bg.jpg) repeat-x scroll left top #ffffff;
+	overflow: auto;
+	width: 250px;
+	height: 80px;
+	color: #000000;
+	border-color:#00ccff;/*鼠标移入边框颜色*/
+	border-style:solid;
+	border-width:1px;
+	font-size:12px;
+}
+.textarea_click{
+	background:url(form/textarea_bg.jpg) repeat-x scroll left top #ffffff;
+	overflow: auto;
+	width: 250px;
+	height: 80px;
+	color: #000000;
+	border-color:#fbd45c;
+	border-style:solid;
+	border-width:1px;
+	font-size:12px;
+}
+/*文本域样式*/
+
+/*文本框清除文字*/
+div.text_clear_button { background-image:url(form/clear_cross.png); width:11px; height:11px; margin:0; padding:0; background-repeat:no-repeat;
+  z-index:2; position:absolute; cursor:pointer; }
+/*文本框清除文字*/  
+  
+ /*文本框输入限制*/
+.maxNum{
+	color:black;
+}
+ /*文本框输入限制*/
+
+ /*文本域尺寸可调*/
+div.grippie {
+	background:#EEEEEE url(form/grippie.png) no-repeat scroll center 2px;
+	border-color:#DDDDDD;
+	border-style:solid;
+	border-width:0pt 1px 1px;
+	cursor:s-resize;
+	height:9px;
+	overflow:hidden;
+}
+ /*文本域尺寸可调*/
+
+ /*密码强度*/
+.password_strength {
+	padding: 0 5px;
+	display: inline-block;
+	}
+.password_strength_1 {
+	background-color: #fcb6b1;
+	}
+.password_strength_2 {
+	background-color: #fccab1;
+	}
+.password_strength_3 {
+	background-color: #fcfbb1;
+	}
+.password_strength_4 {
+	background-color: #dafcb1;
+	}
+.password_strength_5 {
+	background-color: #bcfcb1;
+	}
+ /*密码强度*/
+
+ /*水印*/
+.watermark {color:#999!important;}
+ /*水印*/
+
+#cursorMessageDiv {
+	position: absolute;
+	z-index: 99999;
+	border: solid 1px #cc9933;
+	background: #ffffcc;
+	padding: 2px;
+	margin: 0px;
+	display: none;
+}

@@ -1,0 +1,196 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="reset.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../jquery-1.4.js"></script>
+<!--星级评价(分离版)start-->
+<script type="text/javascript" src="js/raty_split.js"></script>
+<style>
+img {
+	behavior:url("js/pngFix/pngbehavior.htc");
+}
+</style>
+<!--星级评价(分离版)end-->
+<script type="text/javascript">
+		$(function() {
+
+		   $('div#demo1').raty();
+
+			$('div#demo2').raty({
+				readOnly:	true,
+				start:		2
+			});
+
+			$('div#demo3').raty({
+				scoreName:	'entity.score',
+				number:		10
+			});
+
+			$('div#demo4').raty({
+				hintList:	['a', '', null, 'd', '5'],
+			   	starOn:		'medal-on.png',
+			   	starOff:	'medal-off.png'
+			});
+
+			$('div#demo5').raty({
+				onClick: function(score) {
+					alert('分数: ' + score);
+				}
+			});
+
+			$('div#demo6').raty({
+				start: 3.3,
+				showHalf: true
+			});
+
+		   $('div#demo7').raty({
+				showCancel: true
+			});
+
+		   $('div#demo8').raty({
+				cancelHint: '取消',
+				cancelPlace: 'right',
+				showCancel: true,
+				onClick: function(score) {
+					alert('分数: ' + score);
+				}
+			});
+			
+
+		});
+</script>
+<body>
+	<div class="box2" panelWidth="800" panelTitle="基本用法">
+	首先引入脚本
+<textarea class="code">
+<script type="text/javascript" src="../jquery-1.4.js"></script>
+<!--星级评价(分离版)start-->
+<script type="text/javascript" src="js/raty_split.js"></script>
+<style>
+img {
+	behavior:url("js/pngFix/pngbehavior.htc");
+}
+</style>
+<!--星级评价(分离版)end-->
+</textarea>
+<pre></pre>
+	引入pngbehavior.htc文件是为了修正IE6支持透明PNG图片
+
+
+	然后在HTML中写一个div，例如
+<textarea class="code">
+<div id="demo1"></div>
+</textarea>
+<pre></pre>	
+	通过JS对该div调用raty()方法实现星级评价。通过不同参数实现不同效果。<br />
+	注意：在初始化函数的最后应调用enableTooltips()以让信息提示效果生效。<br />
+	默认：
+	<div id="demo1"></div>
+<textarea class="code">
+ $('div#demo1').raty();
+</textarea>
+<pre></pre>	
+	</div>
+
+	<div class="box2" panelWidth="800" panelTitle="只读">
+	<div id="demo2"></div>
+<textarea class="code">
+$('div#demo2').raty({
+	readOnly:	true,
+	start:		2
+});
+</textarea>
+<pre></pre>	
+	</div>
+
+	<div class="box2" panelWidth="800" panelTitle="自定义个数和提示语">
+	<div id="demo3"></div>
+<textarea class="code">
+$('div#demo3').raty({
+	scoreName:	'entity.score',
+	number:		10
+});
+</textarea>
+<pre></pre>	
+	</div>
+
+	<div class="box2" panelWidth="800" panelTitle="自定义图标和提示语">
+	<div id="demo4"></div>
+<textarea class="code">
+$('div#demo4').raty({
+	hintList:	['a', '', null, 'd', '5'],
+   	starOn:		'medal-on.png',
+   	starOff:	'medal-off.png'
+});
+</textarea>
+<pre></pre>	
+	</div>
+
+	<div class="box2" panelWidth="800" panelTitle="点击事件">
+	<div id="demo5"></div>
+<textarea class="code">
+$('div#demo5').raty({
+	onClick: function(score) {
+		alert('分数: ' + score);
+	}
+});
+</textarea>
+<pre></pre>	
+	</div>
+
+	<div class="box2" panelWidth="800" panelTitle="可以选半颗星">
+	<div id="demo6"></div>
+<textarea class="code">
+$('div#demo6').raty({
+	start: 3.3,
+	showHalf: true
+});
+</textarea>
+<pre></pre>	
+	</div>	
+
+	<div class="box2" panelWidth="800" panelTitle="使用取消按钮">
+<div id="demo7"></div>
+<textarea class="code">
+ $('div#demo7').raty({
+	showCancel: true
+});
+</textarea>
+<pre></pre>	
+	</div>
+
+	<div class="box2" panelWidth="800" panelTitle="自定义取消按钮">
+<div id="demo8"></div>
+<textarea class="code">
+$('div#demo8').raty({
+	cancelHint: '取消',
+	cancelPlace: 'right',
+	showCancel: true,
+	onClick: function(score) {
+		alert('分数: ' + score);
+	}
+});
+</textarea>
+<pre></pre>	
+	</div>
+</body>
+<!--代码高亮start-->
+<script type="text/javascript" src="../hl/highlight.js"></script>
+<script type="text/javascript" src="../hl/lang-xml.js"></script>
+<script type="text/javascript" src="../hl/lang-html.js"></script>
+<link href="../hl/style.css" rel="stylesheet" type="text/css"/>
+<script>
+	$(function(){
+			showCode()
+	})
+	function showCode(){
+		$(".code").each(function(){
+			var code =$(this).val()
+			var hl = new DlHighlight({lang: "html",lineNumbers :false });
+			var formatted = hl.doItNow(code);
+			$(this).next().addClass("DlHighlight").html("<pre>" + formatted + "</pre>")
+		})
+	}
+</script>
+<!--代码高亮end-->
+</html>

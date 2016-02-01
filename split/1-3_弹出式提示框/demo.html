@@ -1,0 +1,151 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="reset.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../jquery-1.4.js"></script>
+<!--弹出式提示框（分离版）start-->
+<link href="skins/blue/style.css" rel="stylesheet" type="text/css" id="compStyle"/>
+<script type="text/javascript" src="js/messager_split.js"></script>
+<!--弹出式提示框（分离版）end-->
+<script>
+	function open1(){
+		$.messager.show(0,'提示内容');
+	}
+	function open2(){
+		$.messager.show('自定义标题','提示内容');
+	}
+	function open3(){
+		$.messager.show(0,'提示内容',10000);
+	}
+	function open3_2(){
+		$.messager.show(0,'','stay');
+	}
+	function open4(){
+		$.messager.show(0,'提示内容！',10000,'message.mp3');
+	}
+	function open4_2(){
+		$.messager.show(0,'提示内容！',10000,'msg.wav');
+	}
+	function open5(){
+		$.messager.lays(300, 200);
+		$.messager.show(0,'提示内容',4000);
+	}
+</script>
+<body>
+	<script>
+		function changeSkin(){
+			$("#compStyle").attr("href","skins/"+$("#changeSkin").val()+"/style.css");
+		}
+	</script>
+	更换风格
+	<select  onchange='changeSkin()' id="changeSkin">
+	    <option value="blue">蓝色</option>
+	    <option value="lightBlue">亮蓝色</option>
+	    <option value="darkBlue">深蓝色</option>
+	    <option value="green">绿色</option>
+		<option value="red">红色</option>
+		<option value="darkYellow">棕黄色</option>
+		<option value="armyGreen">军绿色</option>
+	</select>
+	<div class="box2" panelTitle="基本使用">
+	首先引入脚本和CSS，如下
+<textarea class="code">
+<script type="text/javascript" src="../jquery-1.4.js"></script>	
+<!--弹出式提示框（分离版）start-->
+<link href="skins/blue/style.css" rel="stylesheet" type="text/css" id="compStyle"/>
+<script type="text/javascript" src="js/messager_split.js"></script>
+<!--弹出式提示框（分离版）end-->
+</textarea>	
+<pre></pre>
+
+	<input type="button" value="弹出提示" onclick='open1()'/>
+<textarea class="code">
+function open1(){
+	$.messager.show(0,'提示内容');
+}
+</textarea>
+<pre></pre>	
+	</div>
+	
+	<div class="box2" panelTitle="自定义提示框标题">
+	第一个参数为0表示使用默认的标题。更改该参数可以自定义标题。<br />
+	<input type="button" value="弹出自定义提示框标题提示框" onclick='open2()'/>
+<textarea class="code">
+function open2(){
+	$.messager.show('自定义标题','提示内容');
+}
+</textarea>
+<pre></pre>	
+	</div>
+	
+	<div class="box2" panelTitle="自定义提示持续时间">
+	提示框默认出现后持续4秒。设置第三个参数可自定义持续时间(毫秒级)。<br />
+	<input type="button" value="自定义持续时间为10秒" onclick='open3()'/>
+<textarea class="code">
+function open3(){
+	$.messager.show(0,'提示内容',10000);
+}
+</textarea>
+<pre></pre>	
+	如果将该参数设为"stay"，则弹出后不关闭，需要点击关闭按钮才会关闭。效果如下<br />
+	<input type="button" value="打开后不关闭" onclick='open3_2()'/>
+<textarea class="code">
+function open3_2(){
+	$.messager.show(0,'提示内容！','stay');
+}
+</textarea>
+<pre></pre>
+	</div>
+		
+	<div class="box2" panelTitle="播放声音">
+	为第四个参数指定一个音频文件，则弹出提示时会播放声音。<br />
+	<span class="font_bold red">注意：框架所在路径不能有中文，否则FireFox中将听不到声音</span><br />
+	<input type="button" value="提示出现时播放声音" onclick='open4()'/>
+<textarea class="code">
+function open4(){
+	$.messager.show(0,'提示内容！',10000,'message.mp3');
+}
+</textarea>
+<pre></pre>	
+指定不同的声音文件就会播放不同的声音。如<br />
+<input type="button" value="提示出现时播放声音2" onclick='open4_2()'/>
+<textarea class="code">
+function open4_2(){
+	$.messager.show(0,'提示内容！',10000,'msg.wav');
+}
+</textarea>
+<pre></pre>	
+	</div>
+	
+	<div class="box2" panelTitle="自定义框尺">
+	如果要自定义提示框的尺寸，可参考下面代码。<br />
+	<input type="button" value="弹出自定义提示框尺寸提示框" onclick='open5()'/>
+<textarea class="code">
+function open5(){
+	$.messager.lays(300, 200);
+	$.messager.show(0,'提示内容！');
+}
+</textarea>
+<pre></pre>
+	</div>		
+</body>
+<!--代码高亮start-->
+<script type="text/javascript" src="../hl/highlight.js"></script>
+<script type="text/javascript" src="../hl/lang-xml.js"></script>
+<script type="text/javascript" src="../hl/lang-html.js"></script>
+<link href="../hl/style.css" rel="stylesheet" type="text/css"/>
+<script>
+	$(function(){
+			showCode()
+	})
+	function showCode(){
+		$(".code").each(function(){
+			var code =$(this).val()
+			var hl = new DlHighlight({lang: "html",lineNumbers :false });
+			var formatted = hl.doItNow(code);
+			$(this).next().addClass("DlHighlight").html("<pre>" + formatted + "</pre>")
+		})
+	}
+</script>
+<!--代码高亮end-->
+</html>

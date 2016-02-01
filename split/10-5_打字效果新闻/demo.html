@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="reset.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../jquery-1.4.js"></script>
+<!--打字效果新闻(分离版)start-->
+<link href="skins/style.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="js/ticker_split.js"></script>
+<!--打字效果新闻(分离版)end-->
+<script type="text/javascript">
+	$(function () {
+		$('#js-news').ticker();	
+	});
+</script>	
+<style>
+#ticker-wrapper {
+	margin: 20px 0px 0px 20px;
+	width: 800px;
+	height: 30px;
+	border: 1px solid #CFCFCF;
+	display: block;
+	background-color:white;
+}
+#ticker {
+	padding: 0px 0px 0px 10px;
+	width: 710px;
+	height: 23px;
+}
+</style>
+<body>
+	<div id="ticker-wrapper">
+		<ul id="js-news" class="js-hidden">
+			<li class="news-item">十五所第十三届运动会即将开始，请大家抓紧时间报名</li>
+			<li class="news-item">研发部《部门质量保证文件V2.0-06》发布</li>
+			<li class="news-item">关于成立“服务器端软件设计”技术沙龙的通知</li>
+		</ul>
+	</div>
+	<div class="box2" panelWidth="800" panelTitle="基本用法">
+	首先引入脚本和CSS
+<textarea class="code">
+<script type="text/javascript" src="../jquery-1.4.js"></script>
+<!--打字效果新闻(分离版)start-->
+<link href="skins/style.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="js/ticker_split.js"></script>
+<!--打字效果新闻(分离版)end-->
+</textarea>
+<pre></pre>
+
+	HTML部分
+<textarea class="code">
+<div id="ticker-wrapper">
+	<ul id="js-news" class="js-hidden">
+		<li class="news-item">十五所第十三届运动会即将开始，请大家抓紧时间报名</li>
+		<li class="news-item">研发部《部门质量保证文件V2.0-06》发布</li>
+		<li class="news-item">关于成立“服务器端软件设计”技术沙龙的通知</li>
+	</ul>
+</div>
+</textarea>
+<pre></pre>
+	添加CSS控制显示样式
+<textarea class="code">
+<style>
+#ticker-wrapper {
+	margin: 20px 0px 0px 20px;
+	width: 800px;
+	height: 30px;
+	border: 1px solid #CFCFCF;
+	display: block;
+	background-color:white;
+}
+#ticker {
+	padding: 0px 0px 0px 10px;
+	width: 710px;
+	height: 23px;
+}
+</style>
+</textarea>
+<pre></pre>
+	最后是JS部分：
+<textarea class="code">
+$(function () {
+	$('#js-news').ticker();	
+});
+</textarea>
+<pre></pre>
+</div>
+
+<div class="box2" panelWidth="800" panelTitle="参数表">
+<table class="tableStyle">
+	<tr>
+		<th>参数名</th><th>默认值</th><th>参数说明</th>
+	</tr>
+	<tr>
+		<td>speed</td><td>0.10</td><td>播放速度</td>
+	</tr>
+	<tr>
+		<td>controls</td><td>true</td><td>是否显示控制按钮</td>
+	</tr>
+	<tr>
+		<td>titleText</td><td>最新信息</td><td>标题名称</td>
+	</tr>
+	<tr>
+		<td>pauseOnItems</td><td>2000</td><td>每条信息停留时间</td>
+	</tr>
+	<tr>
+		<td>fadeInSpeed</td><td>300</td><td>淡入速度</td>
+	</tr>
+	<tr>
+		<td>fadeOutSpeed</td><td>300</td><td>淡出速度</td>
+	</tr>
+</table>
+	</div>
+</body>
+<!--代码高亮start-->
+<script type="text/javascript" src="../hl/highlight.js"></script>
+<script type="text/javascript" src="../hl/lang-xml.js"></script>
+<script type="text/javascript" src="../hl/lang-html.js"></script>
+<link href="../hl/style.css" rel="stylesheet" type="text/css"/>
+<script>
+	$(function(){
+			showCode()
+	})
+	function showCode(){
+		$(".code").each(function(){
+			var code =$(this).val()
+			var hl = new DlHighlight({lang: "html",lineNumbers :false });
+			var formatted = hl.doItNow(code);
+			$(this).next().addClass("DlHighlight").html("<pre>" + formatted + "</pre>")
+		})
+	}
+</script>
+<!--代码高亮end-->
+</html>

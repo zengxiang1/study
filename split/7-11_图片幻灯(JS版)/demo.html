@@ -1,0 +1,235 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="reset.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../jquery-1.4.js"></script>
+<!--图片幻灯(JS版)start-->
+<link href="skins/style.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="js/switchable_split.js"></script>
+<script type="text/javascript" src="js/switchable.effect.js"></script>
+<!--图片幻灯(JS版)end-->
+<script>
+	$(function(){
+		$("#trigger1").switchable("#slide1 > div > img", { effect: "scroll" });
+	});
+	$(function(){
+		$("#trigger2").switchable("#slide2 > div > img", { effect: "scroll", vertical: true });
+	})
+	$(function(){
+		$("#trigger3").switchable("#slide3 > div > img", { effect: "scroll", vertical: true });
+	});
+	$(function(){
+		window.api = $("#trigger4").switchable("#slide4 > div > img", {
+			effect: "scroll",
+			vertical: true
+		}).carousel().autoplay({ api: true });
+	});
+	$(function(){
+		$("#trigger5").switchable("#slide5 > div > img", {
+			effect: "scroll",
+			panelSwitch: true,/*点击内容切换*/
+			circular: true,
+			vertical: true
+		});
+	});
+</script>
+<body>
+	首先引入脚本：
+<textarea class="code">
+<script type="text/javascript" src="../jquery-1.4.js"></script>
+<!--图片幻灯(JS版)start-->
+<link href="skins/style.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="js/switchable_split.js"></script>
+<script type="text/javascript" src="js/switchable.effect.js"></script>
+<!--图片幻灯(JS版)end-->
+</textarea>
+<pre></pre>	
+	<div class="box2" panelTitle="水平切换幻灯">
+	<div id="slide1" class="slide-panel">
+		<div>
+			<img src="demo/slider3.jpg" />
+			<img src="demo/slider2.jpg" />
+			<img src="demo/slider1.jpg" />
+		</div>
+	</div>
+	<div id="trigger1" class="slide-trigger"><!-- 自动创建数字标签 --></div>
+	HTML部分
+<textarea class="code">
+<div id="slide1" class="slide-panel">
+	<div>
+		<img src="demo/slider3.jpg" />
+		<img src="demo/slider2.jpg" />
+		<img src="demo/slider1.jpg" />
+	</div>
+</div>
+<div id="trigger1" class="slide-trigger"><!-- 自动创建数字标签 --></div>
+</textarea>
+<pre></pre>		
+	JS部分
+<textarea class="code">
+$(function(){
+	$("#trigger1").switchable("#slide1 > div > img", { effect: "scroll" });
+});
+</textarea>
+<pre></pre>		
+	</div>
+	
+	<div class="box2" panelTitle="垂直切换幻灯">
+	<div id="slide2" class="slide-panel">
+		<div>
+			<img src="demo/slider3.jpg" />
+			<img src="demo/slider2.jpg" />
+			<img src="demo/slider1.jpg" />
+		</div>
+	</div>
+	<div id="trigger2" class="slide-trigger"><!-- 自动创建数字标签 --></div>
+	HTML部分
+<textarea class="code">
+<div id="slide2" class="slide-panel">
+	<div>
+		<img src="demo/slider3.jpg" />
+		<img src="demo/slider2.jpg" />
+		<img src="demo/slider1.jpg" />
+	</div>
+</div>
+<div id="trigger2" class="slide-trigger"><!-- 自动创建数字标签 --></div>
+</textarea>
+<pre></pre>		
+	JS部分
+<textarea class="code">
+$(function(){
+	$("#trigger2").switchable("#slide2 > div > img", { effect: "scroll", vertical: true });
+})
+</textarea>
+<pre></pre>		
+	</div>
+	
+	<div class="box2" panelTitle="自定义尺寸">
+	<div id="slide3" class="slide-panel" style="width:300px;">
+		<div>
+			<img src="demo/slider3.jpg" style="width:300px;height:150px;"/>
+			<img src="demo/slider2.jpg" style="width:300px;height:150px;"/>
+			<img src="demo/slider1.jpg" style="width:300px;height:150px;"/>
+		</div>
+	</div>
+	<div id="trigger3" class="slide-trigger" style="width:300px;"><!-- 自动创建数字标签 --></div>
+HTML部分
+<textarea class="code">
+<div id="slide3" class="slide-panel" style="width:300px;">
+	<div>
+		<img src="demo/slider3.jpg" style="width:300px;height:150px;"/>
+		<img src="demo/slider2.jpg" style="width:300px;height:150px;"/>
+		<img src="demo/slider1.jpg" style="width:300px;height:150px;"/>
+	</div>
+</div>
+<div id="trigger3" class="slide-trigger" style="width:300px;"><!-- 自动创建数字标签 --></div>
+</textarea>
+<pre></pre>		
+	JS部分
+<textarea class="code">
+$(function(){
+	$("#trigger3").switchable("#slide3 > div > img", { effect: "scroll", vertical: true });
+});
+</textarea>
+<pre></pre>			
+	</div>
+	
+	<div class="box2" panelTitle="自动播放">
+	<div id="slide4" class="slide-panel">
+		<div>
+			<img src="demo/slider3.jpg" />
+			<img src="demo/slider2.jpg" />
+			<img src="demo/slider1.jpg" />
+		</div>
+	</div>
+	<div id="trigger4" class="slide-trigger"><!-- 自动创建数字标签 --></div>
+	<div class="ctrl" style="width:470px;">
+		<button class="play" onClick="api.play();" title="Play"></button>
+		<button class="pause" onClick="api.pause();" title="Pause"></button>
+		<button class="stop" onClick="api.stop();" title="Stop"></button>
+	</div>
+	HTML部分
+<textarea class="code">
+<div id="slide4" class="slide-panel">
+	<div>
+		<img src="demo/slider3.jpg" />
+		<img src="demo/slider2.jpg" />
+		<img src="demo/slider1.jpg" />
+	</div>
+</div>
+<div id="trigger4" class="slide-trigger"><!-- 自动创建数字标签 --></div>
+<div class="ctrl" style="width:470px;">
+	<button class="play" onClick="api.play();" title="Play"></button>
+	<button class="pause" onClick="api.pause();" title="Pause"></button>
+	<button class="stop" onClick="api.stop();" title="Stop"></button>
+</div>
+</textarea>
+<pre></pre>		
+	JS部分
+<textarea class="code">
+$(function(){
+	window.api = $("#trigger4").switchable("#slide4 > div > img", {
+		effect: "scroll",
+		vertical: true
+	}).carousel().autoplay({ api: true });
+});
+</textarea>
+<pre></pre>		
+	</div>
+	
+	<div class="box2" panelTitle="无数字标签">
+	<div id="slide5" class="slide-panel">
+		<div>
+			<img src="demo/slider3.jpg" />
+			<img src="demo/slider2.jpg" />
+			<img src="demo/slider1.jpg" />
+		</div>
+	</div>
+	<div id="trigger5" class="slide-trigger" style="display:none;"><!-- 标签必须存在，通过CSS隐藏 --></div>
+	HTML部分
+<textarea class="code">
+<div id="slide5" class="slide-panel">
+	<div>
+		<img src="demo/slider3.jpg" />
+		<img src="demo/slider2.jpg" />
+		<img src="demo/slider1.jpg" />
+	</div>
+</div>
+<div id="trigger5" class="slide-trigger" style="display:none;"><!-- 标签必须存在，通过CSS隐藏 --></div>
+</textarea>
+<pre></pre>		
+	JS部分
+<textarea class="code">
+$(function(){
+	$("#trigger5").switchable("#slide5 > div > img", {
+		effect: "scroll",
+		panelSwitch: true,/*点击内容切换*/
+		circular: true,
+		vertical: true
+	});
+});
+</textarea>
+<pre></pre>		
+	</div>
+
+</body>
+<!--代码高亮start-->
+<script type="text/javascript" src="../hl/highlight.js"></script>
+<script type="text/javascript" src="../hl/lang-xml.js"></script>
+<script type="text/javascript" src="../hl/lang-html.js"></script>
+<link href="../hl/style.css" rel="stylesheet" type="text/css"/>
+<script>
+	$(function(){
+			showCode()
+	})
+	function showCode(){
+		$(".code").each(function(){
+			var code =$(this).val()
+			var hl = new DlHighlight({lang: "html",lineNumbers :false });
+			var formatted = hl.doItNow(code);
+			$(this).next().addClass("DlHighlight").html("<pre>" + formatted + "</pre>")
+		})
+	}
+</script>
+<!--代码高亮end-->
+</html>

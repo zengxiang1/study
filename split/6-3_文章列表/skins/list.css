@@ -1,0 +1,37 @@
+/*文章列表*/
+.sgList li{
+	height:25px;
+	line-height:25px;
+	text-indent:15px;
+}
+.dbList li{
+	float:left;
+	padding:0 0 0 0px;
+	height:25px;
+	line-height:25px;
+	text-indent:15px;
+}
+.listArr{
+	background: url(arror.gif);
+	background-repeat:no-repeat;
+	background-position:5px 40%;
+}
+.listPoint{
+	background: url(point.gif);
+	background-repeat:no-repeat;
+	background-position:5px 50%;
+}
+.clear{
+	clear:both;
+	line-height:1px;
+}
+/*文章列表*/
+
+/*文字出省略号*/
+.text_slice{
+	display:block;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+/*文字出省略号*/

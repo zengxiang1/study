@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="reset.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../jquery-1.4.js"></script>
+<!--显示当前位置start-->
+<link href="skins/blue/style.css" rel="stylesheet" type="text/css" id="compStyle"/>
+<!---显示当前位置end-->
+<body>
+	<script>
+		function changeSkin(){
+			$("#compStyle").attr("href","skins/"+$("#changeSkin").val()+"/style.css");
+		}
+	</script>
+	更换风格
+	<select  onchange='changeSkin()' id="changeSkin">
+	    <option value="blue">蓝色</option>
+	    <option value="lightBlue">亮蓝色</option>
+	    <option value="darkBlue">深蓝色</option>
+	    <option value="green">绿色</option>
+		<option value="red">红色</option>
+		<option value="darkYellow">棕黄色</option>
+		<option value="armyGreen">军绿色</option>
+	</select>
+	<div class="position">
+		<div class="center">
+		<div class="left">
+		<div class="right">
+			<span>当前位置：导航与布局 >> 其他 >> 显示当前位置</span>
+		</div>	
+		</div>	
+		</div>
+	</div>	
+	首先引入CSS
+<textarea class="code">
+<!--显示当前位置start-->
+<link href="skins/blue/style.css" rel="stylesheet" type="text/css" id="compStyle"/>
+<!---显示当前位置end-->		
+</textarea>
+<pre></pre>
+	HTML代码如下：
+<textarea class="code">
+<div class="position">
+	<div class="center">
+	<div class="left">
+	<div class="right">
+		<span>当前位置：导航与布局 >> 其他 >> 显示当前位置</span>
+	</div>	
+	</div>	
+	</div>
+</div>		
+</textarea>
+<pre></pre>		
+</body>
+<!--代码高亮start-->
+<script type="text/javascript" src="../hl/highlight.js"></script>
+<script type="text/javascript" src="../hl/lang-xml.js"></script>
+<script type="text/javascript" src="../hl/lang-html.js"></script>
+<link href="../hl/style.css" rel="stylesheet" type="text/css"/>
+<script>
+	$(function(){
+			showCode()
+	})
+	function showCode(){
+		$(".code").each(function(){
+			var code =$(this).val()
+			var hl = new DlHighlight({lang: "html",lineNumbers :false });
+			var formatted = hl.doItNow(code);
+			$(this).next().addClass("DlHighlight").html("<pre>" + formatted + "</pre>")
+		})
+	}
+</script>
+<!--代码高亮end-->
+</html>

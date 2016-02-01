@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="reset.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../jquery-1.4.js"></script>
+<!--步进器(分离版)start-->
+<link href="skins/blue/style.css" rel="stylesheet" type="text/css" id="compStyle"/>
+<script type="text/javascript" src="js/spinbox_split.js"></script>
+<!--步进器(分离版)end-->
+<script>
+	function getSpinValue(){
+		var msg=$("#spin1").val();
+		alert(msg);
+	}
+</script>
+<body>
+	<script>
+		function changeSkin(){
+			$("#compStyle").attr("href","skins/"+$("#changeSkin").val()+"/style.css");
+		}
+	</script>
+	更换风格
+	<select  onchange='changeSkin()' id="changeSkin">
+	    <option value="blue">蓝色</option>
+	    <option value="green">绿色</option>
+		<option value="red">红色</option>
+		<option value="darkYellow">棕黄色</option>
+		<option value="armyGreen">军绿色</option>
+	</select>
+ <div class="box2" panelWidth="800" panelTitle="基本用法">
+	 首先引入脚本和CSS：
+<textarea class="code">
+<script type="text/javascript" src="../jquery-1.4.js"></script>
+<!--步进器(分离版)start-->
+<link href="skins/style.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="js/spinbox_split.js"></script>
+<!--步进器(分离版)end-->
+</textarea>
+<pre></pre>	
+
+	写一个文本框，将class设为spinbox。HTML代码如下：
+<textarea class="code">
+<input type="text" class="spinbox"/>
+</textarea>
+<pre></pre>	
+
+效果：<input type="text" class="spinbox" id="spin1"/> <input type="button" value="获取值" onclick="getSpinValue()"/>
+<br />步进器的值就是文本框的value
+	</div>
+	
+	<div class="box2" panelWidth="800" panelTitle="自定义宽度">
+
+步进器默认宽度为50px，通过设置style可自定义宽度。<br />
+为文本框设置一个value值可实现初始时的数值。<br />
+<input type="text" class="spinbox" value="10" style="width:100px;"/>
+<textarea class="code">
+<input type="text" class="spinbox" value="10" style="width:100px;"/>
+</textarea>
+<pre></pre>
+	</div>
+	
+	<div class="box2" panelWidth="800" panelTitle="自定义设置">
+步进器还可通过min、max、step来设置最小值、最大值和步长。<br />
+<input type="text" class="spinbox" min="5" max="10" value="5" step="0.5"/>
+<textarea class="code">
+<input type="text" class="spinbox" min="5" max="10" value="5" step="0.5"/>
+</textarea>
+<pre></pre>
+	</div>
+</body>
+<!--代码高亮start-->
+<script type="text/javascript" src="../hl/highlight.js"></script>
+<script type="text/javascript" src="../hl/lang-xml.js"></script>
+<script type="text/javascript" src="../hl/lang-html.js"></script>
+<link href="../hl/style.css" rel="stylesheet" type="text/css"/>
+<script>
+	$(function(){
+			showCode()
+	})
+	function showCode(){
+		$(".code").each(function(){
+			var code =$(this).val()
+			var hl = new DlHighlight({lang: "html",lineNumbers :false });
+			var formatted = hl.doItNow(code);
+			$(this).next().addClass("DlHighlight").html("<pre>" + formatted + "</pre>")
+		})
+	}
+</script>
+<!--代码高亮end-->
+</html>

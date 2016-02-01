@@ -1,0 +1,176 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="reset.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../jquery-1.4.js"></script>
+<!--拖拽排序(分离版)start-->
+<script type="text/javascript" src="js/dragsort_split.js"></script>
+<!--拖拽排序(分离版)end-->
+<script type="text/javascript">
+	$(function(){
+		$("ul:first").dragsort();
+	})
+</script>
+
+<script type="text/javascript">
+	$(function(){
+		$("#list1, #list2").dragsort({ dragSelector: "div", dragBetween: true, dragEnd: saveOrder, placeHolderTemplate: "<li class='placeHolder'><div></div></li>" });
+	})
+	function saveOrder() {
+		var serialStr = "";
+		$("#list1 li").each(function(i, elm) { serialStr += (i > 0 ? "|" : "") + $(elm).children().html(); });
+		$("input[name=list1SortOrder]").val(serialStr);
+	};
+</script>
+<style>
+	#list1, #list2 { width:350px; list-style-type:none; margin:0px; }
+	#list1 li, #list2 li { float:left; padding:5px; width:100px; height:100px; }
+	#list1 div, #list2 div { width:90px; height:50px; border:solid 1px black; background-color:#E0E0E0; text-align:center; padding-top:40px; }
+	#list2 { float:right; }
+	.placeHolder div { background-color:white !important; border:dashed 1px gray !important; }
+</style>
+<body>
+	首先引入脚本
+<textarea class="code">
+<script type="text/javascript" src="../jquery-1.4.js"></script>
+<!--拖拽排序(分离版)start-->
+<script type="text/javascript" src="js/dragsort_split.js"></script>
+<!--拖拽排序(分离版)end-->
+</textarea>
+<pre></pre>	
+<div class="box2" panelTitle="效果">	
+	<ul>
+			<li>列表选项1</li>
+			<li>列表选项2</li>
+			<li>列表选项3</li>
+			<li>列表选项4</li>
+			<li>列表选项5</li>
+			<li>列表选项6</li>
+		</ul>
+</div>
+<div class="box2" panelTitle="用法">
+		HTML代码
+<textarea class="code">
+<ul>
+	<li>列表选项1</li>
+	<li>列表选项2</li>
+	<li>列表选项3</li>
+	<li>列表选项4</li>
+	<li>列表选项5</li>
+	<li>列表选项6</li>
+</ul>
+</textarea>
+<pre></pre>	
+	JS代码
+<textarea class="code">
+$(function(){
+	$("ul:first").dragsort();
+})
+</textarea>
+<pre></pre>		
+</div>	
+
+<div class="box2" panelTitle="效果">		
+		<ul id="list2">
+		<li><div>10</div></li>
+			<li><div>11</div></li>
+			<li><div>12</div></li>
+			<li><div>13</div></li>
+			<li><div>14</div></li>
+			<li><div>15</div></li>
+			<li><div>16</div></li>
+			<li><div>17</div></li>
+			<li><div>18</div></li>
+		</ul>
+		
+		<ul id="list1">
+			<li><div>1</div></li>
+			<li><div>2</div></li>
+			<li><div>3</div></li>
+			<li><div>4</div></li>
+			<li><div>5</div></li>
+			<li><div>6</div></li>
+			<li><div>7</div></li>
+			<li><div>8</div></li>
+			<li><div>9</div></li>
+		</ul>
+		<input name="list1SortOrder" type="hidden" />
+</div>	
+
+<div class="box2" panelTitle="用法">
+		HTML代码
+<textarea class="code">
+<ul id="list2">
+	<li><div>10</div></li>
+	<li><div>11</div></li>
+	<li><div>12</div></li>
+	<li><div>13</div></li>
+	<li><div>14</div></li>
+	<li><div>15</div></li>
+	<li><div>16</div></li>
+	<li><div>17</div></li>
+	<li><div>18</div></li>
+</ul>
+
+<ul id="list1">
+	<li><div>1</div></li>
+	<li><div>2</div></li>
+	<li><div>3</div></li>
+	<li><div>4</div></li>
+	<li><div>5</div></li>
+	<li><div>6</div></li>
+	<li><div>7</div></li>
+	<li><div>8</div></li>
+	<li><div>9</div></li>
+</ul>
+<input name="list1SortOrder" type="hidden" />
+</textarea>
+<pre></pre>	
+	添加CSS
+<textarea class="code">
+<style>
+	#list1, #list2 { width:350px; list-style-type:none; margin:0px; }
+	#list1 li, #list2 li { float:left; padding:5px; width:100px; height:100px; }
+	#list1 div, #list2 div { width:90px; height:50px; border:solid 1px black; background-color:#E0E0E0; text-align:center; padding-top:40px; }
+	#list2 { float:right; }
+	.placeHolder div { background-color:white !important; border:dashed 1px gray !important; }
+</style>
+</textarea>
+<pre></pre>	
+
+	JS代码
+<textarea class="code">
+$(function(){
+	$("#list1, #list2").dragsort({ dragSelector: "div", dragBetween: true, dragEnd: saveOrder, placeHolderTemplate: "<li class='placeHolder'><div></div></li>" });
+})
+function saveOrder() {
+	var serialStr = "";
+	$("#list1 li").each(function(i, elm) { serialStr += (i > 0 ? "|" : "") + $(elm).children().html(); });
+	$("input[name=list1SortOrder]").val(serialStr);
+	
+};
+</textarea>
+<pre></pre>		
+	dragEnd指定为saveOrder函数，拖拽后将结果保存在list1SortOrder的隐藏表单元素中。
+	</div>
+</body>
+<!--代码高亮start-->
+<script type="text/javascript" src="../hl/highlight.js"></script>
+<script type="text/javascript" src="../hl/lang-xml.js"></script>
+<script type="text/javascript" src="../hl/lang-html.js"></script>
+<link href="../hl/style.css" rel="stylesheet" type="text/css"/>
+<script>
+	$(function(){
+			showCode()
+	})
+	function showCode(){
+		$(".code").each(function(){
+			var code =$(this).val()
+			var hl = new DlHighlight({lang: "html",lineNumbers :false });
+			var formatted = hl.doItNow(code);
+			$(this).next().addClass("DlHighlight").html("<pre>" + formatted + "</pre>")
+		})
+	}
+</script>
+<!--代码高亮end-->
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="reset.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../jquery-1.4.js"></script>
+<!--标签生成器(分离版)start-->
+<link href="skins/style.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="js/tageditor_split.js"></script>
+<!--标签生成器(分离版)end-->
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#Tags").tagEditor(
+        {
+            items: ["第一个标签", "第二个标签"],
+            confirmRemoval: true
+        });
+        $("#Tags2").tagEditor(
+        {
+            items: ["第一个标签", "第二个标签"],
+            confirmRemoval: true,
+            separator: ' ',
+            completeOnSeparator: true,
+            completeOnBlur: true
+        });
+        $("#Tags3").tagEditor(
+        {
+            confirmRemoval: true,
+            completeOnBlur: true
+        });
+        $("#getTagsButton").click(function() {
+            alert($("#Tags3").tagEditorGetTags());
+        });
+        $("#addTagButton").click(function() {
+            $("#Tags3").tagEditorAddTag('新标签');
+        });
+        $("#resetTagsButton").click(function() {
+            $("#Tags3").tagEditorResetTags();
+        });
+    });
+</script>
+<body>
+<div class="box2" panelWidth="800" panelTitle="效果">
+	输入后按回车键
+	 <input id="Tags" name="Tags" type="text" value=""/><br />
+	 输入后按回车键或点击空白处
+	 <input id="Tags2" name="Tags2" type="text" value=""/><br />
+	 输入后按回车键或点击空白处
+	 <input id="Tags3" name="Tags3" type="text" value="标签1,标签2"/><br />
+	 <button id="getTagsButton">获取标签</button> <button id="addTagButton">添加标签</button> <button id="resetTagsButton">重置标签</button><br />
+	</div>
+	
+	<div class="box2" panelWidth="800" panelTitle="用法">
+	首先引入脚本
+<textarea class="code">
+<script type="text/javascript" src="../jquery-1.4.js"></script>
+<!--标签生成器(分离版)start-->
+<link href="skins/style.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="js/tageditor_split.js"></script>
+<!--标签生成器(分离版)end-->
+</textarea>
+<pre></pre>	
+
+	HTML部分
+<textarea class="code">
+输入后按回车键
+<input id="Tags" name="Tags" type="text" value=""/><br />
+输入后按回车键或点击空白处
+<input id="Tags2" name="Tags2" type="text" value=""/><br />
+输入后按回车键或点击空白处
+<input id="Tags3" name="Tags3" type="text" value="标签1,标签2"/><br />
+ <button id="getTagsButton">获取标签</button> 
+ <button id="addTagButton">添加标签</button> 
+ <button id="resetTagsButton">重置标签</button>
+</textarea>
+<pre></pre>	
+
+	JS部分
+<textarea class="code">
+ $(document).ready(function() {
+    $("#Tags").tagEditor(
+    {
+        items: ["第一个标签", "第二个标签"],
+        confirmRemoval: true
+    });
+    $("#Tags2").tagEditor(
+    {
+        items: ["第一个标签", "第二个标签"],
+        confirmRemoval: true,
+        separator: ' ',
+        completeOnSeparator: true,
+        completeOnBlur: true
+    });
+    $("#Tags3").tagEditor(
+    {
+        confirmRemoval: true,
+        completeOnBlur: true
+    });
+    $("#getTagsButton").click(function() {
+        alert($("#Tags3").tagEditorGetTags());
+    });
+    $("#addTagButton").click(function() {
+        $("#Tags3").tagEditorAddTag('Newly added tag');
+    });
+    $("#resetTagsButton").click(function() {
+        $("#Tags3").tagEditorResetTags();
+    });
+});
+</textarea>
+<pre></pre>	
+	</div>	
+</body>
+<!--代码高亮start-->
+<script type="text/javascript" src="../hl/highlight.js"></script>
+<script type="text/javascript" src="../hl/lang-xml.js"></script>
+<script type="text/javascript" src="../hl/lang-html.js"></script>
+<link href="../hl/style.css" rel="stylesheet" type="text/css"/>
+<script>
+	$(function(){
+			showCode()
+	})
+	function showCode(){
+		$(".code").each(function(){
+			var code =$(this).val()
+			var hl = new DlHighlight({lang: "html",lineNumbers :false });
+			var formatted = hl.doItNow(code);
+			$(this).next().addClass("DlHighlight").html("<pre>" + formatted + "</pre>")
+		})
+	}
+</script>
+<!--代码高亮end-->
+</html>

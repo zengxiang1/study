@@ -1,0 +1,27 @@
+/*按钮样式*/
+.button{
+	background:transparent url(form/btn_bg.jpg) repeat scroll 0 0;
+	border:1px solid #83b1f2;
+	font-size:12px;
+	height:22px;
+	line-height:20px;
+	>margin-right:4px;
+}
+.button_hover{
+	background:transparent url(form/btn_bg_hover.jpg) repeat scroll 0 0;
+	border:1px solid #af923f;
+	font-size:12px;
+	height:22px;
+	line-height:20px;
+	>margin-right:4px;
+}
+.button_focus{
+	background:transparent url(form/btn_bg.jpg) repeat scroll 0 0;
+	border-color:#00bbff;
+	border:1px solid;
+	font-size:12px;
+	height:22px;
+	line-height:20px;
+	>margin-right:4px;
+}
+/*按钮样式*/

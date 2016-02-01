@@ -1,0 +1,169 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="reset.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../jquery-1.4.js"></script>
+<script type="text/javascript" src="js/center-plugin.js"></script>
+<script>
+$(function(){
+	$('.mainCenter').center();
+	
+	 var fadeSpeed = ($.browser.safari ? 400 : 250);           
+	$('.changePic .hover').css('opacity', 0);
+	
+	$('.hover').parent().hover(function() {
+		$('.hover', this).stop().animate({
+			'opacity': 1
+		}, fadeSpeed);
+	}, function() {
+		$('.hover', this).stop().animate({
+			'opacity': 0
+		}, fadeSpeed);
+	});
+})
+</script>
+<style>
+	html{
+		overflow:hidden;
+	}
+	.mainCenter{
+		width:627px;
+		height:627px;
+	}
+	.demo1{
+		 background: url(demo/nav1.jpg) no-repeat bottom left; 
+		 width:208px;
+		 height:277px;
+		 display:block;
+		 cursor:pointer;
+		 cursor:hand; 
+	}
+	.demo1 .hover{
+		background: url(demo/nav1_light.jpg) no-repeat top left;
+		width:100%;
+		height:100%;
+		display:block;
+		 cursor:pointer;
+		 cursor:hand; 
+	}	
+	.demo2{
+		 background: url(demo/nav2.jpg) no-repeat bottom left; 
+		 width:209px;
+		 height:209px;
+		 display:block;
+		 cursor:pointer;
+		 cursor:hand; 
+	}
+	.demo2 .hover{
+		background: url(demo/nav2_light.jpg) no-repeat top left;
+		width:100%;
+		height:100%;
+		display:block;
+		 cursor:pointer;
+		 cursor:hand; 
+	}	
+	.demo3{
+		 background: url(demo/nav3.jpg) no-repeat bottom left; 
+		 width:209px;
+		 height:209px;
+		 display:block;
+		 cursor:pointer;
+		 cursor:hand; 
+	}
+	.demo3 .hover{
+		background: url(demo/nav3_light.jpg) no-repeat top left;
+		width:100%;
+		height:100%;
+		display:block;
+		 cursor:pointer;
+		 cursor:hand; 
+	}	
+	.demo4{
+		 background: url(demo/nav4.jpg) no-repeat bottom left; 
+		 width:209px;
+		 height:271px;
+		 display:block;
+		 cursor:pointer;
+		 cursor:hand; 
+	}
+	.demo4 .hover{
+		background: url(demo/nav4_light.jpg) no-repeat top left;
+		width:100%;
+		height:100%;
+		display:block;
+		 cursor:pointer;
+		 cursor:hand; 
+	}	
+	.demo5{
+		 background: url(demo/nav5.jpg) no-repeat bottom left; 
+		 width:209px;
+		 height:209px;
+		 display:block;
+		 cursor:pointer;
+		 cursor:hand; 
+	}
+	.demo5 .hover{
+		background: url(demo/nav5_light.jpg) no-repeat top left;
+		width:100%;
+		height:100%;
+		display:block;
+		 cursor:pointer;
+		 cursor:hand; 
+	}	
+	.demo6{
+		 background: url(demo/nav6.jpg) no-repeat bottom left; 
+		 width:209px;
+		 height:209px;
+		 display:block;
+		 cursor:pointer;
+		 cursor:hand; 
+	}
+	.demo6 .hover{
+		background: url(demo/nav6_light.jpg) no-repeat top left;
+		width:100%;
+		height:100%;
+		display:block;
+		 cursor:pointer;
+		 cursor:hand; 
+	}
+	.changePic{
+		float:left;
+		width:209px;
+	}
+	.changePic li{
+		padding:0px 0 0 0px;
+	}
+	.typeTitle{
+		background: url(demo/title.jpg) no-repeat;
+		width:209px;
+		height:307px;
+		background-position:80px 0;
+	}
+</style>
+<body style="background-color:#a3b2b8;">
+	<div class="mainCenter">
+<div class="changePic">
+	<ul>
+		<li><a class="demo1"><span class="hover"></span></a></li>
+		<li class="typeTitle"></li>
+	</ul>
+</div>
+<div class="changePic">
+	<ul>
+		<li><a class="demo2"><span class="hover"></span></a></li>
+		<li><a class="demo5"><span class="hover"></span></a></li>
+		<li><a class="demo6"><span class="hover"></span></a></li>
+	</ul>
+</div>
+<div class="changePic">
+	<ul>
+		<li><a class="demo3"><span class="hover"></span></a></li>
+		
+		<li><a class="demo4"><span class="hover"></span></a></li>
+		
+	</ul>
+</div>
+<div class="clear"></div>
+	</div>
+</body>
+</html>

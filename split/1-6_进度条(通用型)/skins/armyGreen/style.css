@@ -1,0 +1,17 @@
+/*进度条*/
+.progressBg{
+	width:350px;
+	height:43px;
+	background: url(progressBar/progressBg.jpg);
+	background-repeat:no-repeat;
+	padding:21px 0 0 0px;
+	text-align:center;
+}
+.progressBar{
+	margin:0 auto;
+	width:305px;
+	height:22px;
+	background-image: url(progressBar/progressBar.gif);
+	background-repeat: no-repeat;
+}
+/*进度条*/

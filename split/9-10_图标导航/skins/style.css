@@ -1,0 +1,59 @@
+/*图标导航*/
+.navIcon{
+	padding:15px 0 15px 0;
+	cursor:pointer;
+	cursor:hand;
+	width:240px;
+}
+.navIcon img{
+	width:80px;
+	height:80px;
+}
+.navIcon_left{
+	float:left;
+	width:80px;
+}
+.navIcon_right{
+	float:left;
+	padding:0 0 0 8px;
+	line-height:180%;
+	width:150px;
+}
+.navIcon_right_con{
+	
+}
+.navIcon_right_title{
+	font-weight:bold;
+	color:#0460b7; /*标题文字颜色*/
+}
+.navIcon_hover{
+	background-color:#c9e5fc!important; /*鼠标移入背景色*/
+	border:solid 1px #438dce!important; /*鼠标移入边框色*/
+}
+.navIcon{
+	border:solid 1px #ffffff; /*初始时背景色，要与页面背景色一致*/
+}
+.navIconSmall{
+	border:solid 1px #d8e8f6; /*边框色*/
+	width:80px;
+	margin:10px 10px 0 0;
+	display:inline;
+	text-align:center;
+	font-weight:bold;
+	color:#2980d1; /*标题文字颜色*/
+	float:left;
+	cursor:pointer;
+	cursor:hand;
+}
+.navIconSmall img{
+	width:60px;
+	height:60px;
+}
+.navIconSmall_hover{
+	background-color:#e7f4fe!important; /*鼠标移入背景色*/
+	border:solid 1px #54a2e6!important; /*鼠标移入边框色*/
+}
+ /*图标导航*/
+.clear{
+	clear:both;
+}

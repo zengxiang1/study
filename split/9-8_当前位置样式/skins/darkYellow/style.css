@@ -1,0 +1,40 @@
+/*所在位置*/
+.position{
+	height:32px;
+	line-height:32px;
+	margin:5px 5px 2px 0;
+	padding:0 0 0 0px;
+	font-family: "Agency FB";
+}
+.position .center{
+	background-image: url(tab/position_center.jpg);
+	background-repeat:repeat-x;
+	width:100%;
+	height:100%;
+}
+.position .left{
+	background-image: url(tab/position_left.jpg);
+	background-repeat: no-repeat; 
+	width:100%;
+	height:100%;
+}
+.position .right{
+	background-image: url(tab/position_right.jpg);
+	background-repeat: no-repeat; 
+	background-position:100% 0%;
+	width:100%;
+	height:100%;
+}
+.position .right span{
+	padding:0 0 0 70px;
+	color:#413316!important;/*文字颜色*/
+}
+.position a{
+	color:#413316;/*文字颜色*/
+	text-decoration:none;
+}
+.position a:hover{
+	color:#413316;/*文字颜色*/
+	text-decoration:underline;
+}
+/*所在位置*/

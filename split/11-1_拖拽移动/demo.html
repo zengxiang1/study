@@ -1,0 +1,200 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="reset.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../jquery-1.4.js"></script>
+<!--拖拽移动(分离版)start-->
+<script type="text/javascript" src="js/dragndrop_split.js"></script>
+<!--拖拽移动(分离版)end-->
+ <style type="text/css">
+    p
+    {
+    	height:30px;
+    	}
+    .dragDiv
+    {
+    	width:200px;
+    	background-color:#EFF7FF;
+        border:1px solid #96C2F1;
+        position:absolute;
+        left:100px;
+        top:100px;
+    	}
+    .dragDiv h5
+    {
+    	background-color:#B2D3F5;
+    	padding:5px;
+        margin:1px;
+		font-size:12px;
+    	}
+    .dragDiv div
+    {
+    	padding:5px;
+    	margin-bottom:10px;
+        }
+    .dragDiv2
+    {
+    	background-color:#F0FBEB;
+        border:1px solid #9BDF70;
+    	width:200px;
+    	position:absolute;
+        left:400px;
+        top:400px;
+    	}
+    .dragDiv2 h5
+    {
+    	background-color:#C2ECA7;
+    	padding:5px;
+        margin:1px;
+		font-size:12px;
+        }
+    .dragDiv2 div
+    {
+    	padding:5px;
+    	margin-bottom:10px;
+        }
+</style>
+<script type="text/javascript">
+    $(function() {
+        $('.dragDiv').Drags({
+            handler: '.handler',
+            onMove: function(e) {
+                $('.content').html('位置信息:(Left:' + e.pageX + ' ,Top:' + e.pageY + ')');
+            },
+            onDrop:function(e){
+                $('.content').html('内容区域');
+            }
+        });
+
+        $('.dragDiv2').Drags({
+            handler: '.handler2',                
+            zIndex:200,
+            opacity:.9
+        });
+    });
+</script>
+<body>
+	<div class="dragDiv">
+	    <h5 class="handler">拖拽这里</h5>
+	    <div class="content">内容区域</div>
+	</div>
+	
+	<div class="dragDiv2">
+	    <h5 class="handler2">拖拽这里</h5>
+	    <div class="content2">内容区域</div>
+	</div>
+首先引入脚本：
+<textarea class="code">
+<script type="text/javascript" src="../jquery-1.4.js"></script>
+<!--拖拽移动(分离版)start-->
+<script type="text/javascript" src="js/dragndrop_split.js"></script>
+<!--拖拽移动(分离版)end-->
+</textarea>
+<pre></pre>	
+HTML部分
+<textarea class="code">
+<div class="dragDiv">
+    <h5 class="handler">拖拽这里</h5>
+    <div class="content">内容区域</div>
+</div>
+
+<div class="dragDiv2">
+    <h5 class="handler2">拖拽这里</h5>
+    <div class="content2">拖拽这里</div>
+</div>
+</textarea>
+<pre></pre>
+	
+添加CSS设置窗体样式
+<textarea class="code">
+ <style type="text/css">
+    p
+    {
+    	height:30px;
+    	}
+    .dragDiv
+    {
+    	width:200px;
+    	background-color:#EFF7FF;
+        border:1px solid #96C2F1;
+        position:absolute;
+        left:100px;
+        top:100px;
+    	}
+    .dragDiv h5
+    {
+    	background-color:#B2D3F5;
+    	padding:5px;
+        margin:1px;
+    	}
+    .dragDiv div
+    {
+    	padding:5px;
+    	margin-bottom:10px;
+        }
+    .dragDiv2
+    {
+    	background-color:#F0FBEB;
+        border:1px solid #9BDF70;
+    	width:200px;
+    	position:absolute;
+        left:400px;
+        top:400px;
+    	}
+    .dragDiv2 h5
+    {
+    	background-color:#C2ECA7;
+    	padding:5px;
+        margin:1px;
+        }
+    .dragDiv2 div
+    {
+    	padding:5px;
+    	margin-bottom:10px;
+        }
+</style>
+</textarea>
+<pre></pre>	
+
+	JS代码
+<textarea class="code">
+ $(function() {
+    $('.dragDiv').Drags({
+        handler: '.handler',
+        onMove: function(e) {
+            $('.content').html('位置信息:(Left:' + e.pageX + ' ,Top:' + e.pageY + ')');
+        },
+        onDrop:function(e){
+            $('.content').html('内容区域');
+        }
+    });
+
+    $('.dragDiv2').Drags({
+        handler: '.handler2',                
+        zIndex:200,
+        opacity:.9
+    });
+});
+</textarea>
+<pre></pre>
+</body>
+<!--代码高亮start-->
+<script type="text/javascript" src="../hl/highlight.js"></script>
+<script type="text/javascript" src="../hl/lang-xml.js"></script>
+<script type="text/javascript" src="../hl/lang-html.js"></script>
+<link href="../hl/style.css" rel="stylesheet" type="text/css"/>
+<script>
+	$(function(){
+			showCode()
+	})
+	function showCode(){
+		$(".code").each(function(){
+			var code =$(this).val()
+			var hl = new DlHighlight({lang: "html",lineNumbers :false });
+			var formatted = hl.doItNow(code);
+			$(this).next().addClass("DlHighlight").html("<pre>" + formatted + "</pre>")
+		})
+	}
+</script>
+<!--代码高亮end-->
+</html>

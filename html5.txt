@@ -1,0 +1,4 @@
+﻿1.localStorage本地存储
+用 key/value的形式存储.
+phonegap 发生网络错误是因为没有引入js文件。。。。。
+

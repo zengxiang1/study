@@ -1,0 +1,418 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="reset.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../jquery-1.4.js"></script>
+<!--自定义日期控件（分离版）start-->
+<script language="JavaScript" src="js/datePicker/WdatePicker.js"></script>
+<style>
+.date{
+	background-color:#f1f9fc;
+	border-color:#a2b3bd;
+	background-image: url(js/datePicker/skin/datePicker.gif)!important;
+	background-repeat: no-repeat!important;
+	background-position: 100% 50%!important;
+	height:18px;
+    width:120px;
+	border-style:solid;
+	border-width:1px;
+	font-size: 12px;
+	color: #336699;
+}
+.date_hover{
+	border-color:#00ccff!important;/*鼠标移入边框颜色*/
+}
+.date_click{
+	border-color:#fbd45c!important;
+}
+.cusDate{
+	background-color: #ffffff;
+	background-image: url(js/datePicker/skin/datePicker.gif);
+	background-repeat: no-repeat;
+	background-position: 100% 50%;
+	height:18px;
+    width:120px;
+	border-color:#cccccc;
+	border-style:solid;
+	border-width:1px;
+	font-size: 12px;
+	color: #336699;
+}
+</style>
+<!--自定义日期控件（分离版）end-->
+<body>
+<script>
+var dateSkin="blue";
+$(document).ready(function(){
+	$("#d01").focus(function(){
+		WdatePicker({skin:dateSkin});
+	})
+	$("#d02").focus(function(){
+		WdatePicker({skin:dateSkin,isShowClear:true,readOnly:true})
+	})
+	$("#d03").focus(function(){
+		WdatePicker({skin:dateSkin,dateFmt:'yyyy年MM月dd日 HH时mm分ss秒'})
+	})
+	$("#d04").focus(function(){
+		WdatePicker({skin:dateSkin,dateFmt:'H:mm:ss'})
+	})
+	$("#d05").focus(function(){
+		WdatePicker({skin:dateSkin,isShowWeek:true})
+	})
+	$("#d06").focus(function(){
+		WdatePicker({skin:dateSkin,position:{left:500,top:50}})
+	})
+	$("#d07img").click(function(){
+		WdatePicker({skin:dateSkin,el:$dp.$('d07')})
+	})
+	WdatePicker({eCont:'div1',skin:dateSkin,dateFmt:'yyyy年MM月dd日 HH时mm分ss秒',onpicked:function(dp){alert('你选择的日期是:'+dp.cal.getDateStr())}})
+	$("#d09img").click(function(){
+		WdatePicker({skin:dateSkin,el:'demospan'})
+	})
+	document.getElementById("d5221").onfocus=function(){
+		var d5222=$dp.$('d5222');WdatePicker({
+			skin:dateSkin,onpicked:function(){d5222.focus();},maxDate:'#F{$dp.$D(\'d5222\')}'
+		})
+	}
+	document.getElementById("d5222").onfocus=function(){
+		WdatePicker({skin:dateSkin,minDate:'#F{$dp.$D(\'d5221\')}'})
+	}
+	$("#d11").focus(function(){
+		WdatePicker({skin:dateSkin,dateFmt:'yyyy年M月d日',vel:'d11_2'})
+	})
+	
+	$("#d12").focus(function(){
+		WdatePicker({skin:dateSkin,startDate:'1980-05-01'})
+	})
+	$("#d13").focus(function(){
+		WdatePicker({skin:dateSkin,startDate:'1980-05-01',alwaysUseStartDate:true})
+	})
+	
+	function birthDate(){
+		var Y = 1980;
+		var M = 2;
+		var D = 8;
+		return Y+'-'+M+'-'+D;
+	}
+	$("#d14").focus(function(){
+		var date=birthDate();
+		WdatePicker({skin:dateSkin,startDate:date})
+	})
+	
+})		
+function changeSkin(){
+	dateSkin=$("#changeSkin").val();
+}
+</script>
+	更换风格
+	<select  onchange='changeSkin()' id="changeSkin">
+	    <option value="blue">蓝色</option>
+	    <option value="lightBlue">亮蓝色</option>
+	    <option value="darkBlue">深蓝色</option>
+	    <option value="green">绿色</option>
+		<option value="red">红色</option>
+		<option value="darkYellow">棕黄色</option>
+		<option value="yellowGreen">军绿色</option>
+	</select>	
+	<div class="box2">
+	一般情况下使用demo.html中的基本日期控件就能够满足开发需求，但当有特殊需求时可以更灵活地配置日期控件。
+	要实现自定义日期控件，首先引入下面的脚本并添加CSS
+<textarea class="code">
+<!--自定义日期控件（分离版）start-->
+<script language="JavaScript" src="js/datePicker/WdatePicker.js"></script>
+<style>
+.date{
+	background-color:#f1f9fc;
+	border-color:#a2b3bd;
+	background-image: url(js/datePicker/skin/datePicker.gif)!important;
+	background-repeat: no-repeat!important;
+	background-position: 100% 50%!important;
+	height:18px;
+    width:120px;
+	border-style:solid;
+	border-width:1px;
+	font-size: 12px;
+	color: #336699;
+}
+.date_hover{
+	border-color:#00ccff!important;/*鼠标移入边框颜色*/
+}
+.date_click{
+	border-color:#fbd45c!important;
+}
+.cusDate{
+	background-color: #ffffff;
+	background-image: url(js/datePicker/skin/datePicker.gif);
+	background-repeat: no-repeat;
+	background-position: 100% 50%;
+	height:18px;
+    width:120px;
+	border-color:#cccccc;
+	border-style:solid;
+	border-width:1px;
+	font-size: 12px;
+	color: #336699;
+}
+</style>
+<!--自定义日期控件（分离版）end-->
+</textarea>
+<pre></pre>	
+使用日期控件之前，首先要设置dateSkin参数，此参数用来定义日期控件的风格样式。这里使用了蓝色风格，若要用其他风格更改dateSkin即可。代码如下：
+<textarea class="code">
+var dateSkin="blue";
+</textarea>
+<pre></pre>	
+然后使用文本框的focus事件来调出日期。<br />
+<span class="font_bold">注意此时文本框的class不能是date而是cusDate否则无论如何配置弹出的都是基本日期控件。</span>
+	</div>
+	<div class="box2">
+	1. 普通日期
+	<input class="cusDate" id="d01" type="text"/>
+<textarea class="code">
+<input class="cusDate"  id="d01" type="text"/>
+</textarea>
+<pre></pre>	
+日期调用方法：
+<textarea class="code">
+$("#d01").focus(function(){WdatePicker({skin:dateSkin});})
+</textarea>
+<pre></pre>	
+	</div>
+	<div class="box2">
+	2. 文本框不可编辑
+	<input class="cusDate"   type="text" id="d02" />
+<textarea class="code">
+<input class="cusDate"   type="text" id="d02" />
+</textarea>
+<pre></pre>	
+日期调用方法：
+<textarea class="code">
+$("#d02").focus(function(){
+	WdatePicker({skin:dateSkin,isShowClear:true,readOnly:true})
+})
+</textarea>
+<pre></pre>	
+	</div>
+	<div class="box2">
+	3. 带时间选择器的日期
+	<input type="text" id="d03" class="cusDate"   style="width:200px" />
+<textarea class="code">
+<input type="text" id="d03" class="cusDate"   style="width:200px" />
+</textarea>
+<pre></pre>	
+日期调用方法：
+<textarea class="code">
+$("#d03").focus(function(){
+	WdatePicker({skin:dateSkin,dateFmt:'yyyy年MM月dd日 HH时mm分ss秒'})
+})
+</textarea>
+<pre></pre>	
+	</div>
+	<div class="box2">
+	4. 只选择时间
+	<input type="text" id="d04" class="cusDate" />
+<textarea class="code">
+<input type="text" id="d04" class="cusDate" />
+</textarea>
+<pre></pre>	
+日期调用方法：
+<textarea class="code">
+$("#d04").focus(function(){
+	WdatePicker({skin:dateSkin,dateFmt:'H:mm:ss'})
+})
+</textarea>
+<pre></pre>	
+	</div>
+	<div class="box2">
+	5. 显示周的日期
+	<input id="d05" class="cusDate"  type="text" />
+<textarea class="code">
+<input id="d05" class="cusDate"  type="text" />
+</textarea>
+<pre></pre>	
+日期调用方法：
+<textarea class="code">
+$("#d05").focus(function(){
+	WdatePicker({skin:dateSkin,isShowWeek:true})
+})
+</textarea>
+<pre></pre>	
+	</div>
+	<div class="box2">
+	6. 自定义弹出位置
+	<input class="cusDate"  type="text" id="d06"/>
+<textarea class="code">
+<input class="cusDate"  type="text" id="d06"/>
+</textarea>
+<pre></pre>	
+日期调用方法：
+<textarea class="code">
+$("#d06").focus(function(){
+	WdatePicker({skin:dateSkin,position:{left:500,top:50}})
+})
+</textarea>
+<pre></pre>	
+	</div>
+	<div class="box2">
+	7. 图标触发
+	<input type="text" id="d07"/>
+	<img id="d07img" src="js/datePicker/skin/datePicker.gif" width="16" height="22" align="absmiddle">
+<textarea class="code">
+<input type="text" id="d07"/>
+<img id="d07img" src="js/datePicker/skin/datePicker.gif" width="16" height="22" align="absmiddle">
+</textarea>
+<pre></pre>	
+日期调用方法：
+<textarea class="code">
+$("#d07img").click(function(){
+	WdatePicker({skin:dateSkin,el:$dp.$('d07')})
+})
+</textarea>
+<pre></pre>	
+	</div>
+	<div class="box2">
+	8. 平面显示
+	<div id="div1"></div>
+<textarea class="code">
+<div id="div1"></div>
+</textarea>
+<pre></pre>	
+日期调用方法：
+<textarea class="code">
+WdatePicker({
+	eCont:'div1',skin:dateSkin,dateFmt:'yyyy年MM月dd日 HH时mm分ss秒',onpicked:function(dp){
+		alert('你选择的日期是:'+dp.cal.getDateStr())
+	}
+})
+</textarea>
+<pre></pre>		
+	</div>
+	<div class="box2">
+	9. 文本显示 
+	<span id="demospan">2008-01-01</span> 
+	<img id="d09img" src="js/datePicker/skin/datePicker.gif"  width="16" height="22" align="absmiddle" class="hand" />
+<textarea class="code">
+<span id="demospan">2008-01-01</span> 
+<img id="d09img" src="js/datePicker/skin/datePicker.gif" width="16" 
+height="22" align="absmiddle" class="hand" />
+</textarea>
+<pre></pre>	
+日期调用方法：
+<textarea class="code">
+$("#d09img").click(function(){
+	WdatePicker({skin:dateSkin,el:'demospan'})
+})
+</textarea>
+<pre></pre>	
+	</div>
+	<div class="box2">
+	10. 日期选择联动
+	<input id="d5221" class="cusDate"  type="text"/>
+	至
+	<input id="d5222" class="cusDate"  type="text"/>
+<textarea class="code">
+<input id="d5221" class="cusDate"  type="text"/> 至 <input id="d5222" class="cusDate"  type="text"/>
+</textarea>
+<pre></pre>	
+日期调用方法：
+<textarea class="code">
+document.getElementById("d5221").onfocus=function(){
+	var d5222=$dp.$('d5222');WdatePicker({
+		skin:dateSkin,onpicked:function(){d5222.focus();},maxDate:'#F{$dp.$D(\'d5222\')}'
+	})
+}
+document.getElementById("d5222").onfocus=function(){
+	WdatePicker({skin:dateSkin,minDate:'#F{$dp.$D(\'d5221\')}'})
+}
+</textarea>
+<pre></pre>	
+	</div>
+	<div class="box2">
+	11. 类似于 1999年7月5日 这样的日期是不能够被系统识别的,他必须转换为能够识别的类型如 1999-07-05 <br />
+	<input id="d11" type="text" class="cusDate"  />
+	<input id="d11_2" type="text" /><br />
+	注意:在实际应用中,一般会把vel指定为一个hidden控件,这里是为了把真实值展示出来,所以使用文本框<br />
+	关键属性: vel 指定一个控件或控件的ID,必须具有value属性(如input),用于存储真实值(也就是realDateFmt和realTimeFmt格式化后的值)
+<textarea class="code">
+<input id="d11" type="text" class="cusDate"  /> <input id="d11_2" type="text" />
+</textarea>
+<pre></pre>	
+日期调用方法：
+<textarea class="code">
+$("#d11").focus(function(){
+	WdatePicker({skin:dateSkin,dateFmt:'yyyy年M月d日',vel:'d11_2'})
+})
+</textarea>
+<pre></pre>	
+	</div>
+	<div class="box2">
+	12. 自定义起始日期
+	<br />
+	<input type="text" id="d12" class="cusDate" />每次选择的起始日期随上次选择而变
+<textarea class="code">
+<input type="text" id="d12" class="cusDate" />
+</textarea>
+<pre></pre>	
+日期调用方法：
+<textarea class="code">
+$("#d12").focus(function(){
+	WdatePicker({skin:dateSkin,startDate:'1980-05-01'})
+})
+</textarea>
+<pre></pre>	
+	<input type="text" id="d13" class="cusDate" />每次选择的起始日期始终不变
+<textarea class="code">
+<input type="text" id="d13" class="cusDate" />
+</textarea>
+<pre></pre>	
+日期调用方法：
+<textarea class="code">
+$("#d13").focus(function(){
+	WdatePicker({skin:dateSkin,startDate:'1980-05-01',alwaysUseStartDate:true})
+})
+</textarea>
+<pre></pre>	
+	</div>
+	<div class="box2">
+	13. 动态读取起始日期<br />
+	<input type="text" class="cusDate"  id="d14"/>这个起始日期是通过js动态创建的
+<textarea class="code">
+<input type="text" class="cusDate"  id="d14"/>
+</textarea>
+<pre></pre>	
+日期调用方法：
+<textarea class="code">
+function birthDate(){
+	var Y = 1980;
+	var M = 2;
+	var D = 8;
+	return Y+'-'+M+'-'+D;
+}
+$("#d14").focus(function(){
+	var date=birthDate();
+	WdatePicker({skin:dateSkin,startDate:date})
+})
+</textarea>
+<pre></pre>	
+	</div>
+</body>
+<!--代码高亮start-->
+<script type="text/javascript" src="../hl/highlight.js"></script>
+<script type="text/javascript" src="../hl/lang-xml.js"></script>
+<script type="text/javascript" src="../hl/lang-html.js"></script>
+<link href="../hl/style.css" rel="stylesheet" type="text/css"/>
+<script>
+	$(function(){
+			showCode()
+	})
+	function showCode(){
+		$(".code").each(function(){
+			var code =$(this).val()
+			var hl = new DlHighlight({lang: "html",lineNumbers :false });
+			var formatted = hl.doItNow(code);
+			$(this).next().addClass("DlHighlight").html("<pre>" + formatted + "</pre>")
+		})
+	}
+</script>
+<!--代码高亮end-->
+</html>

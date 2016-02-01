@@ -1,0 +1,1 @@
+弹出验证窗口不消失 ：去掉导入js文件时候的data-redirecturi 属性

@@ -1,0 +1,140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="reset.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../jquery-1.4.js"></script>
+<!--上下滚动新闻(分离版)start-->
+<script type="text/javascript" src="js/vticker_split.js"></script>
+<!--上下滚动新闻(分离版)end-->
+<script type="text/javascript">
+$(function(){
+	$('.news-container').vTicker();
+	$('.news-container2').vTicker({
+		"showItems":1
+	});
+})
+</script>
+<body>
+	<div class="box2" panelWidth="800" panelTitle="基本用法">
+	首先引入脚本
+<textarea class="code">
+<script type="text/javascript" src="../jquery-1.4.js"></script>
+<!--上下滚动新闻(分离版)start-->
+<script type="text/javascript" src="js/vticker_split.js"></script>
+<!--上下滚动新闻(分离版)end-->
+</textarea>
+<pre></pre>
+	HTML部分：
+<textarea class="code">
+<div class="news-container" style="width: 400px;border:solid 1px #ccc;">
+	<ul>
+		<li>滚动新闻1</li> 
+		<li>滚动新闻2</li> 
+		<li>滚动新闻3</li> 
+		<li>滚动新闻4</li> 
+		<li>滚动新闻5</li> 
+	</ul>
+</div>
+</textarea>
+<pre></pre>	
+	JS部分
+<textarea class="code">
+$(function(){
+	$('.news-container').vTicker();
+})
+</textarea>
+<pre></pre>		
+	效果如下：默认始终可见3条信息（与容器的高度设置无关）
+	<div class="news-container" style="width: 400px;border:solid 1px #ccc;">
+		<ul>
+			<li>滚动新闻1</li> 
+			<li>滚动新闻2</li> 
+			<li>滚动新闻3</li> 
+			<li>滚动新闻4</li> 
+			<li>滚动新闻5</li> 
+		</ul>
+	</div>
+	</div>
+	
+	<div class="box2" panelWidth="800" panelTitle="参数表">
+<table class="tableStyle">
+	<tr>
+		<th>参数名</th><th>默认值</th><th>说明</th>
+	</tr>
+	<tr>
+		<td>speed</td><td>700</td><td>滚动速度</td>
+	</tr>
+	<tr>
+		<td>pause</td><td>4000</td><td>初始时等待时间</td>
+	</tr>
+	<tr>
+		<td>showItems</td><td>3</td><td>信息可见条数</td>
+	</tr>
+	<tr>
+		<td>mousePause</td><td>true</td><td>鼠标移入是否停止滚动</td>
+	</tr>
+	<tr>
+		<td>direction</td><td>up</td><td>滚动方向，可设"up"和"down"两种</td>
+	</tr>
+	<tr>
+		<td>isPaused</td><td>false</td><td>初始时是否停止滚动</td>
+	</tr>
+</table>
+	</div>
+	
+	<div class="box2" panelWidth="800" panelTitle="自定义参数">
+	下面代码实现可见1条信息：
+<textarea class="code">
+<div class="news-container2" style="width: 400px;border:solid 1px #ccc;">
+	<ul>
+		<li>滚动新闻1</li> 
+		<li>滚动新闻2</li> 
+		<li>滚动新闻3</li> 
+		<li>滚动新闻4</li> 
+		<li>滚动新闻5</li> 
+	</ul>
+</div>
+</textarea>
+<pre></pre>	
+
+	JS部分
+<textarea class="code">
+$(function(){
+	$('.news-container2').vTicker({
+		"showItems":1
+	});
+})
+</textarea>
+<pre></pre>	
+	效果如下：	
+	<div class="news-container2" style="width: 400px;border:solid 1px #ccc;">
+		<ul>
+			<li>滚动新闻1</li> 
+			<li>滚动新闻2</li> 
+			<li>滚动新闻3</li> 
+			<li>滚动新闻4</li> 
+			<li>滚动新闻5</li> 
+		</ul>
+	</div>
+	</div>
+</body>
+<!--代码高亮start-->
+<script type="text/javascript" src="../hl/highlight.js"></script>
+<script type="text/javascript" src="../hl/lang-xml.js"></script>
+<script type="text/javascript" src="../hl/lang-html.js"></script>
+<link href="../hl/style.css" rel="stylesheet" type="text/css"/>
+<script>
+	$(function(){
+			showCode()
+	})
+	function showCode(){
+		$(".code").each(function(){
+			var code =$(this).val()
+			var hl = new DlHighlight({lang: "html",lineNumbers :false });
+			var formatted = hl.doItNow(code);
+			$(this).next().addClass("DlHighlight").html("<pre>" + formatted + "</pre>")
+		})
+	}
+</script>
+<!--代码高亮end-->
+</html>

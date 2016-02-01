@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="reset.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../jquery-1.4.js"></script>
+<!--图片移入放大(分离版)start-->
+<script type="text/javascript" src="js/bubbleup_split.js"></script>
+<style>  
+.imgBubble{
+	padding:70px 0 0 50px;
+}  
+.imgBubble li {
+    padding: 0px;
+    float: left;
+    position: relative;
+    margin-left: 5px;
+    margin-right: 5px;
+    width: 48px;
+    height: 48px;
+}
+.imgBubble li a {
+    position: absolute;
+}
+.imgBubble li img {
+    position: absolute;
+    width: 48px;
+    top: 0px;
+    left: 0px;
+    padding: 0px;
+    margin: 0 8px 0 0;
+    border: none;
+    overflow: hidden;
+}
+</style>
+<!--图片移入放大(分离版)end-->
+<script type="text/javascript">
+$(function(){
+    $(".imgBubble img").bubbleup({tooltip: true, scale:120});
+});
+</script>
+<body>
+<div class="box2" panelWidth="800" panelTitle="效果">
+<ul class="imgBubble">
+    <li> <a href="javascript:;"><img src="demo/ico1.png" alt="项目1"/></a></li>
+    <li> <a href="javascript:;"><img src="demo/ico2.png" alt="项目2"/></a></li>
+    <li> <a href="javascript:;"><img src="demo/ico3.png" alt="项目3"/></a></li>
+    <li> <a href="javascript:;"><img src="demo/ico4.png" alt="项目4"/></a></li>
+    <li> <a href="javascript:;"><img src="demo/ico5.png" alt="项目5"/></a></li>
+    <li> <a href="javascript:;"><img src="demo/ico6.png" alt="项目6"/></a></li>
+ </ul>
+ <div class="clear"></div>
+ </div>
+ 	<div class="box2" panelWidth="800" panelTitle="用法">
+	首先引入脚本，并使用CSS对排列方式和图片尺寸做一些修饰
+<textarea class="code">
+<script type="text/javascript" src="../jquery-1.4.js"></script>
+<!--图片移入放大(分离版)start-->
+<script type="text/javascript" src="js/bubbleup_split.js"></script>
+<style>  
+.imgBubble{
+	padding:70px 0 0 50px;
+}  
+.imgBubble li {
+    padding: 0px;
+    float: left;
+    position: relative;
+    margin-left: 5px;
+    margin-right: 5px;
+    width: 48px;
+    height: 48px;
+}
+.imgBubble li a {
+    position: absolute;
+}
+.imgBubble li img {
+    position: absolute;
+    width: 48px;
+    top: 0px;
+    left: 0px;
+    padding: 0px;
+    margin: 0 8px 0 0;
+    border: none;
+    overflow: hidden;
+}
+</style>
+<!--图片移入放大(分离版)end-->
+</textarea>
+<pre></pre>	
+
+	HTML部分
+<textarea class="code">
+<ul class="imgBubble">
+    <li> <a href="javascript:;"><img src="demo/ico1.png" alt="项目1"/></a></li>
+    <li> <a href="javascript:;"><img src="demo/ico2.png" alt="项目2"/></a></li>
+    <li> <a href="javascript:;"><img src="demo/ico3.png" alt="项目3"/></a></li>
+    <li> <a href="javascript:;"><img src="demo/ico4.png" alt="项目4"/></a></li>
+    <li> <a href="javascript:;"><img src="demo/ico5.png" alt="项目5"/></a></li>
+    <li> <a href="javascript:;"><img src="demo/ico6.png" alt="项目6"/></a></li>
+ </ul>
+ <div class="clear"></div>
+</textarea>
+<pre></pre>		
+
+	JS部分
+<textarea class="code">
+$(function(){
+    $(".imgBubble img").bubbleup({tooltip: true, scale:120});
+});
+</textarea>
+<pre></pre>	
+	</div>
+</body>
+<!--代码高亮start-->
+<script type="text/javascript" src="../hl/highlight.js"></script>
+<script type="text/javascript" src="../hl/lang-xml.js"></script>
+<script type="text/javascript" src="../hl/lang-html.js"></script>
+<link href="../hl/style.css" rel="stylesheet" type="text/css"/>
+<script>
+	$(function(){
+			showCode()
+	})
+	function showCode(){
+		$(".code").each(function(){
+			var code =$(this).val()
+			var hl = new DlHighlight({lang: "html",lineNumbers :false });
+			var formatted = hl.doItNow(code);
+			$(this).next().addClass("DlHighlight").html("<pre>" + formatted + "</pre>")
+		})
+	}
+</script>
+<!--代码高亮end-->
+</html>

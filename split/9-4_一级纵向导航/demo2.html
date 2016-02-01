@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="reset.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../jquery-1.4.js"></script>
+<!--一级纵向导航(分离版)start-->
+<link href="skins/blue_whiteBg/style.css" rel="stylesheet" type="text/css" id="compStyle"/>
+<script type="text/javascript" src="js/listNav_split.js"></script>
+<!---一级纵向导航(分离版)end-->
+
+<!--去除虚线链接start-->
+<style>
+a {
+	behavior:url(js/focus.htc)
+}
+</style>
+<!--去除虚线链接end-->
+<body>
+	<table width="100%">
+	<tr>
+		<td width="240" class="ver01">
+			<div class="list_menu3" style="position: absolute;">
+				<div class="list_menu3_cur"><span><a href="include/chapter9-1-1-content1.html" target="frmrightChild">选项1</a></span></div>
+				<div><span><a href="include/chapter9-1-1-content2.html" target="frmrightChild">选项2</a></span></div>
+				<div><span><a href="include/chapter9-1-1-content3.html" target="frmrightChild">选项3</a></span></div>
+				<div><span><a href="include/chapter9-1-1-content1.html" target="frmrightChild">选项1</a></span></div>
+				<div><span><a href="include/chapter9-1-1-content2.html" target="frmrightChild">选项2</a></span></div>
+				<div><span><a href="include/chapter9-1-1-content3.html" target="frmrightChild">选项3</a></span></div>
+			</div>
+		</td>
+		<td class="ver01">
+				<IFRAME scrolling="no" width="100%" frameBorder=0 id=frmrightChild name=frmrightChild onload="iframeHeight('frmrightChild')" src="include/chapter9-1-1-content1.html"  allowTransparency="true"></IFRAME>
+		</td>
+	</tr>
+</table>
+</body>
+<!--代码高亮start-->
+<script type="text/javascript" src="../hl/highlight.js"></script>
+<script type="text/javascript" src="../hl/lang-xml.js"></script>
+<script type="text/javascript" src="../hl/lang-html.js"></script>
+<link href="../hl/style.css" rel="stylesheet" type="text/css"/>
+<script>
+	$(function(){
+			showCode()
+	})
+	function showCode(){
+		$(".code").each(function(){
+			var code =$(this).val()
+			var hl = new DlHighlight({lang: "html",lineNumbers :false });
+			var formatted = hl.doItNow(code);
+			$(this).next().addClass("DlHighlight").html("<pre>" + formatted + "</pre>")
+		})
+	}
+</script>
+<!--代码高亮end-->
+</html>

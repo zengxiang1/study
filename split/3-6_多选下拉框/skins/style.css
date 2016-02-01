@@ -1,0 +1,175 @@
+/*多选下拉框样式*/
+.jquery_rgbmultiselect_ie6_iframe
+{
+  position: absolute;
+  display: none;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  z-index: 99;
+}
+.jquery_rgbmultiselect_blurred
+{ 
+  color: gray !important;
+}
+.jquery_rgbmultiselect_options_helptext
+{
+  color: gray;
+  margin: 2px;
+}
+.jquery_rgbmultiselect_options_item,
+.jquery_rgbmultiselect_options_item SPAN
+{ 
+  cursor: pointer;
+}
+.jquery_rgbmultiselect_options_item INPUT
+{ 
+  vertical-align: middle;
+}
+.jquery_rgbmultiselect_options_item SPAN .jquery_rgbmultiselect_options_text_filtermatch
+{ 
+  font-weight: bold;
+}
+.jquery_rgbmultiselect_options_item
+{ 
+  border: 1px solid white;
+  line-height: 20px;
+ }
+ .jquery_rgbmultiselect_options_item_arrownav_selected
+{ 
+  border: 1px solid #777777;
+ }
+ .jquery_rgbmultiselect_options_item_singlefiltered
+{ 
+  color: white;
+  background-color: #3366cc;
+}
+.jquery_rgbmultiselect_options_unselected
+{ 
+  height: 150px;
+  overflow-x: hidden;
+  overflow-y: auto;
+ }
+.jquery_rgbmultiselect_input
+{ 
+  color: black;
+  background-color: #f1f9fc;
+  background-image: url(form/multiSelBtn.jpg);
+  background-repeat: no-repeat;
+  background-position: center right;
+  border:solid 1px #a2b3bd;/*边框颜色*/
+  height:20px;
+  line-height:20px;
+ }
+.jquery_rgbmultiselect_options_container
+{ 
+  text-align: left;
+  position: absolute;
+  display: none;
+  top: 0;
+  left: 0;
+  height: auto;
+  border: 1px solid #b7d1eb;/*下拉容器边框颜色*/
+  font-size: 13px;
+  line-height: 15px;
+  font-family: Helvetica, Tahoma, Arial, sans-serif;
+  margin: 0;
+  padding: 0 2px;
+  background-color: white;
+  z-index: 600;
+ }
+.jquery_rgbmultiselect_options_selected_item
+{ 
+  background-color: #e0ecf7;/*选中项颜色*/
+  border: 1px solid #e0ecf7;/*选中项颜色*/
+  color: black;
+ cursor:pointer;
+	cursor:hand;
+ }
+.jquery_rgbmultiselect_options_item_hovered
+{ 
+  color: white;
+  border: 1px solid #3366cc;/*鼠标移入项颜色*/
+  background-color: #3366cc;/*鼠标移入项颜色*/
+ cursor:pointer;
+	cursor:hand;
+ }
+/*多选下拉框样式*/
+
+/*信息提示*/
+.tooltip{
+	width: 200px; 
+	color:#000;
+	text-decoration:none;
+	text-align:left;
+	display:block;
+	word-wrap: break-word;
+	word-break: break-all;
+}
+.tooltip_min{
+	width: 80px; 
+	color:#000;
+	text-decoration:none;
+	text-align:center;
+	display:block;
+	word-wrap: break-word;
+	word-break: break-all;
+}
+.tooltip_mid{
+	width: 130px; 
+	color:#000;
+	text-align:left;
+	text-decoration:none;
+	text-align:center;
+	display:block;
+	word-wrap: break-word;
+	word-break: break-all;
+}
+.tooltip .top{
+	padding: 30px 8px 0;
+    background: url(tooltip/bt.gif) no-repeat top;
+	display:block;
+}
+.tooltip .bottom{
+	padding:3px 8px 15px;
+	color: #548912;
+    background: url(tooltip/bt.gif) no-repeat bottom;
+	display:block;
+}
+.tooltip_min .top{
+	padding: 25px 8px 0;
+    background: url(tooltip/bt_min.gif) no-repeat top;
+	display:block;
+}
+.tooltip_min .bottom{
+	padding:3px 8px 5px;
+	color: #548912;
+    background: url(tooltip/bt_min.gif) no-repeat bottom;
+	display:block;
+}
+.tooltip_mid .top{
+	padding: 25px 8px 0;
+	text-align:left;
+	line-height:150%;
+    background: url(tooltip/bt_mid.gif) no-repeat top;
+	display:block;
+}
+.tooltip_mid .bottom{
+	padding:3px 8px 5px;color: #548912;
+	text-align:left;
+	line-height:150%;
+    background: url(tooltip/bt_mid.gif) no-repeat bottom;
+	display:block;
+}
+
+#cursorMessageDiv {
+	position: absolute;
+	z-index: 99999;
+	border: solid 1px #cc9933;
+	background: #ffffcc;
+	padding: 2px;
+	margin: 0px;
+	display: none;
+}
+/*信息提示*/

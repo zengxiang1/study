@@ -1,0 +1,301 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="reset.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../jquery-1.4.js"></script>
+<!--弹出式菜单（分离版）start-->
+<link href="skins/blue/style.css" rel="stylesheet" type="text/css" id="compStyle"/>
+<script type="text/javascript" src="js/jkmegamenu_split.js"></script>
+<!--弹出式菜单（分离版）end-->
+<script type="text/javascript">
+	jkmegamenu.definemenu("megaanchor1", "megamenu1", "mouseover")
+	jkmegamenu.definemenu("megaanchor2", "megamenu2", "mouseover")
+	jkmegamenu.definemenu("megaanchor3", "megamenu3", "mouseover")
+	jkmegamenu.definemenu("megaanchor4", "megamenu4", "click","stayOnClick")
+</script>
+<body>
+	<script>
+		function changeSkin(){
+			$("#compStyle").attr("href","skins/"+$("#changeSkin").val()+"/style.css");
+		}
+	</script>
+	更换风格
+	<select  onchange='changeSkin()' id="changeSkin">
+	    <option value="blue">蓝色</option>
+	    <option value="lightBlue">亮蓝色</option>
+	    <option value="darkBlue">深蓝色</option>
+	    <option value="green">绿色</option>
+		<option value="red">红色</option>
+		<option value="darkYellow">棕黄色</option>
+		<option value="armyGreen">军绿色</option>
+	</select>
+		<div class="box2" panelWidth="800" panelTitle="效果">
+		<a id="megaanchor1">鼠标移入弹出基本菜单</a>
+		<div id="megamenu1" class="simplemenu" style="width:100px;">
+			<ul>
+			<li><a href="javascript:;">选项1</a></li>
+			<li><a href="javascript:;">选项2</a></li>
+			<li><a href="javascript:;">选项3</a></li>
+			<li><a href="javascript:;">选项4</a></li>
+			</ul>
+		</div>
+		<br /><br /><br /><br /><br />
+	
+		<a id="megaanchor2">鼠标移入弹出含图标菜单</a>
+		<div id="megamenu2" class="iconmenu" style="width:100px;">
+			<ul>
+			<li><a href="javascript:;"><span class="icon_add">新增</span></a></li>
+			<li><a href="javascript:;"><span class="icon_edit">修改</span></a></li>
+			<li><a href="javascript:;"><span class="icon_delete">删除</span></a></li>
+			<li><a href="javascript:;"><span class="icon_view">查看</span></a></li>
+			</ul>
+		</div>
+		<br /><br /><br /><br /><br />
+
+		<a id="megaanchor3">鼠标移入弹出多列菜单</a>
+		<div id="megamenu3" class="megamenu">
+			<div class="column">
+				<h3>分类1</h3>
+				<ul>
+				<li><a href="javascript:;">选项1</a></li>
+				<li><a href="javascript:;">选项2</a></li>
+				<li><a href="javascript:;">选项3</a></li>
+				<li><a href="javascript:;">选项4</a></li>
+				</ul>
+			</div>
+			
+			<div class="column">
+				<h3>分类2</h3>
+				<ul>
+				<li><a href="javascript:;">选项1</a></li>
+				<li><a href="javascript:;">选项2</a></li>
+				<li><a href="javascript:;">选项3</a></li>
+				<li><a href="javascript:;">选项4</a></li>
+				</ul>
+			</div>
+			<div class="column">
+				<h3>分类3</h3>
+				<ul>
+				<li><a href="javascript:;">选项1</a></li>
+				<li><a href="javascript:;">选项2</a></li>
+				<li><a href="javascript:;">选项3</a></li>
+				<li><a href="javascript:;">选项4</a></li>
+				</ul>
+			</div>
+			<div class="clear"></div>
+			<div class="column">
+				<h3>分类4</h3>
+				<ul>
+				<li><a href="javascript:;">选项1</a></li>
+				<li><a href="javascript:;">选项2</a></li>
+				<li><a href="javascript:;">选项3</a></li>
+				<li><a href="javascript:;">选项4</a></li>
+				</ul>
+			</div>
+			<div class="column">
+				<h3>分类5</h3>
+				<ul>
+				<li><a href="javascript:;">选项1</a></li>
+				<li><a href="javascript:;">选项2</a></li>
+				<li><a href="javascript:;">选项3</a></li>
+				<li><a href="javascript:;">选项4</a></li>
+				</ul>
+			</div>
+			<div class="column">
+				<h3>分类6</h3>
+				<ul>
+				<li><a href="javascript:;">选项1</a></li>
+				<li><a href="javascript:;">选项2</a></li>
+				<li><a href="javascript:;">选项3</a></li>
+				<li><a href="javascript:;">选项4</a></li>
+				</ul>
+			</div>
+		</div>
+		<br /><br /><br /><br /><br />
+		
+		自定义菜单内容<br />
+		<input type="text" id="megaanchor4" readonly="readonly" watermark="点击弹出菜单"/>（功能请自行扩展）
+		<div id="megamenu4" class="megamenu" style="width:100px;">
+			<ul>
+				<li><input type="checkbox" id="checkbox-1" value="选项1" class="default"/><label for="checkbox-1" >选项1</label></li>
+				<li><input type="checkbox" id="checkbox-2" value="选项2" class="default"/><label for="checkbox-2" >选项2</label></li>
+				<li><input type="checkbox" id="checkbox-3" value="选项3" class="default"/><label for="checkbox-3" >选项3</label></li>
+				<li><input type="checkbox" id="checkbox-4" value="选项4" class="default"/><label for="checkbox-4" >选项4</label></li>
+			</ul>
+		</div>
+	</div>
+	
+	<div class="box2" panelWidth="800" panelTitle="基本用法">
+首先引入脚本：
+<textarea class="code">
+<script type="text/javascript" src="../jquery-1.4.js"></script>
+<!--弹出式菜单（分离版）start-->
+<link href="skins/blue/style.css" rel="stylesheet" type="text/css" id="compStyle"/>
+<script type="text/javascript" src="js/jkmegamenu_split.js"></script>
+<!--弹出式菜单（分离版）end-->
+</textarea>
+<pre></pre>
+
+创建一个简单菜单。HTML部分：
+<textarea class="code">
+<a id="megaanchor1">弹出菜单</a>
+<div id="megamenu1" class="simplemenu" style="width:100px;">
+	<ul>
+	<li><a href="javascript:;">选项1</a></li>
+	<li><a href="javascript:;">选项2</a></li>
+	<li><a href="javascript:;">选项3</a></li>
+	<li><a href="javascript:;">选项4</a></li>
+	</ul>
+</div>
+</textarea>
+<pre></pre>
+
+JS部分
+<textarea class="code">
+jkmegamenu.definemenu("megaanchor1", "megamenu1", "mouseover")
+</textarea>
+<pre></pre>
+参数有4个：<br />
+1、要触发菜单的元素id<br />
+2、菜单容器id<br />
+3、触发方式（mouseover和click两种）<br />
+4、点击菜单项后菜单是否关闭（默认为关闭。当设为stayOnClick则不关闭）<br /><br /><br />
+</div>
+
+<div class="box2" panelWidth="800" panelTitle="创建含图标的菜单">
+创建一个含图标菜单。HTML部分：
+<textarea class="code">
+<a id="megaanchor2">鼠标移入弹出含图标菜单</a>
+<div id="megamenu2" class="iconmenu" style="width:100px;">
+	<ul>
+	<li><a href="javascript:;"><span class="icon_add">新增</span></a></li>
+	<li><a href="javascript:;"><span class="icon_edit">修改</span></a></li>
+	<li><a href="javascript:;"><span class="icon_delete">删除</span></a></li>
+	<li><a href="javascript:;"><span class="icon_view">查看</span></a></li>
+	</ul>
+</div>
+</textarea>
+<pre></pre>
+框架图标库中的图标都可以用在上面。<br />
+JS部分
+<textarea class="code">
+jkmegamenu.definemenu("megaanchor2", "megamenu2", "mouseover")
+</textarea>
+<pre></pre>
+</div>
+
+<div class="box2" panelWidth="800" panelTitle="创建多列菜单">
+创建一个多列菜单。HTML部分：
+<textarea class="code">
+<a id="megaanchor3">鼠标移入弹出多列菜单</a>
+<div id="megamenu3" class="megamenu">
+	<div class="column">
+		<h3>分类1</h3>
+		<ul>
+		<li><a href="javascript:;">选项1</a></li>
+		<li><a href="javascript:;">选项2</a></li>
+		<li><a href="javascript:;">选项3</a></li>
+		<li><a href="javascript:;">选项4</a></li>
+		</ul>
+	</div>
+	
+	<div class="column">
+		<h3>分类2</h3>
+		<ul>
+		<li><a href="javascript:;">选项1</a></li>
+		<li><a href="javascript:;">选项2</a></li>
+		<li><a href="javascript:;">选项3</a></li>
+		<li><a href="javascript:;">选项4</a></li>
+		</ul>
+	</div>
+	<div class="column">
+		<h3>分类3</h3>
+		<ul>
+		<li><a href="javascript:;">选项1</a></li>
+		<li><a href="javascript:;">选项2</a></li>
+		<li><a href="javascript:;">选项3</a></li>
+		<li><a href="javascript:;">选项4</a></li>
+		</ul>
+	</div>
+	<div class="clear"></div>
+	<div class="column">
+		<h3>分类4</h3>
+		<ul>
+		<li><a href="javascript:;">选项1</a></li>
+		<li><a href="javascript:;">选项2</a></li>
+		<li><a href="javascript:;">选项3</a></li>
+		<li><a href="javascript:;">选项4</a></li>
+		</ul>
+	</div>
+	<div class="column">
+		<h3>分类5</h3>
+		<ul>
+		<li><a href="javascript:;">选项1</a></li>
+		<li><a href="javascript:;">选项2</a></li>
+		<li><a href="javascript:;">选项3</a></li>
+		<li><a href="javascript:;">选项4</a></li>
+		</ul>
+	</div>
+	<div class="column">
+		<h3>分类6</h3>
+		<ul>
+		<li><a href="javascript:;">选项1</a></li>
+		<li><a href="javascript:;">选项2</a></li>
+		<li><a href="javascript:;">选项3</a></li>
+		<li><a href="javascript:;">选项4</a></li>
+		</ul>
+	</div>
+</div>
+</textarea>
+<pre></pre>
+JS部分
+<textarea class="code">
+jkmegamenu.definemenu("megaanchor3", "megamenu3", "mouseover")
+</textarea>
+<pre></pre>
+</div>
+
+<div class="box2" panelWidth="800" panelTitle="自定义内容的菜单">
+创建一个自定义内容的菜单
+<textarea class="code">
+<input type="text" id="megaanchor4" readonly="readonly" watermark="点击弹出菜单"/>
+<div id="megamenu4" class="megamenu" style="width:100px;">
+	<ul>
+		<li><input type="checkbox" id="checkbox-1" value="选项1" class="default"/><label for="checkbox-1" >选项1</label></li>
+		<li><input type="checkbox" id="checkbox-2" value="选项2" class="default"/><label for="checkbox-2" >选项2</label></li>
+		<li><input type="checkbox" id="checkbox-3" value="选项3" class="default"/><label for="checkbox-3" >选项3</label></li>
+		<li><input type="checkbox" id="checkbox-4" value="选项4" class="default"/><label for="checkbox-4" >选项4</label></li>
+	</ul>
+</div>
+</textarea>
+<pre></pre>
+JS部分
+<textarea class="code">
+jkmegamenu.definemenu("megaanchor4", "megamenu4", "click","stayOnClick")
+</textarea>
+<pre></pre>
+在这里将第三个参数设为click实现点击触发。第四个参数设为stayOnClick这样当点击了一个checkbox后菜单不会自动关闭。
+	</div>
+
+
+</body>
+<!--代码高亮start-->
+<script type="text/javascript" src="../hl/highlight.js"></script>
+<script type="text/javascript" src="../hl/lang-xml.js"></script>
+<script type="text/javascript" src="../hl/lang-html.js"></script>
+<link href="../hl/style.css" rel="stylesheet" type="text/css"/>
+<script>
+	$(function(){
+			showCode()
+	})
+	function showCode(){
+		$(".code").each(function(){
+			var code =$(this).val()
+			var hl = new DlHighlight({lang: "html",lineNumbers :false });
+			var formatted = hl.doItNow(code);
+			$(this).next().addClass("DlHighlight").html("<pre>" + formatted + "</pre>")
+		})
+	}
+</script>
+<!--代码高亮end-->
+</html>

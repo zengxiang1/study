@@ -1,0 +1,178 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="reset.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../jquery-1.4.js"></script>
+<!--拖拽变形(分离版)start-->
+<script type="text/javascript" src="js/resizable_split.js"></script>
+<!--拖拽变形(分离版)end-->
+<style type="text/css">
+    .resizeDiv
+    {
+    	width:400px;
+    	height:200px;
+    	background-color:#EFF7FF;
+        border:1px solid #96C2F1;
+        position:absolute;
+        left:0px;
+        top:0px;
+    	}
+    .resizeDiv h5
+    {
+    	background-color:#B2D3F5;
+    	padding:5px;
+        margin:1px;
+    	}
+    .resizeDiv div.content
+    {
+    	padding:5px;
+        }
+    .resizeDiv .handler
+    {
+    	width:15px;
+    	height:10px;
+    	border-right:solid 1px #888;
+    	border-bottom:solid 1px #888;
+    	position:absolute;
+    	right:1px;
+    	bottom:1px;
+    	cursor:nw-resize;
+    	}
+</style>
+<script type="text/javascript">
+    $(function() {
+        var state = $('#state');
+        $('.resizeDiv').resizable({
+            handler: '.handler',
+            min: { width: 300, height: 150 },
+            max: { width: 500, height: 400 },
+            onResize: function(e) {
+                state.html('目前尺寸: {width: ' +
+                 e.data.resizeData.target.css('width') + ', height: ' +
+                    e.data.resizeData.target.css('height') + '}');
+            },
+            onStop: function(e) {
+                $('#state').html('停止');
+            }
+        });
+    });
+</script>
+<body>
+	<div class="resizeDiv">
+	    <h5>标题</h5>
+	    <div class="content">
+	        鼠标拖拽右下角。
+	        <ol>
+	            <li>max: {width: 500, height: 400}</li>
+	            <li>min: {width: 300, height: 150 }</li>
+	        </ol>
+	        状态信息: <b id="state"></b>
+	    </div>
+	    <div class="handler"></div>
+	</div>
+	<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+	首先引入脚本：
+<textarea class="code">
+<script type="text/javascript" src="../jquery-1.4.js"></script>
+<!--拖拽变形(分离版)start-->
+<script type="text/javascript" src="js/resizable_split.js"></script>
+<!--拖拽变形(分离版)end-->
+</textarea>
+<pre></pre>
+
+HTML部分
+<textarea class="code">
+<div class="resizeDiv">
+    <h5>标题</h5>
+    <div class="content">
+        鼠标拖拽右下角。
+        <ol>
+            <li>max: {width: 500, height: 400}</li>
+            <li>min: {width: 300, height: 150 }</li>
+        </ol>
+        状态信息: <b id="state"></b>
+    </div>
+    <div class="handler"></div>
+</div>
+</textarea>
+<pre></pre>
+	
+添加CSS设置窗体样式
+<textarea class="code">
+<style type="text/css">
+    .resizeDiv
+    {
+    	width:400px;
+    	height:200px;
+    	background-color:#EFF7FF;
+        border:1px solid #96C2F1;
+        position:absolute;
+        left:100px;
+        top:100px;
+    	}
+    .resizeDiv h5
+    {
+    	background-color:#B2D3F5;
+    	padding:5px;
+        margin:1px;
+    	}
+    .resizeDiv div.content
+    {
+    	padding:5px;
+        }
+    .resizeDiv .handler
+    {
+    	width:15px;
+    	height:10px;
+    	border-right:solid 1px #888;
+    	border-bottom:solid 1px #888;
+    	position:absolute;
+    	right:1px;
+    	bottom:1px;
+    	cursor:nw-resize;
+    	}
+</style>
+</textarea>
+<pre></pre>	
+
+	JS代码
+<textarea class="code">
+ $(function() {
+    var state = $('#state');
+    $('.resizeDiv').resizable({
+        handler: '.handler',
+        min: { width: 300, height: 150 },
+        max: { width: 500, height: 400 },
+        onResize: function(e) {
+            state.html('目前尺寸: {width: ' +
+             e.data.resizeData.target.css('width') + ', height: ' +
+                e.data.resizeData.target.css('height') + '}');
+        },
+        onStop: function(e) {
+            $('#state').html('停止');
+        }
+    });
+});
+</textarea>
+<pre></pre>
+</body>
+<!--代码高亮start-->
+<script type="text/javascript" src="../hl/highlight.js"></script>
+<script type="text/javascript" src="../hl/lang-xml.js"></script>
+<script type="text/javascript" src="../hl/lang-html.js"></script>
+<link href="../hl/style.css" rel="stylesheet" type="text/css"/>
+<script>
+	$(function(){
+			showCode()
+	})
+	function showCode(){
+		$(".code").each(function(){
+			var code =$(this).val()
+			var hl = new DlHighlight({lang: "html",lineNumbers :false });
+			var formatted = hl.doItNow(code);
+			$(this).next().addClass("DlHighlight").html("<pre>" + formatted + "</pre>")
+		})
+	}
+</script>
+<!--代码高亮end-->
+</html>

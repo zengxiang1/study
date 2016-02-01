@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="reset.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../jquery-1.4.js"></script>
+<body>
+	<div class="box2" panelWidth="500" panelTitle="单图展示" showStatus="false" roller="true">
+		<a href="include/highslide/white-10px.html" target="_blank">白色边框（直角）</a><br />
+		<a href="include/highslide/white-rounded-outline.html" target="_blank">白色边框（圆角）</a><br />
+		<a href="include/highslide/no-border.html" target="_blank">无边框</a>
+	</div>
+	<div class="box2" panelWidth="500" panelTitle="无缩略图相册" showStatus="false" roller="true">
+		<a href="include/highslide/mini-gallery.html" target="_blank">单个封面相册</a><br />
+		<a href="include/highslide/mini-galleries.html" target="_blank">多个封面相册</a><br />
+		<a href="include/highslide/gallery-white.html" target="_blank">白色边框</a><br />
+		<a href="include/highslide/gallery-in-box.html" target="_blank">外框尺寸固定</a><br />
+		<a href="include/highslide/gallery-controls-in-heading.html" target="_blank">导航在头部</a><br />
+		<a href="include/highslide/gallery-dark.html" target="_blank">黑色边框</a><br />
+		<a href="include/highslide/gallery-floating-caption.html" target="_blank">无边框</a>
+	</div>
+	<div class="box2" panelWidth="500" panelTitle="含缩略图相册" showStatus="false" roller="true">
+		<a href="include/highslide/gallery-vertical-strip.html" target="_blank">缩略图在左侧</a><br />
+		<a href="include/highslide/gallery-thumbstrip-above.html" target="_blank">缩略图在上方</a><br />
+		<a href="include/highslide/gallery-in-page.html" target="_blank">初始时相册开启</a><br />
+		<a href="include/highslide/gallery-horizontal-strip.html" target="_blank">缩略图在下方</a><br />
+		<a href="include/highslide/gallery-floating-thumbs.html" target="_blank">缩略图在右侧</a>
+	</div>
+	<div class="box2" panelWidth="500" panelTitle="文字内容" showStatus="false" roller="true">
+		<a href="include/highslide/inline.html" target="_blank">内容在页面内</a><br />
+		<a href="include/highslide/iframe.html" target="_blank">内容为iframe</a><br />
+		<a href="include/highslide/html.html" target="_blank">自定义窗口外观</a><br />
+		<a href="include/highslide/headline.html" target="_blank">包含标题</a>
+	</div>
+			
+</body>
+<!--代码高亮start-->
+<script type="text/javascript" src="../hl/highlight.js"></script>
+<script type="text/javascript" src="../hl/lang-xml.js"></script>
+<script type="text/javascript" src="../hl/lang-html.js"></script>
+<link href="../hl/style.css" rel="stylesheet" type="text/css"/>
+<script>
+	$(function(){
+			showCode()
+	})
+	function showCode(){
+		$(".code").each(function(){
+			var code =$(this).val()
+			var hl = new DlHighlight({lang: "html",lineNumbers :false });
+			var formatted = hl.doItNow(code);
+			$(this).next().addClass("DlHighlight").html("<pre>" + formatted + "</pre>")
+		})
+	}
+</script>
+<!--代码高亮end-->
+</html>

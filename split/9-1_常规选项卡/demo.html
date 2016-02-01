@@ -1,0 +1,185 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="reset.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../jquery-1.4.js"></script>
+<!--常规选项卡(分离版)start-->
+<link href="skins/style.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="js/normalTab_split.js"></script>
+<!--常规选项卡(分离版)end-->
+<body>
+	非iframe模式<br />
+		<div class="simpleTab">
+			<ul class="simpleTab_top">
+				<li class="current"><a href="javascript:;"><span>选项1</span></a></li>
+				<li><a href="javascript:;"><span>选项2</span></a></li>
+				<li><a href="javascript:;"><span>选项3</span></a></li>
+			</ul>
+			<div class="simpleTab_con">
+				内容1<br />内容1<br />内容1<br />内容1
+			</div>
+			<div class="simpleTab_con">
+				内容2内容2<br />内容2内容2<br />内容2内容2<br />内容2内容2
+			</div>
+			<div class="simpleTab_con">
+				内容3内容3内容3<br />内容3内容3内容3<br />内容3内容3内容3<br />内容3内容3内容3
+			</div>
+		</div>
+	
+	<div class="box2" panelTitle="用法">
+	无需引入任何脚本。HTML代码如下：
+<textarea class="code">
+<div class="box2" panelWidth="600" panelTitle="非iframe模式">
+	<div class="simpleTab">
+		<ul class="simpleTab_top">
+			<li class="current"><a href="javascript:;"><span>选项1</span></a></li>
+			<li><a href="javascript:;"><span>选项2</span></a></li>
+			<li><a href="javascript:;"><span>选项3</span></a></li>
+		</ul>
+		<div class="simpleTab_con">
+			内容1<br />内容1<br />内容1<br />内容1
+		</div>
+		<div class="simpleTab_con">
+			内容2内容2<br />内容2内容2<br />内容2内容2<br />内容2内容2
+		</div>
+		<div class="simpleTab_con">
+			内容3内容3内容3<br />内容3内容3内容3<br />内容3内容3内容3<br />内容3内容3内容3
+		</div>
+	</div>
+</div>
+</textarea>
+<pre></pre>	
+	选项卡默认是非iframe模式，即simpleTab_top有多少标签则simpleTab中就应该有多少simpleTab_con容器用于放置内容。<br />
+	也可使用iframe模式，效果：
+	</div>
+	<br /><br />
+	iframe模式<br />
+		<div class="simpleTab" iframeMode="true">
+			<ul class="simpleTab_top">
+				<li class="current"><a href="include/chapter9-1-1-content1.html" target="frmrightChild"><span>选项1</span></a></li>
+				<li><a href="include/chapter9-1-1-content2.html" target="frmrightChild"><span>选项2</span></a></li>
+				<li><a href="include/chapter9-1-1-content3.html" target="frmrightChild"><span>选项3</span></a></li>
+			</ul>
+			<div class="simpleTab_con">
+				<IFRAME scrolling="no" width="100%" frameBorder=0 id=frmrightChild 
+				name=frmrightChild onload="iframeHeight('frmrightChild')" 
+				src="include/chapter9-1-1-content1.html"  allowTransparency="true"></IFRAME>
+			</div>
+		</div>
+	
+	<div class="box2" panelTitle="用法">
+	需要对class="simpleTab"容器设置iframeMode="true"并使用IFRAME。代码如下：
+<textarea class="code">
+<div class="box2" panelWidth="600" panelTitle="iframe模式">
+	<div class="simpleTab" iframeMode="true">
+		<ul class="simpleTab_top">
+			<li class="current"><a href="include/chapter9-1-1-content1.html" target="frmrightChild">
+				<span>选项1</span></a></li>
+			<li><a href="include/chapter9-1-1-content2.html" target="frmrightChild">
+				<span>选项2</span></a></li>
+			<li><a href="include/chapter9-1-1-content3.html" target="frmrightChild">
+				<span>选项3</span></a></li>
+		</ul>
+		<div class="simpleTab_con">
+			<IFRAME scrolling="no" width="100%" frameBorder=0 id=frmrightChild 
+			name=frmrightChild onload="iframeHeight('frmrightChild')" 
+			src="include/chapter9-1-1-content1.html"  allowTransparency="true"></IFRAME>
+		</div>
+	</div>
+</div>
+</textarea>
+<pre></pre>	
+	</div>
+	<br /><br />
+	外部API控制<br />
+	<script>
+	function nextStep(){
+		var $oldCurTab=$("#apiTab").find(".simpleTab_top").find(".current");
+		$oldCurTab.removeClass("current");
+		$oldCurTab.next().addClass("current");
+	}
+	function prevStep(){
+		var $oldCurTab=$("#apiTab").find(".simpleTab_top").find(".current");
+		$oldCurTab.removeClass("current");
+		$oldCurTab.prev().addClass("current");
+	}
+	</script>
+		<div class="simpleTab" iframeMode="true" id="apiTab">
+			<ul class="simpleTab_top">
+				<li class="current"><a href="include/chapter9-1-1-content4.html" target="frmrightChild2"><span>选项1</span></a></li>
+				<li><a href="include/chapter9-1-1-content5.html" target="frmrightChild2"><span>选项2</span></a></li>
+			</ul>
+			<div class="simpleTab_con">
+				<IFRAME scrolling="no" width="100%" frameBorder=0 id=frmrightChild2 
+				name=frmrightChild2 onload="iframeHeight('frmrightChild2')" 
+				src="include/chapter9-1-1-content4.html"  allowTransparency="true"></IFRAME>
+			</div>
+		</div>
+<div class="box2" panelTitle="用法">		
+	为主tab其设置一个id，例如apiTab。代码：
+<textarea class="code">
+<div class="simpleTab" iframeMode="true" id="apiTab">
+	<ul class="simpleTab_top">
+		<li class="current"><a href="include/chapter9-1-1-content4.html" target="frmrightChild2"><span>选项1</span></a></li>
+		<li><a href="include/chapter9-1-1-content5.html" target="frmrightChild2"><span>选项2</span></a></li>
+	</ul>
+	<div class="simpleTab_con">
+		<IFRAME scrolling="no" width="100%" frameBorder=0 id=frmrightChild2 
+		name=frmrightChild2 onload="iframeHeight('frmrightChild2')" 
+		src="include/chapter9-1-1-content4.html"  allowTransparency="true"></IFRAME>
+	</div>
+</div>
+</textarea>
+<pre></pre>	
+然后在主tab中写两个函数
+<textarea class="code">
+function nextStep(){
+	var $oldCurTab=$("#apiTab").find(".simpleTab_top").find(".current");
+	$oldCurTab.removeClass("current");
+	$oldCurTab.next().addClass("current");
+}
+function prevStep(){
+	var $oldCurTab=$("#apiTab").find(".simpleTab_top").find(".current");
+	$oldCurTab.removeClass("current");
+	$oldCurTab.prev().addClass("current");
+}
+</textarea>
+<pre></pre>
+	要转到下一页，在子iframe页面中使用下面脚本
+<textarea class="code">
+function goToNext(){
+	window.location="chapter9-1-1-content5.html";
+	parent.nextStep();
+}
+</textarea>
+<pre></pre>	
+	要转到上一页，在子iframe页面中使用下面脚本
+<textarea class="code">
+function goToPrev(){
+	window.location="chapter9-1-1-content4.html";
+	parent.prevStep();
+}
+</textarea>
+<pre></pre>		
+</div>	
+</body>
+<!--代码高亮start-->
+<script type="text/javascript" src="../hl/highlight.js"></script>
+<script type="text/javascript" src="../hl/lang-xml.js"></script>
+<script type="text/javascript" src="../hl/lang-html.js"></script>
+<link href="../hl/style.css" rel="stylesheet" type="text/css"/>
+<script>
+	$(function(){
+			showCode()
+	})
+	function showCode(){
+		$(".code").each(function(){
+			var code =$(this).val()
+			var hl = new DlHighlight({lang: "html",lineNumbers :false });
+			var formatted = hl.doItNow(code);
+			$(this).next().addClass("DlHighlight").html("<pre>" + formatted + "</pre>")
+		})
+	}
+</script>
+<!--代码高亮end-->
+</html>

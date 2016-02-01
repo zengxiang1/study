@@ -1,0 +1,13 @@
+.color{
+	background-color: #ffffff;
+	background-image: url(form/color.jpg);
+	background-repeat: no-repeat;
+	background-position: 100% 50%;
+	height:18px;
+    width:120px;
+	border-color:#cccccc;
+	border-style:solid;
+	border-width:1px;
+	font-size: 12px;
+	color: #336699;
+}

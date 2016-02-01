@@ -1,0 +1,8 @@
+php配置   
+
+apache  服务器版本要和 php版本匹配。特别是位数  如果apache是32位那么php必须32位
+不然产生 cannot load php*apache*-*.....into server
+
+配置curl  curl不能用可以尝试将php中的libssh2.dll文件放到apache服务器主目录下面的bin文件夹下。
+
+如果setcookie 设置错误  那么可以考虑一下是不是 参数没有设置好。

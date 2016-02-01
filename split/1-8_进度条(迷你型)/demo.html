@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="reset.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../jquery-1.4.js"></script>
+<!--迷你进度条（分离版）start-->
+<script type="text/javascript" src="js/prettyLoader_split.js"></script>
+<style>
+.prettyLoader {
+	background: url(images/loading/prettyLoader.png) top left no-repeat;
+	height: 30px;
+	position: absolute;
+	width: 30px;
+	z-index: 30000;
+}
+.prettyLoader img {
+	display: block;
+	margin: 7px 0 0 7px;
+}
+.pl_ie6 { background-image: url(images/loading/prettyLoader.gif); }
+</style>
+<!--迷你进度条（分离版）end-->
+<body>
+	有时候会用到迷你型进度条。例如当翻页时可以显示一个迷你进度条，翻页完成后页面重定向进度条自动消失。也可以手动让进度条消失。效果如下<br />
+	<input type="button" onclick="$.prettyLoader.show();" value="显示进度条" />
+	<input type="button" onclick="$.prettyLoader.hide();" value="隐藏进度条" />
+	<br />首先引入脚本和CSS
+<textarea class="code">
+<script type="text/javascript" src="../jquery-1.4.js"></script>	
+<!--迷你进度条（分离版）start-->
+<script type="text/javascript" src="js/prettyLoader_split.js"></script>
+<style>
+.prettyLoader {
+	background: url(images/loading/prettyLoader.png) top left no-repeat;
+	height: 30px;
+	position: absolute;
+	width: 30px;
+	z-index: 30000;
+}
+.prettyLoader img {
+	display: block;
+	margin: 7px 0 0 7px;
+}
+.pl_ie6 { background-image: url(images/loading/prettyLoader.gif); }
+</style>
+<!--迷你进度条（分离版）end-->
+</textarea>
+<pre></pre>	
+	
+	当要显示进度条时调用$.prettyLoader.show()，要隐藏进度条使用$.prettyLoader.hide()。代码如下：<br />
+<textarea class="code">
+<input type="button" onclick="$.prettyLoader.show();" value="显示进度条" />
+<input type="button" onclick="$.prettyLoader.hide();" value="隐藏进度条" />
+</textarea>
+<pre></pre>	
+	
+	还可以设置显示进度条后多久消失。
+	<input type="button" onclick="$.prettyLoader.show(2000);" value="点击两秒后进度条消失" />
+	<br />代码如下：<br />
+<textarea class="code">
+<input type="button" onclick="$.prettyLoader.show(2000);" value="点击两秒后进度条消失" />
+</textarea>
+<pre></pre>		
+	
+	也可以用在ajax加载中。
+	<input type="button" onclick="$('#ajax_container').load('chapter3-8-content1.html');" value="ajax加载" />
+	<div id="ajax_container"></div>
+	
+	<br />代码如下：<br />
+<textarea class="code">
+<input type="button" onclick="$('#ajax_container').load('chapter3-8-content1.html');" value="ajax加载" />
+<div id="ajax_container"></div>
+</textarea>
+<pre></pre>		
+			
+</body>
+<!--代码高亮start-->
+<script type="text/javascript" src="../hl/highlight.js"></script>
+<script type="text/javascript" src="../hl/lang-xml.js"></script>
+<script type="text/javascript" src="../hl/lang-html.js"></script>
+<link href="../hl/style.css" rel="stylesheet" type="text/css"/>
+<script>
+	$(function(){
+			showCode()
+	})
+	function showCode(){
+		$(".code").each(function(){
+			var code =$(this).val()
+			var hl = new DlHighlight({lang: "html",lineNumbers :false });
+			var formatted = hl.doItNow(code);
+			$(this).next().addClass("DlHighlight").html("<pre>" + formatted + "</pre>")
+		})
+	}
+</script>
+<!--代码高亮end-->
+</html>

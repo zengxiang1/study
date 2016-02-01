@@ -1,0 +1,34 @@
+.flash_install{
+	border:solid 1px #cccccc;
+	width:380px;
+	height:200px;
+	background-color:white;
+}
+.flash_install_con{
+	padding:20px 15px 0 50px;
+	font-size:14px;
+	font-weight:bold;
+	text-align:left;
+	line-height:200%;
+}
+.flash_install_con a{
+	color:red;
+}
+.flash_install_con a:hover{
+	color:red;
+	text-decoration:underline;
+}
+html>/**/body .forIE{
+	display: none;
+}
+.forFF{
+	>display: none;
+} 
+.msg_icon3{
+	background-image: url(icons/tips03.jpg);
+	background-repeat: no-repeat;
+	width: 316px;
+	height: 84px;
+	padding: 10px 0 0 30px;
+	background-position: 100% 100%;
+}

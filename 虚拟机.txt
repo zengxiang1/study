@@ -1,0 +1,25 @@
+linux package  located err  >   excute  apt-get update
+
+
+
+
+    vmware安装扩展工具报错的问题
+    vmware安装扩展工具报错
+
+    Creating a new initrd boot image for the kernel.
+
+    update-initramfs: Generating /boot/initrd.img-2.6.38-8-generic
+
+    initctl: Job failed to start    
+
+    Unable to start services for VMware Tools
+
+     
+
+    解决方法：
+
+     /bin  卸载
+    apt-get reomove open-vm-tools
+
+    重装
+

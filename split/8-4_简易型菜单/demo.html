@@ -1,0 +1,193 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="reset.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../jquery-1.4.js"></script>
+<!--弹出式菜单（分离版）start-->
+<link href="skins/blue/style.css" rel="stylesheet" type="text/css" id="compStyle"/>
+<script type="text/javascript" src="js/simpleMenu_split.js"></script>
+<!--弹出式菜单（分离版）end-->
+<style>
+	.demo{
+		width:300px;
+		border: solid 1px #42a7f7;
+		background-color: #dfeafa;
+		margin:5px 0 0 0;
+	}
+</style>
+<body>
+	<script>
+		function changeSkin(){
+			$("#compStyle").attr("href","skins/"+$("#changeSkin").val()+"/style.css");
+		}
+	</script>
+	更换风格
+	<select  onchange='changeSkin()' id="changeSkin">
+	    <option value="blue">蓝色</option>
+	    <option value="lightBlue">亮蓝色</option>
+	    <option value="darkBlue">深蓝色</option>
+	    <option value="green">绿色</option>
+		<option value="red">红色</option>
+		<option value="darkYellow">棕黄色</option>
+		<option value="armyGreen">军绿色</option>
+	</select>
+		上一节中的弹出菜单虽然功能全面，但是因为每个菜单都要调用JS来创建一下，这对于某些情况并不适用（例如需要动态添加能够生成菜单的元素）。所以这里准备了第二套菜单。
+	<div class="box2" panelTitle="基本用法">
+	一个基本的菜单效果如下：
+	<div class="simpleMenu">
+		<div class="simpleMenu_link">
+			<a href="javascript:;">选择</a>
+		</div>
+		<div class="simpleMenu_con">
+			<a href="javascript:;"><span>状态</span></a>
+			<a href="javascript:;"><span>相册</span></a>
+			<a href="javascript:;"><span>分享</span></a>
+			<a href="javascript:;"><span>日志</span></a>
+		</div>
+	</div>
+	<br /><br />
+	无需写脚本。HTML代码如下：
+<textarea class="code">
+<div class="simpleMenu">
+	<div class="simpleMenu_link">
+		<a href="javascript:;">弹出菜单</a>
+	</div>
+	<div class="simpleMenu_con">
+		<a href="javascript:;"><span>状态</span></a>
+		<a href="javascript:;"><span>相册</span></a>
+		<a href="javascript:;"><span>分享</span></a>
+		<a href="javascript:;"><span>日志</span></a>
+	</div>
+</div>
+</textarea>
+<pre></pre>		
+	</div>
+	
+	<div class="box2" panelTitle="自定义显示效果">
+	菜单链接默认宽度为50像素，菜单项默认100像素。可通过style自定义宽度。另外也可为选项加图标。图标样式请参考“使用帮助>>图标库检索及使用”。效果如下：
+	<div class="simpleMenu" style="width:92px;">
+		<div class="simpleMenu_link arrow border white_bg">
+			<a href="javascript:;">全部操作</a>
+		</div>
+		<div class="simpleMenu_con" style="width:90px;">
+			<a href="javascript:;"><span class="icon_add">新增</span></a>
+			<a href="javascript:;"><span class="icon_view">查看</span></a>
+			<a href="javascript:;"><span class="icon_edit">修改</span></a>
+			<a href="javascript:;"><span class="icon_delete">删除</span></a>
+			<a href="javascript:;"><span class="icon_save">保存</span></a>
+		</div>
+	</div>
+	<br /><br />
+代码如下：
+<textarea class="code">
+<div class="simpleMenu" style="width:92px;">
+	<div class="simpleMenu_link arrow border white_bg">
+		<a href="javascript:;">全部操作</a>
+	</div>
+	<div class="simpleMenu_con" style="width:90px;">
+		<a href="javascript:;"><span class="icon_add">新增</span></a>
+		<a href="javascript:;"><span class="icon_view">查看</span></a>
+		<a href="javascript:;"><span class="icon_edit">修改</span></a>
+		<a href="javascript:;"><span class="icon_delete">删除</span></a>
+		<a href="javascript:;"><span class="icon_save">保存</span></a>
+	</div>
+</div>
+</textarea>
+<pre></pre>	
+	simpleMenu_link中的arrow表示为链接加一个向下的箭头；border表示为链接加一个边框；white_bg表示设置背景为白色。	
+	</div>
+	
+	<div class="box2" panelTitle="自定义菜单链接">
+	菜单链接可以除了文字还可以放图标。效果如下：
+	
+	<div class="simpleMenu" style="width:20px;">
+		<div class="simpleMenu_link" noBorder="true">
+			<span class="img_add hand"></span><br />
+		</div>
+		<div class="simpleMenu_con">
+			<a href="javascript:;"><span>状态</span></a>
+			<a href="javascript:;"><span>相册</span></a>
+			<a href="javascript:;"><span>分享</span></a>
+			<a href="javascript:;"><span>日志</span></a>
+		</div>
+	</div>
+代码如下：
+<textarea class="code">
+<div class="simpleMenu" style="width:20px;">
+	<div class="simpleMenu_link" noBorder="true">
+		<span class="img_add hand"></span><br />
+	</div>
+	<div class="simpleMenu_con">
+		<a href="javascript:;"><span>状态</span></a>
+		<a href="javascript:;"><span>相册</span></a>
+		<a href="javascript:;"><span>分享</span></a>
+		<a href="javascript:;"><span>日志</span></a>
+	</div>
+</div>
+</textarea>
+<pre></pre>	
+ noBorder="true"表示鼠标移入不出现边框。注意，如果是图标的话后面要加一个br。<br /><br /><br />
+	</div>
+	<script>
+		function creatObj(){
+			var objStr='<div class="demo"><table width="100%"><tr><td width="20">'+
+			'<div class="simpleMenu" style="width:20px;"><div class="simpleMenu_link" noBorder="true">'+
+			'<span class="img_add hand"></span><br /></div><div class="simpleMenu_con">'+
+			'<a href="javascript:;"><span class="icon_add">添加</span></a><a href="javascript:;"><span class="icon_view">查看</span></a>'+
+			'<a href="javascript:;"><span class="icon_edit">修改</span></a></div></div></td><td>婴儿配方奶粉</td>'+
+			'<td width="60"><input type="text" style="width:50px" class="textinput"/>g</td></tr></table></div>'
+			var $obj=$(objStr)
+			$("#objContent").append($obj)
+			refreshSimpleMenu()
+		}
+	</script>
+	<div class="box2" panelTitle="动态添加能够生成菜单的元素">
+	将上面菜单的HTML动态生成后，调用refreshSimpleMenu()函数来更新菜单显示即可。效果如下：<br />
+	<input type="button" value="点击生成元素" onclick="creatObj()"/>
+	<div id="objContent">
+		
+	</div>
+	HTML部分：
+<textarea class="code">
+<input type="button" value="点击生成元素" onclick="creatObj()"/>
+<div id="objContent"></div>
+</textarea>
+<pre></pre>	 
+	creatObj()函数代码：
+<textarea class="code">
+function creatObj(){
+	var objStr='<div class="demo"><table width="100%"><tr><td width="20">'+
+	'<div class="simpleMenu" style="width:20px;"><div class="simpleMenu_link" noBorder="true">'+
+	'<span class="img_add hand"></span><br /></div><div class="simpleMenu_con">'+
+	'<a href="javascript:;"><span class="icon_add">添加</span></a><a href="javascript:;"><span class="icon_view">查看</span></a>'+
+	'<a href="javascript:;"><span class="icon_edit">修改</span></a></div></div></td><td>婴儿配方奶粉</td>'+
+	'<td width="60"><input type="text" style="width:50px" class="textinput"/>g</td></tr></table></div>'
+	var $obj=$(objStr)
+	$("#objContent").append($obj)
+	refreshSimpleMenu()
+}
+</textarea>
+<pre></pre>		
+	</div>	
+
+</body>
+<!--代码高亮start-->
+<script type="text/javascript" src="../hl/highlight.js"></script>
+<script type="text/javascript" src="../hl/lang-xml.js"></script>
+<script type="text/javascript" src="../hl/lang-html.js"></script>
+<link href="../hl/style.css" rel="stylesheet" type="text/css"/>
+<script>
+	$(function(){
+			showCode()
+	})
+	function showCode(){
+		$(".code").each(function(){
+			var code =$(this).val()
+			var hl = new DlHighlight({lang: "html",lineNumbers :false });
+			var formatted = hl.doItNow(code);
+			$(this).next().addClass("DlHighlight").html("<pre>" + formatted + "</pre>")
+		})
+	}
+</script>
+<!--代码高亮end-->
+</html>

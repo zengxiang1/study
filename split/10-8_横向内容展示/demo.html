@@ -1,0 +1,239 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="reset.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../jquery-1.4.js"></script>
+<!--coverflip展示start-->
+ <link rel="stylesheet" href="js/jcoverflip/jquery-ui-1.7.2.custom.css" type="text/css" media="all" />
+ <script type="text/javascript" src="js/jcoverflip/jquery-ui-1.7.2.custom.min.js"></script>
+ <script type="text/javascript" src="js/jcoverflip/jcoverflip.js"></script>
+ <!--coverflip展示end-->
+<script>
+jQuery( document ).ready( function(){
+    jQuery( '#flip' ).jcoverflip({
+      current: 2,
+      beforeCss: function( el, container, offset ){
+        return [
+          $.jcoverflip.animationElement( el, { left: ( container.width( )/2 - 210 - 110*offset + 20*offset )+'px', bottom: '20px' }, { } ),
+          $.jcoverflip.animationElement( el.find( 'img' ), { width: Math.max(10,100-20*offset*offset) + 'px' }, {} )
+        ];
+      },
+      afterCss: function( el, container, offset ){
+        return [
+          $.jcoverflip.animationElement( el, { left: ( container.width( )/2 + 110 + 110*offset )+'px', bottom: '20px' }, { } ),
+          $.jcoverflip.animationElement( el.find( 'img' ), { width: Math.max(10,100-20*offset*offset) + 'px' }, {} )
+        ];
+      },
+      currentCss: function( el, container ){
+        return [
+          $.jcoverflip.animationElement( el, { left: ( container.width( )/2 - 100 )+'px', bottom: 0 }, { } ),
+          $.jcoverflip.animationElement( el.find( 'img' ), { width: '200px' }, { } )
+        ];
+      },
+      change: function(event, ui){
+        jQuery('#scrollbar').slider('value', ui.to*25);
+      }
+    });
+    jQuery('#scrollbar').slider({
+      value: 50,
+      stop: function(event, ui) {
+        if(event.originalEvent) {
+          var newVal = Math.round(ui.value/25);
+          jQuery( '#flip' ).jcoverflip( 'current', newVal );
+          jQuery('#scrollbar').slider('value', newVal*25);
+        }
+      }
+    });
+  });
+</script>
+<style>
+  .ui-jcoverflip {
+    position: relative;
+  }
+  .ui-jcoverflip--item {
+    position: absolute;
+    display: block;
+  }
+  #flip {
+    height: 200px;
+    width: 630px;
+    margin-bottom: 50px;
+  }
+  #flip .ui-jcoverflip--title {
+    position: absolute;
+    bottom: -30px;
+    width: 100%;
+    text-align: center;
+    color: #555;
+  }
+  #flip img {
+    display: block;
+    border: 0;
+    outline: none;
+  }
+  #flip a {
+    outline: none;
+  }
+  #wrapper {
+    height: 300px;
+    width: 630px;
+    overflow: hidden;
+    position: relative;
+  }
+  .ui-jcoverflip--item {
+    cursor: pointer;
+  } 
+  #scrollbar {
+    position: absolute;
+    left: 20px;
+    right: 20px;
+    
+  }
+</style>
+
+<body>
+	<ul id="flip" style="width:600px;"> 
+      <li title="文字说明1" ><img src="demo/ico1.png" /></li> 
+      <li title="文字说明2" ><img src="demo/ico2.png" /></li> 
+      <li title="文字说明3" ><img src="demo/ico5.png" /></li> 
+      <li title="文字说明4" ><img src="demo/ico4.png" /></li> 
+      <li title="文字说明5" ><img src="demo/ico3.png" /></li> 
+      
+    </ul> 
+    <div id="scrollbar" style="width:600px;"></div> 
+	
+	<br /><br /><br />
+	引入脚本和CSS
+<textarea class="code">
+<script type="text/javascript" src="../jquery-1.4.js"></script>
+<!--coverflip展示start-->
+ <link rel="stylesheet" href="js/jcoverflip/jquery-ui-1.7.2.custom.css" type="text/css" media="all" />
+ <script type="text/javascript" src="js/jcoverflip/jquery-ui-1.7.2.custom.min.js"></script>
+ <script type="text/javascript" src="js/jcoverflip/jcoverflip.js"></script>
+ <!--coverflip展示end-->
+</textarea>
+<pre></pre>		
+
+	JS代码
+<textarea class="code">
+jQuery( document ).ready( function(){
+    jQuery( '#flip' ).jcoverflip({
+      current: 2,
+      beforeCss: function( el, container, offset ){
+        return [
+          $.jcoverflip.animationElement( el, { left: ( container.width( )/2 - 210 - 110*offset + 20*offset )+'px', bottom: '20px' }, { } ),
+          $.jcoverflip.animationElement( el.find( 'img' ), { width: Math.max(10,100-20*offset*offset) + 'px' }, {} )
+        ];
+      },
+      afterCss: function( el, container, offset ){
+        return [
+          $.jcoverflip.animationElement( el, { left: ( container.width( )/2 + 110 + 110*offset )+'px', bottom: '20px' }, { } ),
+          $.jcoverflip.animationElement( el.find( 'img' ), { width: Math.max(10,100-20*offset*offset) + 'px' }, {} )
+        ];
+      },
+      currentCss: function( el, container ){
+        return [
+          $.jcoverflip.animationElement( el, { left: ( container.width( )/2 - 100 )+'px', bottom: 0 }, { } ),
+          $.jcoverflip.animationElement( el.find( 'img' ), { width: '200px' }, { } )
+        ];
+      },
+      change: function(event, ui){
+        jQuery('#scrollbar').slider('value', ui.to*25);
+      }
+    });
+    jQuery('#scrollbar').slider({
+      value: 50,
+      stop: function(event, ui) {
+        if(event.originalEvent) {
+          var newVal = Math.round(ui.value/25);
+          jQuery( '#flip' ).jcoverflip( 'current', newVal );
+          jQuery('#scrollbar').slider('value', newVal*25);
+        }
+      }
+    });
+  });
+</textarea>
+<pre></pre>	
+
+	CSS代码
+<textarea class="code">
+<style>
+  .ui-jcoverflip {
+    position: relative;
+  }
+  .ui-jcoverflip--item {
+    position: absolute;
+    display: block;
+  }
+  #flip {
+    height: 200px;
+    width: 630px;
+    margin-bottom: 50px;
+  }
+  #flip .ui-jcoverflip--title {
+    position: absolute;
+    bottom: -30px;
+    width: 100%;
+    text-align: center;
+    color: #555;
+  }
+  #flip img {
+    display: block;
+    border: 0;
+    outline: none;
+  }
+  #flip a {
+    outline: none;
+  }
+  #wrapper {
+    height: 300px;
+    width: 630px;
+    overflow: hidden;
+    position: relative;
+  }
+  .ui-jcoverflip--item {
+    cursor: pointer;
+  } 
+  #scrollbar {
+    position: absolute;
+    left: 20px;
+    right: 20px;
+    
+  }
+</style>
+</textarea>
+<pre></pre>	
+
+	HTML代码
+<textarea class="code">
+<ul id="flip" style="width:600px;"> 
+  <li title="文字说明1" ><img src="demo/ico1.png" /></li> 
+  <li title="文字说明2" ><img src="demo/ico2.png" /></li> 
+  <li title="文字说明3" ><img src="demo/ico5.png" /></li> 
+  <li title="文字说明4" ><img src="demo/ico4.png" /></li> 
+  <li title="文字说明5" ><img src="demo/ico3.png" /></li> 
+</ul> 
+<div id="scrollbar" style="width:600px;"></div> 
+</textarea>
+<pre></pre>	
+</body>
+<!--代码高亮start-->
+<script type="text/javascript" src="../hl/highlight.js"></script>
+<script type="text/javascript" src="../hl/lang-xml.js"></script>
+<script type="text/javascript" src="../hl/lang-html.js"></script>
+<link href="../hl/style.css" rel="stylesheet" type="text/css"/>
+<script>
+	$(function(){
+			showCode()
+	})
+	function showCode(){
+		$(".code").each(function(){
+			var code =$(this).val()
+			var hl = new DlHighlight({lang: "html",lineNumbers :false });
+			var formatted = hl.doItNow(code);
+			$(this).next().addClass("DlHighlight").html("<pre>" + formatted + "</pre>")
+		})
+	}
+</script>
+<!--代码高亮end-->
+</html>

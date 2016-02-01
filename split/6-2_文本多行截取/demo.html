@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="reset.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../jquery-1.4.js"></script>
+<!--多行文本截取（分离版）start-->
+<script type="text/javascript" src="js/readmore_split.js"></script>
+<!--多行文本截取（分离版）end-->
+<style>
+	.textStyle{
+		font-size:14px;
+		border:solid 1px #cccccc;
+		width:400px;
+		line-height:150%;
+	}
+	.more{
+		color:red;
+	}
+</style>
+ <script>
+ $(document).ready(function () {
+	$("#demo1").readmore({ substr_len: 145});
+	$("#demo2").readmore({ substr_len: 226,more_link:"<a class='more'>更多</a>" });
+});
+ </script>
+<body>
+	
+	<div class="box2" panelTitle="基本用法">
+	<div id="demo1" class="textStyle">
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;当下非常流行一个名词叫RIA，RIA全称是Rich Internet Application，翻译成中文为丰富互联网应用程序。RIA 是集桌面应用程序的最佳用户界面功能与Web应用程序的普遍采用和快速、低成本布署以及互动多媒体通信的实时快捷于一体的新一代网络应用程序。目前WEB领域和桌面软件领域正逐步向RIA靠拢，预计3、5年后RIA的时代将会完全到来。<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;现在很多大软件公司纷纷抢占RIA 领域的市场，以至于出现百花争鸣的现象。能够实现RIA的技术有很多种，例如Adobe公司的推出的Flex技术、微软推出的SilverLight技术、Sun被收购前推出的JavaFX，还有我们熟知的AJAX也可以算作一种轻量级的RIA技术。
+Flex通俗的说就是使用编程的手法来开发制作Flash，让Flash实现不再是设计人员的专利。开发出来的Flash既可以作为网页的组成部分用于WEB领域，也可以嵌入到C++、C#桌面程序中以改善界面美观和提高用户体验。
+	</div>
+	首先引入脚本
+<textarea class="code">
+<!--多行文本截取（分离版）start-->
+<script type="text/javascript" src="js/readmore_split.js"></script>
+<!--多行文本截取（分离版）end-->
+</textarea>
+<pre></pre>	
+
+	HTML中为文本所在容器设置一个id
+<textarea class="code">
+<div id="demo1" class="textStyle">
+	要截取的内容
+</div>	
+</textarea>
+<pre></pre>
+
+	通过CSS设置容器的尺寸、外观等
+<textarea class="code">
+<div id="demo1" class="textStyle">
+	<style>
+	.textStyle{
+		font-size:14px;
+		border:solid 1px #cccccc;
+		width:400px;
+		line-height:150%;
+	}
+</style>
+</div>	
+</textarea>
+<pre></pre>	
+
+	JS中设置要截取的字符数：
+<textarea class="code">
+ $(document).ready(function () {
+	$("#demo1").readmore({ substr_len: 145});
+});
+</textarea>
+<pre></pre>	
+	</div>
+	
+	<div class="box2" panelTitle="出现“更多”链接">
+	点击“更多”链接后在本页中将隐藏内容显示出来。
+<textarea class="code">
+ $(document).ready(function () {
+	$("#demo2").readmore({ substr_len: 226 ,more_link:"<a class='more'>更多</a>"});
+});
+</textarea>
+<pre></pre>		
+	<div id="demo2" class="textStyle">
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;当下非常流行一个名词叫RIA，RIA全称是Rich Internet Application，翻译成中文为丰富互联网应用程序。RIA 是集桌面应用程序的最佳用户界面功能与Web应用程序的普遍采用和快速、低成本布署以及互动多媒体通信的实时快捷于一体的新一代网络应用程序。目前WEB领域和桌面软件领域正逐步向RIA靠拢，预计3、5年后RIA的时代将会完全到来。<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;现在很多大软件公司纷纷抢占RIA 领域的市场，以至于出现百花争鸣的现象。能够实现RIA的技术有很多种，例如Adobe公司的推出的Flex技术、微软推出的SilverLight技术、Sun被收购前推出的JavaFX，还有我们熟知的AJAX也可以算作一种轻量级的RIA技术。
+Flex通俗的说就是使用编程的手法来开发制作Flash，让Flash实现不再是设计人员的专利。开发出来的Flash既可以作为网页的组成部分用于WEB领域，也可以嵌入到C++、C#桌面程序中以改善界面美观和提高用户体验。
+	</div>
+	
+	如果需要点击更多链接到其他页面，对该链接加href属性。例如
+<textarea class="code">
+ $(document).ready(function () {
+	$("#demo2").readmore({ 
+	substr_len: 226 ,
+	more_link:"<a class='more' href='test.html' target='blank'>更多</a>"
+	});
+});
+</textarea>
+<pre></pre>	
+
+	另外还可以使用第一个例子中不显示更多按钮，然后自己添加一个个性化的“更多”按钮。	
+</div>		
+</body>
+<!--代码高亮start-->
+<script type="text/javascript" src="../hl/highlight.js"></script>
+<script type="text/javascript" src="../hl/lang-xml.js"></script>
+<script type="text/javascript" src="../hl/lang-html.js"></script>
+<link href="../hl/style.css" rel="stylesheet" type="text/css"/>
+<script>
+	$(function(){
+			showCode()
+	})
+	function showCode(){
+		$(".code").each(function(){
+			var code =$(this).val()
+			var hl = new DlHighlight({lang: "html",lineNumbers :false });
+			var formatted = hl.doItNow(code);
+			$(this).next().addClass("DlHighlight").html("<pre>" + formatted + "</pre>")
+		})
+	}
+</script>
+<!--代码高亮end-->
+</html>

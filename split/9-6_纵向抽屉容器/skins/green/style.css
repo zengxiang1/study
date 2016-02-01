@@ -1,0 +1,31 @@
+/*纵向抽屉容器*/
+.accordition  {
+	border-left: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+}
+.accordition div {
+	background-color: #fff;
+}
+.accordition a {
+	cursor:pointer;
+	display:block;
+	padding:5px;
+	margin-top: 0;
+	text-decoration: none;
+	font-size: 12px;
+	color: black;
+	background-color: #00a0c6;
+	background-image: url(tab/accTabNor.jpg);
+}
+.accordition a:hover {
+	background-color: white;
+	background-image: url(tab/accTabCur.jpg);
+	color:white;
+}
+.accordition a.selected {
+	background-color: #80cfe2;
+	background-image: url(tab/accTabCur.jpg);
+	color:white;
+}
+/*纵向抽屉容器*/

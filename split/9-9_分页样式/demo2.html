@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="reset.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../jquery-1.4.js"></script>
+<!--分页样式start-->
+<link href="skins/style.css" rel="stylesheet" type="text/css"/>
+<!--分页样式end-->
+
+<!--单选下拉框(分离版)start-->
+<link href="skins/selectStyle.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="js/select_split.js"></script>
+<!--单选下拉框(分离版)end-->
+<body>
+	<div class="box2">
+		<div style="height:35px;">
+			<div class="float_left padding5">左侧内容区域。如没有可去掉。</div>
+			<div class="float_right padding5 paging">
+				<div class="float_left padding_top4">
+				<span class="paging_disabled"><a href="javascript:;">上一页</a></span>
+				<span class="paging_current"><a href="javascript:;">1</a></span>
+				<span><a href="javascript:;">2</a></span>
+				<span><a href="javascript:;">3</a></span>
+				<span><a href="javascript:;">4</a></span>
+				<span><a href="javascript:;">5</a></span>
+				<span>...</span>
+				<span><a href="javascript:;">20</a></span>
+				<span><a href="javascript:;">下一页</a></span> &nbsp;每页
+				</div>
+				<div class="float_left"><select autoWidth="true"><option>50</option><option>100</option><option>150</option></select></div>
+				<div class="float_left padding_top4">条记录</div>
+				<div class="clear"></div>
+			</div>
+			<div class="clear"></div>
+		</div>
+与渲染的下拉框整合。首先引入脚本和CSS
+<textarea class="code">
+<script type="text/javascript" src="../jquery-1.4.js"></script>
+<!--分页样式start-->
+<link href="skins/style.css" rel="stylesheet" type="text/css"/>
+<!--分页样式end-->
+
+<!--单选下拉框(分离版)start-->
+<link href="skins/selectStyle.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="js/select_split.js"></script>
+<!--单选下拉框(分离版)end-->	
+</textarea>
+<pre></pre>
+	HTML代码如下：		
+<textarea class="code">
+<div style="height:35px;">
+	<div class="float_left padding5">左侧内容区域。如没有可去掉。</div>
+	<div class="float_right padding5 paging">
+		<div class="float_left padding_top4">
+		<span class="paging_disabled"><a href="javascript:;">上一页</a></span>
+		<span class="paging_current"><a href="javascript:;">1</a></span>
+		<span><a href="javascript:;">2</a></span>
+		<span><a href="javascript:;">3</a></span>
+		<span><a href="javascript:;">4</a></span>
+		<span><a href="javascript:;">5</a></span>
+		<span>...</span>
+		<span><a href="javascript:;">20</a></span>
+		<span><a href="javascript:;">下一页</a></span>&nbsp;每页
+		</div>
+		<div class="float_left"><select autoWidth="true"><option>50</option><option>100</option><option>150</option></select></div>
+		<div class="float_left padding_top4">条记录</div>
+		<div class="clear"></div>
+	</div>
+	<div class="clear"></div>
+</div>
+</textarea>
+<pre></pre>			
+	</div>	
+</body>
+<!--代码高亮start-->
+<script type="text/javascript" src="../hl/highlight.js"></script>
+<script type="text/javascript" src="../hl/lang-xml.js"></script>
+<script type="text/javascript" src="../hl/lang-html.js"></script>
+<link href="../hl/style.css" rel="stylesheet" type="text/css"/>
+<script>
+	$(function(){
+			showCode()
+	})
+	function showCode(){
+		$(".code").each(function(){
+			var code =$(this).val()
+			var hl = new DlHighlight({lang: "html",lineNumbers :false });
+			var formatted = hl.doItNow(code);
+			$(this).next().addClass("DlHighlight").html("<pre>" + formatted + "</pre>")
+		})
+	}
+</script>
+<!--代码高亮end-->
+</html>

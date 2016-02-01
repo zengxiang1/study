@@ -1,0 +1,81 @@
+/*可控的左右滚动*/
+.trigger-bar { width:423px; height:18px; }
+.trigger-bar .prev,
+.trigger-bar .next {
+	float:right;
+	width:18px;
+	height:18px;
+	display:block;
+	outline:none;
+	background-image:url(tab/navigator.png);
+	background-repeat:no-repeat;
+}
+.trigger-bar .prev {
+	margin-right:-1px;
+	background-position:-40px 0;
+}
+.trigger-bar .next { background-position:-17px 0; }
+.trigger-bar .prev:hover {
+	text-decoration:none;
+	background-position:0 0;
+}
+.trigger-bar .next:hover {
+	text-decoration:none;
+	background-position:-57px 0;
+}
+	
+.scrollable-trigger { float:right; }
+.scrollable-trigger a {
+	display:inline-block;
+	width:6px;
+	height:6px;
+	margin:6px 5px 0 0;
+	font-size:0px;
+	color:#70B2D5;
+	background:url(tab/navigator.png) -80px -10px no-repeat;
+	outline:none;
+	overflow:hidden;
+}
+.scrollable-trigger a.current,
+.scrollable-trigger a:hover{
+	color:#CACACA;
+	background:url(tab/navigator.png) -80px 0 no-repeat;
+}
+
+.scrollable-panel {
+	/* 下面四项必须设置 */
+	position:relative;
+	width:437px;
+	height:76px;
+	overflow:hidden;
+}
+.scrollable-panel div {
+	position:absolute;
+	width:2010em; /* 设置足够的宽度 */
+}
+.scrollable-panel img {
+	float:left;
+	display:inline; /* 修复IE6双边距BUG */
+	margin:10px 0 0 15px;
+	padding:2px;
+	border:1px solid #ccc;
+	width:120px;
+	height:60px;
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px;
+}
+
+ /*可控的左右滚动*/
+
+ /*控制按钮*/
+.ctrl { width:348px; text-align:center; padding:5px 0; }
+.play, .pause, .stop {
+	width:20px;
+	height:20px;
+	border:none;
+	cursor:pointer;
+}
+.play { background:url(tab/ctrl.gif) 0 0 no-repeat; }
+.pause { background:url(tab/ctrl.gif) 0 -20px no-repeat; }
+.stop { background:url(tab/ctrl.gif) 0 -40px no-repeat; }
+ /*控制按钮*/

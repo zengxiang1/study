@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="reset.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../jquery-1.4.js"></script>
+<!--弹出式提示框（分离版）start-->
+<link href="skins/blue/style.css" rel="stylesheet" type="text/css" id="compStyle"/>
+<script type="text/javascript" src="js/messager_split.js"></script>
+<!--弹出式提示框（分离版）end-->
+
+<!--弹出窗口（分离版）start-->
+<script type="text/javascript" src="js/zDialog_split/zDrag.js"></script>
+<script type="text/javascript" src="js/zDialog_split/zDialog.js"></script>
+<!--弹出窗口（分离版）end-->
+<script>
+	function open6(){
+		$.messager.lays(250, 140);
+		$.messager.show(0,'<ul><li><a href="javascript:openWin()"><span class="icon_lightOn">系统消息：3条</span></a></li><div class="clear"></div>'+
+		'<li><a href="javascript:openWin()"><span class="icon_lightOn">公共消息：10条</span></a></li><div class="clear"></div>'+
+		'<li><a href="javascript:openWin()"><span class="icon_lightOn">私人消息：5条</span></a></li><div class="clear"></div>'+
+		'<li><a href="javascript:openWin()"><span class="icon_lightOn">未读消息：15条</span></a></li><div class="clear"></div></ul>','stay','message.mp3');
+	}
+	function openWin(){
+		top.Dialog.open({URL:"include/chapter3-9-content1.html",Title:"信件箱"});
+	}
+</script>
+<body>
+	<script>
+		function changeSkin(){
+			$("#compStyle").attr("href","skins/"+$("#changeSkin").val()+"/style.css");
+			IMAGESPATH='js/zDialog_split/skins/'+$("#changeSkin").val()+'/';
+		}
+	</script>
+	更换风格
+	<select  onchange='changeSkin()' id="changeSkin">
+	    <option value="blue">蓝色</option>
+	    <option value="lightBlue">亮蓝色</option>
+	    <option value="darkBlue">深蓝色</option>
+	    <option value="green">绿色</option>
+		<option value="red">红色</option>
+		<option value="darkYellow">棕黄色</option>
+		<option value="armyGreen">军绿色</option>
+	</select>
+	
+	<div class="box2" panelTitle="综合实例">
+		本例与弹出窗口和自定义的树形表格整合。<br />
+		<input type="button" value="弹出提示窗口" onclick='open6()'/><br />
+首先引入弹出式提示框脚本和CSS与弹出窗口脚本
+<textarea class="code">
+<script type="text/javascript" src="../jquery-1.4.js"></script>	
+<!--弹出式提示框（分离版）start-->
+<link href="skins/blue/style.css" rel="stylesheet" type="text/css" id="compStyle"/>
+<script type="text/javascript" src="js/messager_split.js"></script>
+<!--弹出式提示框（分离版）end-->
+
+<!--弹出窗口（分离版）start-->
+<script type="text/javascript" src="js/zDialog_split/zDrag.js"></script>
+<script type="text/javascript" src="js/zDialog_split/zDialog.js"></script>
+<!--弹出窗口（分离版）end-->
+</textarea>
+<pre></pre>			
+	使用代码如下：
+<textarea class="code">
+function open6(){
+$.messager.lays(250, 140);
+$.messager.show(0,'<ul><li><a href="javascript:openWin()"><span class="icon_lightOn">系统消息：3条</span></a></li><div class="clear"></div>'+
+'<li><a href="javascript:openWin()"><span class="icon_lightOn">公共消息：10条</span></a></li><div class="clear"></div>'+
+'<li><a href="javascript:openWin()"><span class="icon_lightOn">私人消息：5条</span></a></li><div class="clear"></div>'+
+'<li><a href="javascript:openWin()"><span class="icon_lightOn">未读消息：15条</span></a></li><div class="clear"></div></ul>','stay','message.mp3');
+}
+function openWin(){
+	top.Dialog.open({URL:"lesson/chapter3-9-content1.html",Title:"信件箱"});
+}
+</textarea>
+<pre></pre>
+	</div>
+			
+</body>
+<!--代码高亮start-->
+<script type="text/javascript" src="../hl/highlight.js"></script>
+<script type="text/javascript" src="../hl/lang-xml.js"></script>
+<script type="text/javascript" src="../hl/lang-html.js"></script>
+<link href="../hl/style.css" rel="stylesheet" type="text/css"/>
+<script>
+	$(function(){
+			showCode()
+	})
+	function showCode(){
+		$(".code").each(function(){
+			var code =$(this).val()
+			var hl = new DlHighlight({lang: "html",lineNumbers :false });
+			var formatted = hl.doItNow(code);
+			$(this).next().addClass("DlHighlight").html("<pre>" + formatted + "</pre>")
+		})
+	}
+</script>
+<!--代码高亮end-->
+</html>

@@ -1,0 +1,25 @@
+/*可编辑文本*/
+.divtotext {
+	position: relative;
+	background: url(text/divtotext_bg.png);
+	width: 350px;
+	height: 40px;
+	font-size: 12px;
+	font-weight: normal;
+}
+.divtotext input {
+	position: absolute;
+	top: 6px;
+	left: 6px;
+	width: 288px;
+	height: 26px;
+	font-style: italic;
+	border: none;
+	background: url(text/divtotext_text.png);
+}
+.divtotext img {
+	position: absolute;
+	top: 6px;
+	right: 2px;
+}
+/*可编辑文本*/

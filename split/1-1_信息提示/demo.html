@@ -1,0 +1,263 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="reset.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../jquery-1.4.js"></script>
+<!--信息提示（分离版）start-->
+<link href="skins/blue/style.css" rel="stylesheet" type="text/css" id="compStyle"/>
+<script type="text/javascript" src="js/tooltip_split.js"></script>
+<!--信息提示（分离版）end-->
+<body>
+	<script>
+		function changeSkin(){
+			$("#compStyle").attr("href","skins/"+$("#changeSkin").val()+"/style.css");
+		}
+	</script>
+	更换风格
+	<select  onchange='changeSkin()' id="changeSkin">
+	    <option value="blue">蓝色</option>
+	    <option value="lightBlue">亮蓝色</option>
+	    <option value="green">绿色</option>
+		<option value="red">红色</option>
+		<option value="darkYellow">棕黄色</option>
+	</select>
+	<div class="box2" panelTitle="使用说明">
+	首先引入脚本和CSS，如下
+<textarea class="code">
+<script type="text/javascript" src="../jquery-1.4.js"></script>	
+<!--信息提示（分离版）start-->
+<link href="skins/blue/style.css" rel="stylesheet" type="text/css" id="compStyle"/>
+<script type="text/javascript" src="js/tooltip_split.js"></script>
+<!--信息提示（分离版）end-->
+</textarea>	
+<pre></pre>
+	然后元素标签上添加title="xxx"就会出现提示了。<br />
+	提示信息有3种尺寸，当文字在5个以内会自动调用小尺寸，小于18个字调用中尺寸，大于18个字会调用大尺寸。<br />
+	</div>
+	
+	<div class="box2" panelTitle="span提示">
+	<span title="不超过5字">小尺寸提示</span><br />
+	<span title="图片过大会撑坏网页结构。">中尺寸提示</span><br />
+	<span  title="图片过大会撑坏网页结构。对于大图可以强制设置width（不要设置height），
+这样可以对大图片等比例缩小。图片过大会撑坏网页结构。对于大图可以强制设置width
+（不要设置height），这样可以对大图片等比例缩小。">大尺寸提示</span><br />
+<span title="图片过大<br/>会<span style='color:red;'>撑坏</span>网页结构。">提示信息含html元素</span>
+<textarea class="code">
+<span title="不超过5字">小尺寸提示</span><br />
+<span title="图片过大会撑坏网页结构。">中尺寸提示</span><br />
+<span  title="图片过大会撑坏网页结构。对于大图可以强制设置width（不要设置height），
+这样可以对大图片等比例缩小。图片过大会撑坏网页结构。对于大图可以强制设置width
+（不要设置height），这样可以对大图片等比例缩小。">大尺寸提示</span><br />
+<span title="图片过大<br/>会<span style='color:red;'>撑坏</span>网页结构。">提示信息含html元素</span>
+</textarea>
+<pre></pre>
+	</div>
+
+	<div class="box2" panelTitle="div提示">
+	<div title="在div标签加入title属性" style="width:200px;">这是在div中的内容</div>
+<textarea class="code">
+<div title="在div标签加入title属性" style="width:200px;">这是在div中的内容</div>
+</textarea>
+<pre></pre>
+	</div>
+
+	<div class="box2" panelTitle="a链接提示">
+	<a title="这是一个链接提示">查看</a>
+<textarea class="code">
+<a title="这是一个链接提示">查看</a>
+</textarea>
+<pre></pre>
+<br />
+	</div>
+	
+	<div class="box2" panelTitle="表单元素提示">
+	<input  type="text" title="在这里输入查询条件"/><br />
+	<textarea title="请限制在200个字内"></textarea>
+<textarea class="code">
+<input  type="text" title="在这里输入查询条件"/><br />
+&lt;textarea  title="请限制在200个字内"&gt;&lt;/textarea&gt;
+</textarea>
+<pre></pre>
+	</div>
+	
+	<div class="box2" panelTitle="图片提示">
+	<img src="demo/smallimg1.jpg" title="看过高达动漫吗？"/>
+<textarea class="code">
+<img src="demo/smallimg1.jpg" title="看过高达动漫吗？"/>
+</textarea>
+<pre></pre>
+	</div>
+	
+<!--示例代码start-->
+<script>
+		$(document).ready(function(){
+			$("#changeTitle").toggle(function(){
+				$("#changeTitle").attr("title","后退");
+				enableTooltips()
+			},function(){
+				$("#changeTitle").attr("title","前进");
+				enableTooltips()
+			})
+			
+			$("#hideTip").toggle(function(){
+				$("#hideTip").animate({
+					"marginLeft":"200px"
+				})
+			},function(){
+				$("#hideTip").animate({
+					"marginLeft":0
+				})
+			})
+			
+			$("#hideTip2").toggle(function(){
+				$("#hideTip2").animate({
+					"marginLeft":"200px"
+				})
+				hideTooltip()
+			},function(){
+				$("#hideTip2").animate({
+					"marginLeft":0
+				})
+				hideTooltip()
+			})
+		})
+</script>
+<!--示例代码start-->		
+	
+	<div class="box2" panelTitle="动态更改提示信息">
+	如果动态更改了title属性，使用enableTooltips()来更新提示。<br />
+	<input type="button" id="changeTitle" value="点击后鼠标重新移入按钮上" title="前进"/>
+<textarea class="code">
+<input type="button" id="changeTitle" value="点击后鼠标重新移入按钮上" title="前进"/>
+</textarea>
+<pre></pre>
+脚本代码如下：
+<textarea class="code">
+$("#changeTitle").toggle(function(){
+	$("#changeTitle").attr("title","后退");
+	enableTooltips()
+},function(){
+	$("#changeTitle").attr("title","前进");
+	enableTooltips()
+})
+</textarea>
+<pre></pre>
+	</div>
+
+	<div class="box2" panelTitle="强制让提示消失">
+	默认情况下提示出现后只要鼠标不移动则不会消失。某些情况可以使用hideTooltip()强制让其消失。<br />
+	例如下面的按钮在IE的效果为：当点击时移动，结果提示仍然在原来的位置。<br />
+	<input type="button" id="hideTip" value="点击移动" title="提示信息"/>
+<textarea class="code">
+<input type="button" id="hideTip" value="点击移动" title="提示信息"/>
+<pre></pre>
+脚本代码如下：
+<textarea class="code">
+$("#hideTip").toggle(function(){
+	$("#hideTip").animate({
+		"marginLeft":"200px"
+	})
+},function(){
+	$("#hideTip").animate({
+		"marginLeft":0
+	})
+})
+</textarea>
+<pre></pre>
+<br />
+
+	使用了hideTooltip()后<br />
+	<input type="button" id="hideTip2" value="点击移动" title="提示信息"/>
+<textarea class="code">
+<input type="button" id="hideTip2" value="点击移动" title="提示信息"/>
+<pre></pre>
+脚本代码如下：
+<textarea class="code">
+$("#hideTip2").toggle(function(){
+	$("#hideTip2").animate({
+		"marginLeft":"200px"
+	})
+	hideTooltip()
+},function(){
+	$("#hideTip2").animate({
+		"marginLeft":0
+	})
+	hideTooltip()
+})
+</textarea>
+<pre></pre>
+	</div>
+
+	
+	<div class="box2" panelTitle="不使用提示特效">
+		如果某些情况下如果不希望使用集成的提示，则设置defaultTip="false"。例如<br />
+		<a href="javascript:;"><img src="demo/ico2.png" title="首页" defaultTip="false"/></a>
+		<br />代码：
+<textarea class="code">
+<a href="javascript:;"><img src="demo/ico2.png" title="首页" defaultTip="false"/></a>
+</textarea>
+<pre></pre>		
+	</div>	
+	
+	<div class="box2" panelTitle="第二种提示">
+		上面的情况都是鼠标移入才会出现提示。某些特殊情况可能会需要以其他方式将提示调出。这时可以采用本框架集成的第二种提示方案。一般用在表单元素中。
+		<br />下面的是onfocus事件触发：<br />
+		<input type="text" onfocus="$.cursorMessage('注意不能输入特殊字符');"/><br />
+		下面的是onchange事件触发：<br />
+		<script>
+		function selFunc(){
+			$.cursorMessage("选择了："+$("#sel").val());
+		}
+		</script>		
+		<select  onchange='selFunc()' id="sel">
+		    <option value="">请选择功能</option>
+		    <option value="1">新增图片</option>
+		    <option value="2">维护图片</option>
+		    <option value="3">新增新闻</option>
+		</select><br />		
+		下面的是onkeydown事件触发：<br />
+		<textarea onkeydown="$.cursorMessage('填写详细有助于我们更好地服务');"></textarea><br />
+		下面的是onmouseover事件触发：<br />
+		<textarea onmouseover="$.cursorMessage('请限制在200个字。');"></textarea><br />
+		代码：
+<textarea class="code">
+<input type="text" onfocus="$.cursorMessage('注意不能输入特殊字符');"/>br />	
+<select  onchange='selFunc()' id="sel">
+    <option value="">请选择功能</option>
+    <option value="1">新增图片</option>
+    <option value="2">维护图片</option>
+    <option value="3">新增新闻</option>
+</select><br />	
+&lt;textarea onkeydown="$.cursorMessage('填写详细有助于我们更好地服务');"&gt;&lt;/textarea&gt;<br />
+&lt;textarea onmouseover="$.cursorMessage('请限制在200个字。');"&gt;&lt;/textarea&gt;
+</textarea>
+<pre></pre>	
+下拉框的	selFunc()代码
+<textarea class="code">
+function selFunc(){
+	$.cursorMessage("选择了："+$("#sel").val());
+}
+</textarea>
+<pre></pre>	
+	</div>		
+</body>
+<!--代码高亮start-->
+<script type="text/javascript" src="../hl/highlight.js"></script>
+<script type="text/javascript" src="../hl/lang-xml.js"></script>
+<script type="text/javascript" src="../hl/lang-html.js"></script>
+<link href="../hl/style.css" rel="stylesheet" type="text/css"/>
+<script>
+	$(function(){
+			showCode()
+	})
+	function showCode(){
+		$(".code").each(function(){
+			var code =$(this).val()
+			var hl = new DlHighlight({lang: "html",lineNumbers :false });
+			var formatted = hl.doItNow(code);
+			$(this).next().addClass("DlHighlight").html("<pre>" + formatted + "</pre>")
+		})
+	}
+</script>
+<!--代码高亮end-->
+</html>

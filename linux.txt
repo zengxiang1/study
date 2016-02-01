@@ -1,0 +1,9 @@
+如果你在linux中部署了tomcat 在本地可以访问  但是外部不能访问。那么可能是防火墙阻止了，那么配置一下防火墙把需要的端口打开
+
+iptables 命令格式
+iptables [-t table] 命令 [chain] [rules] [-j target]
+table——指定表明
+命令——对链的操作命令 A I R ...
+chain——链名
+rules——规则
+target——动作如何进行

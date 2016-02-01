@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="reset.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../jquery-1.4.js"></script>
+<!--图片预览（分离版）start-->
+<link href="skins/style.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="js/imgPreview_split.js"></script>
+<!--图片预览（分离版）end-->
+<body>
+	
+	首先引入脚本和CSS
+<textarea class="code">
+<script type="text/javascript" src="../jquery-1.4.js"></script>
+<!--图片预览（分离版）start-->
+<link href="skins/style.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="js/imgPreview_split.js"></script>
+<!--图片预览（分离版）end-->
+</textarea>
+<pre></pre>	
+
+	<div class="box2" panelWidth="800" panelTitle="不含标题">
+	<a href="javascript:;" ref="demo/1.jpg" class="preview"><img src="demo/1s.jpg"/></a>
+	<a href="javascript:;" ref="demo/2.jpg" class="preview"><img src="demo/2s.jpg"/></a>
+	<a href="javascript:;" ref="demo/3.jpg" class="preview"><img src="demo/3s.jpg"/></a>
+	<a href="javascript:;" ref="demo/4.jpg" class="preview"><img src="demo/4s.jpg"/></a>
+<textarea class="code">
+<a href="javascript:;" ref="demo/1.jpg" class="preview">
+	<img src="demo/1s.jpg"/></a>
+<a href="javascript:;" ref="demo/2.jpg" class="preview">
+	<img src="demo/2s.jpg"/></a>
+<a href="javascript:;" ref="demo/3.jpg" class="preview">
+	<img src="demo/3s.jpg"/></a>
+<a href="javascript:;" ref="demo/4.jpg" class="preview">
+	<img src="demo/4s.jpg"/></a>
+</textarea>
+<pre></pre>	
+	</div>
+	
+	<div class="box2" panelWidth="800" panelTitle="含标题">
+	<a href="javascript:;" ref="demo/1.jpg" title="标题1" defaultTip="false" class="preview"><img src="demo/1s.jpg"/></a>
+	<a href="javascript:;" ref="demo/2.jpg" title="标题2" defaultTip="false" class="preview"><img src="demo/2s.jpg"/></a>
+	<a href="javascript:;" ref="demo/3.jpg" title="标题3" defaultTip="false" class="preview"><img src="demo/3s.jpg"/></a>
+	<a href="javascript:;" ref="demo/4.jpg" title="标题4" defaultTip="false" class="preview"><img src="demo/4s.jpg"/></a>
+<textarea class="code">
+<a href="javascript:;" ref="demo/1.jpg" title="标题1" defaultTip="false" class="preview">
+	<img src="demo/1s.jpg"/></a>
+<a href="javascript:;" ref="demo/2.jpg" title="标题2" defaultTip="false" class="preview">
+	<img src="demo/2s.jpg"/></a>
+<a href="javascript:;" ref="demo/3.jpg" title="标题3" defaultTip="false" class="preview">
+	<img src="demo/3s.jpg"/></a>
+<a href="javascript:;" ref="demo/4.jpg" title="标题4" defaultTip="false" class="preview">
+	<img src="demo/4s.jpg"/></a>
+</textarea>
+<pre></pre>
+	</div>
+		
+	<div class="box2" panelWidth="800" panelTitle="文字链接">
+	<a href="javascript:;" ref="demo/4.jpg" title="标题4" defaultTip="false" class="preview">文字链接</a>
+<textarea class="code">
+<a href="javascript:;" ref="demo/4.jpg" title="标题4" defaultTip="false" class="preview">
+	文字链接</a>
+</textarea>
+<pre></pre>		
+	</div>
+</body>
+<!--代码高亮start-->
+<script type="text/javascript" src="../hl/highlight.js"></script>
+<script type="text/javascript" src="../hl/lang-xml.js"></script>
+<script type="text/javascript" src="../hl/lang-html.js"></script>
+<link href="../hl/style.css" rel="stylesheet" type="text/css"/>
+<script>
+	$(function(){
+			showCode()
+	})
+	function showCode(){
+		$(".code").each(function(){
+			var code =$(this).val()
+			var hl = new DlHighlight({lang: "html",lineNumbers :false });
+			var formatted = hl.doItNow(code);
+			$(this).next().addClass("DlHighlight").html("<pre>" + formatted + "</pre>")
+		})
+	}
+</script>
+<!--代码高亮end-->
+</html>

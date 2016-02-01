@@ -1,0 +1,122 @@
+/*水平选项卡样式2*/
+.tabs-trigger{
+	width:350px;
+	height:27px;
+	background:url(tab/tabs-bgCenter.gif) repeat-x;
+}
+.tabs-triggerLeft{
+	width:100%;
+	height:100%;
+	background:url(tab/tabs-bg.gif) no-repeat;
+}
+.tabs-triggerRight{
+	width:100%;
+	height:100%;
+	background:url(tab/tabs-bgRight.gif) no-repeat 100% 0%;
+}
+.tabs-trigger a {
+	display:inline-block;
+	float:left;
+	width:85px;
+	height:23px;
+	line-height:23px;
+	color:#1f376d;
+	text-align:center;
+	background:url(tab/tabs-bg.gif) 0 -34px no-repeat;
+	outline:none;
+	overflow:hidden;
+}
+.tabs-trigger a:hover { color:#F8A319; }
+.tabs-trigger a.current {
+	font-weight:bold;
+	background:url(tab/tabs-bg.gif) 0 -64px no-repeat;
+}
+		
+.tabs-panel {
+	width:348px;
+	padding-bottom:10px;
+	border:1px solid #aacbee;/*内容区边框色*/
+	border-top:0;
+	background-color:white;
+	overflow: auto;
+	position:relative;
+}
+/*水平选项卡样式2*/
+
+ /*第二种选项卡样式2*/
+.tabs-2 {
+	margin-top:10px;
+	border:1px solid #cfdae4;
+	border-top:none;
+	width:308px;
+	background-color:white;
+	position:relative;
+}
+.tabs-2-trigger {
+	width:308px;
+	height:30px;
+	overflow:hidden;
+}
+.tabs-2-trigger li {
+	float:left;
+	margin-left:-1px;
+	height:28px;
+	line-height:28px;
+	text-align:center;
+	border:1px solid #cfdae4;
+	border-right:none;
+	background:url(tab/tabs_bg2.png) repeat-x;
+	cursor:pointer;
+}
+.third li { width:102px; }
+.fourth li { width:77px; }
+.tabs-2-trigger li.current {
+	border-top:1px solid #eea63a;
+	border-bottom:1px solid #fff;
+	background:url(tab/tabs_bg.png) 0 -28px repeat-x;
+}
+.tabs-2-trigger li,
+.tabs-2-trigger li a {
+	font-size:14px;
+	color:#15377e;
+	font-weight:700;
+}
+ /*第二种选项卡样式2*/
+
+/*文章列表*/
+.sgList li{
+	height:25px;
+	line-height:25px;
+	text-indent:15px;
+}
+.dbList li{
+	float:left;
+	padding:0 0 0 0px;
+	height:25px;
+	line-height:25px;
+	text-indent:15px;
+}
+.listArr{
+	background: url(arror.gif);
+	background-repeat:no-repeat;
+	background-position:5px 40%;
+}
+.listPoint{
+	background: url(point.gif);
+	background-repeat:no-repeat;
+	background-position:5px 50%;
+}
+.clear{
+	clear:both;
+	line-height:1px;
+}
+/*文章列表*/
+
+/*文字出省略号*/
+.text_slice{
+	display:block;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+/*文字出省略号*/

@@ -1,0 +1,170 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="reset.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../jquery-1.4.js"></script>
+<!--打字效果（分离版）start-->
+<script type="text/javascript" src="js/jticker_split.js"></script>
+<!--打字效果（分离版）end-->
+<script>
+	$(function(){
+		jQuery("#ticker").ticker({
+	 		cursorList:  " ",
+	 		rate:        10,
+	 		delay:       4000
+		}).trigger("play").trigger("stop");
+		
+		jQuery(".next").live("click", function(){
+	        jQuery("#ticker")
+	        .trigger({type: "play"})
+	        .trigger({type: "stop"});
+	        return false;
+	    });
+		
+    jQuery("#speedup").click(function(){
+        jQuery("#ticker")
+        .trigger({
+            type: "control",
+            item: 0,
+            rate: 10,
+            delay: 4000
+        })
+        return false;
+    });
+    
+    jQuery("#slowdown").click(function(){
+        jQuery("#ticker")
+        .trigger({
+            type: "control",
+            item: 0,
+            rate: 90,
+            delay: 8000
+        })
+        return false;
+    });
+	})
+</script>
+<body>
+	
+	<div id="ticker" style="height:200px;width:500px;border:solid 1px #cccccc;">
+    <div>
+      <h3>1.1	RIA与Flex</h3>
+        <p>当下非常流行一个名词叫RIA，RIA全称是Rich Internet Application，翻译成中文为丰富互联网应用程序。RIA 是集桌面应用程序的最佳用户界面功能与Web应用程序的普遍采用和快速、低成本布署以及互动多媒体通信的实时快捷于一体的新一代网络应用程序。目前WEB领域和桌面软件领域正逐步向RIA靠拢，预计3、5年后RIA的时代将会完全到来。</p>
+        <a class="next" href="javascript:;">下一条</a>
+    </div>
+    <div>
+        <p>现在很多大软件公司纷纷抢占RIA 领域的市场，以至于出现百花争鸣的现象。能够实现RIA的技术有很多种，例如Adobe公司的推出的Flex技术、微软推出的SilverLight技术、Sun被收购前推出的JavaFX，还有我们熟知的AJAX也可以算作一种轻量级的RIA技术。</p>
+        <a class="next" href="javascript:;">下一条</a>
+    </div>
+    <div>
+        <p>Flex通俗的说就是使用编程的手法来开发制作Flash，让Flash实现不再是设计人员的专利。开发出来的Flash既可以作为网页的组成部分用于WEB领域，也可以嵌入到C++、C#桌面程序中以改善界面美观和提高用户体验。</p>
+        <a class="next" href="javascript:;">下一条</a>
+    </div>
+    <div>
+    	 <h3>1.2	Flex特点与应用领域</h3>
+		<p>Flex支持用户完全自定义皮肤，小到按钮，大到整个网页或软件的界面都可以根据需要进行定制。例如你可以把一个按钮做成图 1- 1模样并且不改变按钮的特性，你甚至可以做成当鼠标移入时会有一个箱子打开的动画过程。这在普通的网页中只能通过JAVASCRIPT操作图片来完成，实现起来工作量较大，灵活度也较差。</p>
+        <a class="next" href="javascript:;">下一条</a>
+    </div>
+  </div>
+  <div class="clear"></div>
+  <input type="button" value="减速" id="slowdown"/>
+  <input type="button" value="加速" id="speedup"/>
+ 
+  <br />
+  首先引入脚本
+<textarea class="code">
+<script type="text/javascript" src="../jquery-1.4.js"></script>
+<!--打字效果（分离版）start-->
+<script type="text/javascript" src="js/jticker_split.js"></script>
+<!--打字效果（分离版）end-->
+</textarea>
+<pre></pre>	
+
+	HTML部分
+<textarea class="code">
+<div id="ticker">
+    <div>
+    	内容1
+        <a class="next" href="javascript:;">下一条</a>
+    </div>
+    <div>
+    	内容2
+        <a class="next" href="javascript:;">下一条</a>
+    </div>
+    <div>
+    	内容3
+        <a class="next" href="javascript:;">下一条</a>
+    </div>
+    <div>
+    	内容4
+        <a class="next" href="javascript:;">下一条</a>
+    </div>
+</div>
+<div class="clear"></div>
+</textarea>
+<pre></pre>
+
+	JS部分
+<textarea class="code">
+$(function(){
+	jQuery("#ticker").ticker({
+ 		cursorList:  " ",
+ 		rate:        10,
+ 		delay:       4000
+	}).trigger("play").trigger("stop");
+	jQuery(".next").live("click", function(){
+        jQuery("#ticker")
+        .trigger({type: "play"})
+        .trigger({type: "stop"});
+        return false;
+    });
+})
+</textarea>
+<pre></pre>	
+
+	加速与减速
+<textarea class="code">
+ jQuery("#speedup").click(function(){
+        jQuery("#ticker")
+        .trigger({
+            type: "control",
+            item: 0,
+            rate: 10,
+            delay: 4000
+        })
+        return false;
+    });
+    
+    jQuery("#slowdown").click(function(){
+        jQuery("#ticker")
+        .trigger({
+            type: "control",
+            item: 0,
+            rate: 90,
+            delay: 8000
+        })
+        return false;
+    });
+</textarea>
+<pre></pre>
+</body>
+<!--代码高亮start-->
+<script type="text/javascript" src="../hl/highlight.js"></script>
+<script type="text/javascript" src="../hl/lang-xml.js"></script>
+<script type="text/javascript" src="../hl/lang-html.js"></script>
+<link href="../hl/style.css" rel="stylesheet" type="text/css"/>
+<script>
+	$(function(){
+			showCode()
+	})
+	function showCode(){
+		$(".code").each(function(){
+			var code =$(this).val()
+			var hl = new DlHighlight({lang: "html",lineNumbers :false });
+			var formatted = hl.doItNow(code);
+			$(this).next().addClass("DlHighlight").html("<pre>" + formatted + "</pre>")
+		})
+	}
+</script>
+<!--代码高亮end-->
+</html>

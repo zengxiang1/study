@@ -1,0 +1,47 @@
+/*nav_menu_v结构*/
+.menu_v_bg{
+	height:180px;
+}
+.imenus_v_main{
+	width:180px;
+	z-index:8;
+	position:absolute;
+	left:20px;
+}
+.imenus_v .imeam_icon1 span{background-image:url(navMenu/help.gif); width:16px; height:16px; left:-160px; top:4px; background-repeat:no-repeat;background-position:top left;}
+.imenus_v .imeam_icon2 span{background-image:url(navMenu/mark.gif); width:16px; height:16px; left:-160px; top:4px; background-repeat:no-repeat;background-position:top left;}
+.imenus_v .imeam_icon3 span{background-image:url(navMenu/attention.gif); width:16px; height:16px; left:-160px; top:4px; background-repeat:no-repeat;background-position:top left;}
+.imenus_v .imeam_icon4 span{background-image:url(navMenu/list.gif); width:16px; height:16px; left:-160px; top:4px; background-repeat:no-repeat;background-position:top left;}
+.imenus_v .imeam_icon5 span{background-image:url(navMenu/key.gif); width:16px; height:16px; left:-160px; top:4px; background-repeat:no-repeat;background-position:top left;}
+.imenus_v .imeam_icon6 span{background-image:url(navMenu/edit.gif); width:16px; height:16px; left:-160px; top:4px; background-repeat:no-repeat;background-position:top left;}
+.imenus_v .imeam_icon7 span{background-image:url(navMenu/img.gif); width:16px; height:16px; left:-160px; top:4px; background-repeat:no-repeat;background-position:top left;}
+.imenus_v .imeam_icon8 span{background-image:url(navMenu/find.gif); width:16px; height:16px; left:-160px; top:4px; background-repeat:no-repeat;background-position:top left;}
+.imenus_v .imeam_icon9 span{background-image:url(navMenu/cart.gif); width:16px; height:16px; left:-160px; top:4px; background-repeat:no-repeat;background-position:top left;}
+.imenus_v .imeam_icon10 span{background-image:url(navMenu/item.gif); width:16px; height:16px; left:-160px; top:4px; background-repeat:no-repeat;background-position:top left;}
+.imenus_v .imeam_icon11 span{background-image:url(navMenu/poll.gif); width:16px; height:16px; left:-160px; top:4px; background-repeat:no-repeat;background-position:top left;}
+.imenus_v .imeam_icon12 span{background-image:url(navMenu/reply.gif); width:16px; height:16px; left:-160px; top:4px; background-repeat:no-repeat;background-position:top left;}
+.imenus_v .imeam_icon13 span{background-image:url(navMenu/print.gif); width:16px; height:16px; left:-160px; top:4px; background-repeat:no-repeat;background-position:top left;}
+.imenus_v .imeam_icon14 span{background-image:url(navMenu/globe.gif); width:16px; height:16px; left:-160px; top:4px; background-repeat:no-repeat;background-position:top left;}
+/*主菜单图标*/
+.imenus_v .imeam span,.imenus_v .imeamj span {background-image:url(navMenu/light_arrow_right.gif); width:6px; height:9px; left:-6px; top:8px; background-repeat:no-repeat;background-position:top left;}
+.imenus_v li:hover .imeam span,.imenus_v li a.iactive .imeamj span {background-image:url(navMenu/light_arrow_right.gif); background-repeat:no-repeat;background-position:top left;}
+/* 子菜单图标*/
+.imenus_v ul .imeas span,.imenus_v ul .imeasj span {background-image:url(navMenu/light_arrow_right.gif); width:6px; height:9px; left:-6px; top:3px; background-repeat:no-repeat;background-position:top left;}
+.imenus_v ul li:hover .imeas span,.imenus_v ul li a.iactive .imeasj span {background-image:url(navMenu/light_arrow_right.gif); background-repeat:no-repeat;background-position:top left;}
+/*主菜单容器*/
+.imouter_v {border-style:none; border-color:#6a6a6a; border-width:1px; padding:10px; margin:0px; }
+/*子菜单容器*/
+.imenus_v li ul {background-image:url(navMenu/menuConBg.jpg);background-repeat:repeat-x; background-position:0% 100%;
+background-color:#f7fbfe; /*子菜单容器背景*/
+border-style:solid; border-color:#333333; border-width:1px; padding:5px; margin:4px 0px 0px; }
+/*主菜单项 */
+.imenus_v li a, .imenus_v .imctitle {background-image:url(navMenu/itemBg.jpg);background-repeat:repeat-x;  text-align:left; font-size:12px; font-weight:normal; text-decoration:none; height:27px;line-height:27px;border: solid 1px #c7dbe7; padding:0 8px 0 30px; margin:0px 0px 6px; }
+.imenus_v li:hover>a {color:#000;text-decoration:none; }
+.imenus_v li a.ihover, .imde imenus0 a:hover {color:#000;text-decoration:none;background-image:url(navMenu/itemBgHover.jpg); }
+.imenus_v li a.iactive {}
+/*子菜单项 */
+.imenus_v ul a, .imenus_v .imsubc li .imctitle  {height:auto; background-color:transparent; background-image:none;color:#000; text-align:left; font-size:12px; font-weight:normal; text-decoration:none; border-style:none; border-color:#000000; border-width:1px; padding:2px 5px; margin:0px; }
+.imenus_v ul li:hover>a {color:#000; text-decoration:underline; }
+.imenus_v ul li a.ihover {color:#000; text-decoration:underline;background-image:none;}
+.imenus_v ul li a.iactive {background-color:#c8e1f8; }/*有下级时鼠标移入的背景色*/
+/*nav_menu_v结构*/

@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="reset.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../jquery-1.4.js"></script>
+<!--篮子菜单(分离版)start-->
+<link href="skins/style.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="js/stack_split.js"></script>
+<!--篮子菜单(分离版)end-->
+<body>
+	<div class="stack">
+		<img src="stacks/stack.png" title="点击展开"/>
+		<ul id="stack">
+			<li><a href="javascript:;"><span>示例1</span><img src="stacks/aperture.png"/></a></li>
+			<li><a href="javascript:;"><span>示例2</span><img src="stacks/photoshop.png"/></a></li>
+			<li><a href="javascript:;"><span>示例3</span><img src="stacks/safari.png"/></a></li>
+			<li><a href="javascript:;"><span>示例4</span><img src="stacks/coda.png"/></a></li>
+			<li><a href="javascript:;"><span>示例5</span><img src="stacks/finder.png"/></a></li>			
+		</ul>
+	</div>
+	
+首先引入脚本
+<textarea class="code">
+<script type="text/javascript" src="../jquery-1.4.js"></script>	
+<!--篮子菜单(分离版)start-->
+<link href="skins/style.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="js/stack_split.js"></script>
+<!--篮子菜单(分离版)end-->
+</textarea>
+<pre></pre>	
+
+	HTML代码，容器要设置class="stack"
+<textarea class="code">
+<div class="stack">
+	<img src="stacks/stack.png" alt="stack"/>
+	<ul id="stack">
+		<li><a href="javascript:;"><span>示例1</span><img src="stacks/aperture.png"/></a></li>
+		<li><a href="javascript:;"><span>示例2</span><img src="stacks/photoshop.png"/></a></li>
+		<li><a href="javascript:;"><span>示例3</span><img src="stacks/safari.png"/></a></li>
+		<li><a href="javascript:;"><span>示例4</span><img src="stacks/coda.png"/></a></li>
+		<li><a href="javascript:;"><span>示例5</span><img src="stacks/finder.png"/></a></li>			
+	</ul>
+</div>
+</textarea>
+<pre></pre>	
+</body>
+<!--代码高亮start-->
+<script type="text/javascript" src="../hl/highlight.js"></script>
+<script type="text/javascript" src="../hl/lang-xml.js"></script>
+<script type="text/javascript" src="../hl/lang-html.js"></script>
+<link href="../hl/style.css" rel="stylesheet" type="text/css"/>
+<script>
+	$(function(){
+			showCode()
+	})
+	function showCode(){
+		$(".code").each(function(){
+			var code =$(this).val()
+			var hl = new DlHighlight({lang: "html",lineNumbers :false });
+			var formatted = hl.doItNow(code);
+			$(this).next().addClass("DlHighlight").html("<pre>" + formatted + "</pre>")
+		})
+	}
+</script>
+<!--代码高亮end-->
+</html>

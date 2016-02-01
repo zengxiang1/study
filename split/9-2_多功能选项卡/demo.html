@@ -1,0 +1,852 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="reset.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../jquery-1.4.js"></script>
+<!--多功能选项卡(分离版)start-->
+<link href="skins/style.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="js/switchable_split.js"></script>
+<!--多功能选项卡(分离版)end-->
+<script>
+	$(function(){
+		$("#tabs1").switchable("#panels1 >div");
+	})
+	$(function(){
+		$("#tabs2").switchable("#panels2 >div");
+	})
+	$(function(){
+		$("#tabs3").switchable("#panels3 >div",{  
+		     triggerType:"click"
+		});
+	})
+	$(function(){
+		$("#tabs4").switchable("#panels4 >div",{  
+		     triggerType:"click",
+			 effect:"iframe"
+		});
+	})
+	$(function(){
+		$("#tabs6").switchable("#panels6 >div",{  
+		     triggerType:"click"
+		});
+	})
+	function clickFunc1(){
+		var api=$("#tabs6").switchable();  
+		alert(api.getTriggers().eq(0).html())
+	}
+	function clickFunc2(){
+		var api=$("#tabs6").switchable();  
+		alert(api.getTriggers().eq(1).html())
+	}
+	function clickFunc3(){
+		var api=$("#tabs6").switchable();  
+		alert(api.getPanels().eq(0).html())
+	}
+	function clickFunc4(){
+		var api=$("#tabs6").switchable();  
+		alert(api.getPanels().eq(1).html())
+	}
+	function clickFunc5(){
+		var api=$("#tabs6").switchable();  
+		alert(api.getIndex())
+	}
+	function clickFunc6(){
+		var api=$("#tabs6").switchable();  
+		api.move(1);
+	}
+	function clickFunc7(){
+		var api=$("#tabs6").switchable();  
+		api.prev();
+	}
+	$(function(){
+		$("#tabs7").switchable("#panels7 >div",{  
+		     triggerType:"click",
+			 beforeSwitch:function(e,i){
+			 	if(i>0){
+					if($("#ness").val()==""){
+						alert("请先填写第一项")
+						return false;
+					}
+				}
+			 }
+		});
+	})
+	$(function(){
+		$("#tabs8").switchable("#panels8 >div").mousewheel(); 
+	})
+	$(function(){
+		$("#tabs9").switchable("#panels9 >div",{ triggers: "li" }).mousewheel(); 
+	})
+	$(function(){
+		$("#tabs10").switchable("#panels10 >div",{ triggers: "li" }).mousewheel(); 
+	})
+</script>
+<body>
+<div class="box2" panelTitle="基本用法">	
+		有时候可能会需要选项卡内容中还有选项卡的情况，这里提供了第二种选项卡。可用在第一种内部，也可单独使用。效果如下：
+		<div id="tabs1" class="tabs-trigger">
+		<div class="tabs-triggerLeft">
+		<div class="tabs-triggerRight">
+			<a href="#First">选项1</a>
+			<a href="#Second">选项2</a>
+			<a href="#Third">选项3</a>
+		</div>
+		</div>
+		</div>
+		<div id="panels1" class="tabs-panel">
+			<div class="padding_left10">
+				内容1<br />内容1<br />内容1<br />内容1<br />
+			</div>
+			<div class="padding_left10">
+				内容2<br />内容2<br />内容2<br />内容2<br />内容2
+			</div>
+			<div class="padding_left10">
+				内容3<br />内容3<br />内容3<br />内容3<br />
+			</div>
+		</div>
+	
+		首先引入脚本
+<textarea class="code">
+<script type="text/javascript" src="../js/nav/switchable.js"></script>
+</textarea>
+<pre></pre>	
+	HTML代码
+<textarea class="code">
+<div id="tabs1" class="tabs-trigger">
+<div class="tabs-triggerLeft">
+<div class="tabs-triggerRight">
+	<a href="#First">选项1</a>
+	<a href="#Second">选项2</a>
+	<a href="#Third">选项3</a>
+</div>
+</div>
+</div>
+<div id="panels1" class="tabs-panel">
+	<div class="padding_left10">
+		内容1<br />内容1<br />内容1<br />内容1<br />
+	</div>
+	<div class="padding_left10">
+		内容2<br />内容2<br />内容2<br />内容2<br />内容2
+	</div>
+	<div class="padding_left10">
+		内容3<br />内容3<br />内容3<br />内容3<br />
+	</div>
+</div>
+</textarea>
+<pre></pre>	
+	JS代码
+<textarea class="code">
+$(function(){
+	$("#tabs1").switchable("#panels1 >div");
+})
+</textarea>
+<pre></pre>	
+	</div>
+	
+	<div class="box2" panelTitle="自定义宽高">	
+		选项卡容器默认高度自适应，宽度350像素。
+		若要自定义宽度，HTML部分代码如下：
+<textarea class="code">
+<div id="tabs2" class="tabs-trigger" style="width:500px;">
+<div class="tabs-triggerLeft">
+<div class="tabs-triggerRight">
+	<a href="#First">选项1</a>
+	<a href="#Second">选项2</a>
+</div>
+</div>
+</div>
+<div id="panels2" class="tabs-panel" style="width:498px;height:200px;">
+	<div class="padding_left10">
+		内容1<br />内容1<br />内容1<br />内容1<br />内容1<br />
+		内容1<br />内容1<br />内容1<br />内容1<br />内容1<br />
+		内容1<br />内容1<br />内容1<br />内容1<br />内容1
+	</div>
+	<div class="padding_left10">
+		内容2<br />内容2<br />内容2<br />内容2<br />内容2
+	</div>
+</div>	
+</textarea>
+<pre></pre>		
+	JS代码部分不变
+<textarea class="code">
+$(function(){
+	$("#tabs2").switchable("#panels2 >div");
+})
+</textarea>
+<pre></pre>	
+效果：
+		<div id="tabs2" class="tabs-trigger" style="width:500px;">
+		<div class="tabs-triggerLeft">
+		<div class="tabs-triggerRight">
+			<a href="#First">选项1</a>
+			<a href="#Second">选项2</a>
+		</div>
+		</div>
+		</div>
+		<div id="panels2" class="tabs-panel" style="width:498px;height:200px;">
+			<div class="padding_left10">
+				内容1<br />内容1<br />内容1<br />内容1<br />内容1<br />
+				内容1<br />内容1<br />内容1<br />内容1<br />内容1<br />
+				内容1<br />内容1<br />内容1<br />内容1<br />内容1
+			</div>
+			<div class="padding_left10">
+				内容2<br />内容2<br />内容2<br />内容2<br />内容2
+			</div>
+		</div>	
+	</div>
+	
+	<div class="box2" panelTitle="点击触发">	
+	选项卡默认鼠标移入触发，如果要实现点击触发代码如下：<br />
+	HTML部分不变
+<textarea class="code">
+<div id="tabs3" class="tabs-trigger">
+<div class="tabs-triggerLeft">
+<div class="tabs-triggerRight">
+	<a href="#First">选项1</a>
+	<a href="#Second">选项2</a>
+</div>
+</div>
+</div>
+<div id="panels3" class="tabs-panel">
+	<div class="padding_left10">
+		内容1<br />内容1<br />内容1<br />内容1<br />内容1
+	</div>
+	<div class="padding_left10">
+		内容2<br />内容2<br />内容2<br />内容2<br />内容2
+	</div>
+</div>			
+</textarea>
+<pre></pre>	
+	JS代码
+<textarea class="code">
+$(function(){
+	$("#tabs3").switchable("#panels3 >div",{  
+	     triggerType:"click"
+	});
+})
+</textarea>
+<pre></pre>	
+	效果如下：
+		<div id="tabs3" class="tabs-trigger">
+		<div class="tabs-triggerLeft">
+		<div class="tabs-triggerRight">
+			<a href="#First">选项1</a>
+			<a href="#Second">选项2</a>
+		</div>
+		</div>
+		</div>
+		<div id="panels3" class="tabs-panel">
+			<div class="padding_left10">
+				内容1<br />内容1<br />内容1<br />内容1<br />内容1
+			</div>
+			<div class="padding_left10">
+				内容2<br />内容2<br />内容2<br />内容2<br />内容2
+			</div>
+		</div>	
+	</div>
+		
+	<div class="box2" panelTitle="iframe嵌入方式">		
+		若要实现嵌入iframe,HTML代码：
+<textarea class="code">
+<div id="tabs4" class="tabs-trigger">
+<div class="tabs-triggerLeft">
+<div class="tabs-triggerRight">
+	<a href="inclued/chapter9-1-1-content1.html" target="frmrightChild" class="current">选项1</a>
+	<a href="inclued/chapter9-1-1-content2.html" target="frmrightChild">选项2</a>
+</div>
+</div>
+</div>
+<div id="panels4" class="tabs-panel">
+	<IFRAME scrolling="no" width="100%" frameBorder=0 id=frmrightChild 
+	name=frmrightChild onload="iframeHeight('frmrightChild')" 
+	allowTransparency="true"></IFRAME>
+</div>			
+</textarea>
+<pre></pre>	
+	JS代码
+<textarea class="code">
+$(function(){
+	$("#tabs4").switchable("#panels4 >div",{  
+	     triggerType:"click",
+		 effect:"iframe"
+	});
+})
+</textarea>
+<pre></pre>	
+	效果如下：
+		<div id="tabs4" class="tabs-trigger">
+		<div class="tabs-triggerLeft">
+		<div class="tabs-triggerRight">
+			<a href="include/chapter9-1-1-content1.html" target="frmrightChild" class="current">选项1</a>
+			<a href="include/chapter9-1-1-content2.html" target="frmrightChild">选项2</a>
+		</div>
+		</div>
+		</div>
+		<div id="panels4" class="tabs-panel">
+			<div>
+			<IFRAME scrolling="no" width="100%" frameBorder=0 id=frmrightChild 
+			name=frmrightChild onload="iframeHeight('frmrightChild')" 
+			  allowTransparency="true"></IFRAME>
+			</div>
+		</div>
+	</div>
+	
+	<div class="box2" panelTitle="ajax加载数据">		
+		若要实现ajax加载数据,HTML代码：
+<textarea class="code">
+<div id="tabs5" class="tabs-trigger">
+<div class="tabs-triggerLeft">
+<div class="tabs-triggerRight">
+	<a href="include/chapter9-1-1-content1.html" target="frmrightChild" class="current">选项1</a>
+	<a href="include/chapter9-1-1-content2.html" target="frmrightChild">选项2</a>
+</div>
+</div>
+</div>
+<div id="panels5" class="tabs-panel">
+	<div></div>
+</div>		
+</textarea>
+<pre></pre>	
+	JS代码
+<textarea class="code">
+$(function(){
+	$("#tabs5").switchable("#panels5 >div",{  
+	     triggerType:"click",
+		 effect:"ajax"
+	});
+})
+</textarea>
+<pre></pre>	
+如果是IE浏览器，这种方式需要需要使用http的方式访问才可以，否则会失效。
+	</div>
+		
+	<div class="box2" panelTitle="回调函数">		
+<table class="tableStyle">
+	<tr>
+		<th>事件名</th><th>事件说明</th>
+	</tr>
+	<tr>
+		<td>beforeSwitch</td><td>触发前的 Callback</td>
+	</tr>
+	<tr>
+		<td>onSwitch</td><td>触发时的 Callback</td>
+	</tr>
+</table>
+	用法如下：
+<textarea class="code">
+$(function(){
+	$("#tabs5").switchable("#panels5 >div",{  
+	     triggerType:"click",
+		 onSwitch:function(e,i){
+		 	alert(e.type)
+			alert(i)
+		 }
+	});
+})
+</textarea>
+<pre></pre>	
+	</div>
+	
+	<div class="box2" panelTitle="外部控制">	
+<table class="tableStyle">
+	<tr>
+		<th>方法名</th><th>说明</th>
+	</tr>
+	<tr>
+		<td>getTriggers()</td><td>返回tab标签对象（jQuery对象）</td>
+	</tr>
+	<tr>
+		<td>getPanels()</td><td>返回内容区对象（jQuery对象）</td>
+	</tr>
+	<tr>
+		<td>getVisiblePanel(index)</td><td>返回可见内容区域对象（jQuery对象）</td>
+	</tr>
+	<tr>
+		<td>getIndex()</td><td>返回当前标签索引</td>
+	</tr>
+	<tr>
+		<td>move(index)</td><td>激活指定索引的标签</td>
+	</tr>
+	<tr>
+		<td>next()</td><td>激活下一个标签</td>
+	</tr>
+	<tr>
+		<td>prev()</td><td>激活上一个标签</td>
+	</tr>
+	<tr>
+		<td>beforeSwitch(fn)</td><td>触发前的 Callback</td>
+	</tr>
+	<tr>
+		<td>onSwitch(fn)</td><td>触发时的 Callback</td>
+	</tr>
+	<tr>
+		<td>bind(name, fn)</td><td>为标签绑定一个或多个事件</td>
+	</tr>
+	<tr>
+		<td>unbind(name)</td><td>解除绑定</td>
+	</tr>
+</table>
+用法如下：
+		<div id="tabs6" class="tabs-trigger">
+		<div class="tabs-triggerLeft">
+		<div class="tabs-triggerRight">
+			<a href="#First">选项1</a>
+			<a href="#Second">选项2</a>
+		</div>
+		</div>
+		</div>
+		<div id="panels6" class="tabs-panel">
+			<div class="padding_left10">
+				内容1<br />内容1<br />内容1<br />内容1<br />内容1
+			</div>
+			<div class="padding_left10">
+				内容2<br />内容2<br />内容2<br />内容2<br />内容2
+			</div>
+		</div>	
+		<input type="button" value="得到第一个标签的html" onclick="clickFunc1()"/>
+		<input type="button" value="得到第二个标签的html" onclick="clickFunc2()"/>
+		<input type="button" value="得到第一个内容区的html" onclick="clickFunc3()"/>
+		<input type="button" value="得到第二个内容区的html" onclick="clickFunc4()"/><br/>
+		<input type="button" value="得到当前标签索引" onclick="clickFunc5()"/>
+		<input type="button" value="激活“选项2”" onclick="clickFunc6()"/>
+		<input type="button" value="激活上一个标签" onclick="clickFunc7()"/>
+		<br/>HTML部分如下：
+<textarea class="code">
+<div id="tabs6" class="tabs-trigger">
+<div class="tabs-triggerLeft">
+<div class="tabs-triggerRight">
+	<a href="#First">选项1</a>
+	<a href="#Second">选项2</a>
+</div>
+</div>
+</div>
+<div id="panels6" class="tabs-panel">
+	<div class="padding_left10">
+		内容1<br />内容1<br />内容1<br />内容1<br />内容1
+	</div>
+	<div class="padding_left10">
+		内容2<br />内容2<br />内容2<br />内容2<br />内容2
+	</div>
+</div>	
+<input type="button" value="得到第一个标签的html" onclick="clickFunc1()"/>
+<input type="button" value="得到第二个标签的html" onclick="clickFunc2()"/>
+<input type="button" value="得到第一个内容区的html" onclick="clickFunc3()"/>
+<input type="button" value="得到第二个内容区的html" onclick="clickFunc4()"/><br/>
+<input type="button" value="得到当前标签索引" onclick="clickFunc5()"/>
+<input type="button" value="激活“选项2”" onclick="clickFunc6()"/>
+<input type="button" value="激活上一个标签" onclick="clickFunc7()"/>
+</textarea>
+<pre></pre>		
+JS部分
+<textarea class="code">
+$(function(){
+	$("#tabs6").switchable("#panels6 >div",{  
+	     triggerType:"click"
+	});
+})
+function clickFunc1(){
+	var api=$("#tabs6").switchable();  
+	alert(api.getTriggers().eq(0).html())
+}
+function clickFunc2(){
+	var api=$("#tabs6").switchable();  
+	alert(api.getTriggers().eq(1).html())
+}
+function clickFunc3(){
+	var api=$("#tabs6").switchable();  
+	alert(api.getPanels().eq(0).html())
+}
+function clickFunc4(){
+	var api=$("#tabs6").switchable();  
+	alert(api.getPanels().eq(1).html())
+}
+function clickFunc5(){
+	var api=$("#tabs6").switchable();  
+	alert(api.getIndex())
+}
+function clickFunc6(){
+	var api=$("#tabs6").switchable();  
+	api.move(1);
+}
+function clickFunc7(){
+	var api=$("#tabs6").switchable();  
+	api.prev();
+}
+</textarea>
+<pre></pre>	
+	</div>	
+
+	<div class="box2" panelTitle="动态控制标签是否可用">	
+		<div id="tabs7" class="tabs-trigger">
+		<div class="tabs-triggerLeft">
+		<div class="tabs-triggerRight">
+			<a href="#First">选项1</a>
+			<a href="#Second">选项2</a>
+			<a href="#third">选项3</a>
+		</div>
+		</div>
+		</div>
+		<div id="panels7" class="tabs-panel" style="height:150px;">
+			<div class="padding_left10">
+				如果不填写下面的文本框则其他标签不可用<br/>
+				<input type="text" id="ness"/>
+			</div>
+			<div class="padding_left10">
+				内容2<br />内容2<br />内容2<br />内容2<br />内容2
+			</div>
+			<div class="padding_left10">
+				内容3<br />内容3<br />内容3<br />内容3<br />内容3
+			</div>
+		</div>
+		HTML部分如下：
+<textarea class="code">
+<div id="tabs7" class="tabs-trigger">
+<div class="tabs-triggerLeft">
+<div class="tabs-triggerRight">
+	<a href="#First">选项1</a>
+	<a href="#Second">选项2</a>
+	<a href="#third">选项3</a>
+</div>
+</div>
+</div>
+<div id="panels7" class="tabs-panel" style="height:150px;">
+	<div class="padding_left10">
+		如果不填写下面的文本框则其他标签不可用<br/>
+		<input type="text" id="ness"/>
+	</div>
+	<div class="padding_left10">
+		内容2<br />内容2<br />内容2<br />内容2<br />内容2
+	</div>
+	<div class="padding_left10">
+		内容3<br />内容3<br />内容3<br />内容3<br />内容3
+	</div>
+</div>
+</textarea>
+<pre></pre>		
+JS部分
+<textarea class="code">
+$(function(){
+	$("#tabs7").switchable("#panels7 >div",{  
+	     triggerType:"click",
+		 beforeSwitch:function(e,i){
+		 	if(i>0){
+				if($("#ness").val()==""){
+					alert("请先填写第一项")
+					return false;
+				}
+			}
+		 }
+	});
+})
+</textarea>
+<pre></pre>
+	</div>
+	
+	<div class="box2" panelTitle="鼠标滚轮切换">	
+		<div id="tabs8" class="tabs-trigger">
+		<div class="tabs-triggerLeft">
+		<div class="tabs-triggerRight">
+			<a href="#First">选项1</a>
+			<a href="#Second">选项2</a>
+			<a href="#Third">选项3</a>
+		</div>
+		</div>
+		</div>
+		<div id="panels8" class="tabs-panel">
+			<div class="padding_left10">
+				内容1<br />内容1<br />内容1<br />内容1<br />
+			</div>
+			<div class="padding_left10">
+				内容2<br />内容2<br />内容2<br />内容2<br />内容2
+			</div>
+			<div class="padding_left10">
+				内容3<br />内容3<br />内容3<br />内容3<br />
+			</div>
+		</div>
+		HTML部分不变：
+<textarea class="code">
+<div id="tabs8" class="tabs-trigger">
+<div class="tabs-triggerLeft">
+<div class="tabs-triggerRight">
+	<a href="#First">选项1</a>
+	<a href="#Second">选项2</a>
+	<a href="#Third">选项3</a>
+</div>
+</div>
+</div>
+<div id="panels8" class="tabs-panel">
+	<div class="padding_left10">
+		内容1<br />内容1<br />内容1<br />内容1<br />
+	</div>
+	<div class="padding_left10">
+		内容2<br />内容2<br />内容2<br />内容2<br />内容2
+	</div>
+	<div class="padding_left10">
+		内容3<br />内容3<br />内容3<br />内容3<br />
+	</div>
+</div>
+</textarea>
+<pre></pre>		
+JS部分
+<textarea class="code">
+$(function(){
+	$("#tabs8").switchable("#panels8 >div").mousewheel(); 
+})
+</textarea>
+<pre></pre>
+	</div>
+	
+	<div class="box2" panelTitle="第二种样式">	
+	适合新闻展示。
+	<div class="tabs-2">
+		<ul class="tabs-2-trigger fourth" id="tabs9">
+			<li><a href="javascript:;">选项一</a></li>
+			<li><a href="javascript:;">选项二</a></li>
+			<li><a href="javascript:;">选项三</a></li>
+			<li><a href="javascript:;">选项四</a></li>
+		</ul>
+		<div id="panels9">
+			<div class="dbList padding_left5">
+				<ul>
+					<li class="listPoint"><a href="javascript:;" title="十五所第十三届运动会即将开始，请大家抓紧时间报名"><span class="text_slice" style="width:145px;">十五所第十三届运动会即将开始，请大家抓紧时间报名</span></a></li>
+					<li class="listPoint"><a href="javascript:;" title="研发部《部门质量保证文件V2.0-06》发布"><span class="text_slice" style="width:145px;">研发部《部门质量保证文件V2.0-06》发布</span></a></li>
+				</ul>
+				<div class="clear"></div>
+				<ul>
+					<li class="listPoint"><a href="javascript:;" title="请新同事将网站个人信息补充完整"><span class="text_slice" style="width:145px;">请新同事将网站个人信息补充完整</span></a></li>
+					<li class="listPoint"><a href="javascript:;" title="关于成立“服务器端软件设计”技术沙龙的通知"><span class="text_slice" style="width:145px;">关于成立“服务器端软件设计”技术沙龙的通知</span></a></li>
+				</ul>
+				<div class="clear"></div>
+			</div>
+			<div class="dbList padding_left5">
+				<ul>
+					<li class="listPoint"><a href="javascript:;" title="请新同事将网站个人信息补充完整"><span class="text_slice" style="width:145px;">请新同事将网站个人信息补充完整</span></a></li>
+					<li class="listPoint"><a href="javascript:;" title="关于成立“服务器端软件设计”技术沙龙的通知"><span class="text_slice" style="width:145px;">关于成立“服务器端软件设计”技术沙龙的通知</span></a></li>
+				</ul>
+				<div class="clear"></div>
+				<ul>
+					<li class="listPoint"><a href="javascript:;" title="研发部《部门质量保证文件V2.0-06》发布"><span class="text_slice" style="width:145px;">研发部《部门质量保证文件V2.0-06》发布</span></a></li>
+					<li class="listPoint"><a href="javascript:;" title="关于组织“青春展风采 激情促腾飞”主题系列活动工作"><span class="text_slice" style="width:145px;">关于组织“青春展风采 激情促腾飞”主题系列活动工作</span></a></li>
+				</ul>
+				<div class="clear"></div>
+			</div>
+			<div class="dbList padding_left5">
+				<ul>
+					<li class="listPoint"><a href="javascript:;" title="关于组织“青春展风采 激情促腾飞”主题系列活动工作"><span class="text_slice" style="width:145px;">关于组织“青春展风采 激情促腾飞”主题系列活动工作</span></a></li>
+					<li class="listPoint"><a href="javascript:;" title="十五所第十三届运动会即将开始，请大家抓紧时间报名"><span class="text_slice" style="width:145px;">十五所第十三届运动会即将开始，请大家抓紧时间报名</span></a></li>
+				</ul>
+				<div class="clear"></div>
+				<ul>
+					<li class="listPoint"><a href="javascript:;" title="研发部《部门质量保证文件V2.0-06》发布"><span class="text_slice" style="width:145px;">研发部《部门质量保证文件V2.0-06》发布</span></a></li>
+					<li class="listPoint"><a href="javascript:;" title="请新同事将网站个人信息补充完整"><span class="text_slice" style="width:145px;">请新同事将网站个人信息补充完整</span></a></li>
+				</ul>
+				<div class="clear"></div>
+			</div>
+			<div class="dbList padding_left5">
+				<ul>
+					<li class="listPoint"><a href="javascript:;" title="研发部《部门质量保证文件V2.0-06》发布"><span class="text_slice" style="width:145px;">研发部《部门质量保证文件V2.0-06》发布</span></a></li>
+					<li class="listPoint"><a href="javascript:;" title="关于组织“青春展风采 激情促腾飞”主题系列活动工作"><span class="text_slice" style="width:145px;">关于组织“青春展风采 激情促腾飞”主题系列活动工作</span></a></li>
+				</ul>
+				<div class="clear"></div>
+				<ul>
+					<li class="listPoint"><a href="javascript:;" title="关于成立“服务器端软件设计”技术沙龙的通知"><span class="text_slice" style="width:145px;">关于成立“服务器端软件设计”技术沙龙的通知</span></a></li>
+					<li class="listPoint"><a href="javascript:;" title="十五所第十三届运动会即将开始，请大家抓紧时间报名"><span class="text_slice" style="width:145px;">十五所第十三届运动会即将开始，请大家抓紧时间报名</span></a></li>
+				</ul>
+				<div class="clear"></div>
+			</div>
+		</div>
+	</div>
+	HTML代码：
+<textarea class="code">
+<div class="tabs-2">
+	<ul class="tabs-2-trigger fourth" id="tabs9">
+		<li><a href="javascript:;">选项一</a></li>
+		<li><a href="javascript:;">选项二</a></li>
+		<li><a href="javascript:;">选项三</a></li>
+		<li><a href="javascript:;">选项四</a></li>
+	</ul>
+	<div id="panels9">
+		<div class="dbList padding_left5">
+			<ul>
+				<li class="listPoint"><a href="javascript:;" title="十五所第十三届运动会即将开始，请大家抓紧时间报名"><span class="text_slice" style="width:145px;">十五所第十三届运动会即将开始，请大家抓紧时间报名</span></a></li>
+				<li class="listPoint"><a href="javascript:;" title="研发部《部门质量保证文件V2.0-06》发布"><span class="text_slice" style="width:145px;">研发部《部门质量保证文件V2.0-06》发布</span></a></li>
+			</ul>
+			<div class="clear"></div>
+			<ul>
+				<li class="listPoint"><a href="javascript:;" title="十五所第十三届运动会即将开始，请大家抓紧时间报名"><span class="text_slice" style="width:145px;">十五所第十三届运动会即将开始，请大家抓紧时间报名</span></a></li>
+				<li class="listPoint"><a href="javascript:;" title="研发部《部门质量保证文件V2.0-06》发布"><span class="text_slice" style="width:145px;">研发部《部门质量保证文件V2.0-06》发布</span></a></li>
+			</ul>
+			<div class="clear"></div>
+		</div>
+		<div class="dbList padding_left5">
+			<ul>
+				<li class="listPoint"><a href="javascript:;" title="请新同事将网站个人信息补充完整"><span class="text_slice" style="width:145px;">请新同事将网站个人信息补充完整</span></a></li>
+				<li class="listPoint"><a href="javascript:;" title="关于成立“服务器端软件设计”技术沙龙的通知"><span class="text_slice" style="width:145px;">关于成立“服务器端软件设计”技术沙龙的通知</span></a></li>
+			</ul>
+			<div class="clear"></div>
+			<ul>
+				<li class="listPoint"><a href="javascript:;" title="请新同事将网站个人信息补充完整"><span class="text_slice" style="width:145px;">请新同事将网站个人信息补充完整</span></a></li>
+				<li class="listPoint"><a href="javascript:;" title="关于成立“服务器端软件设计”技术沙龙的通知"><span class="text_slice" style="width:145px;">关于成立“服务器端软件设计”技术沙龙的通知</span></a></li>
+			</ul>
+			<div class="clear"></div>
+		</div>
+		<div class="dbList padding_left5">
+			<ul>
+				<li class="listPoint"><a href="javascript:;" title="关于组织“青春展风采 激情促腾飞”主题系列活动工作"><span class="text_slice" style="width:145px;">关于组织“青春展风采 激情促腾飞”主题系列活动工作</span></a></li>
+				<li class="listPoint"><a href="javascript:;" title="十五所第十三届运动会即将开始，请大家抓紧时间报名"><span class="text_slice" style="width:145px;">十五所第十三届运动会即将开始，请大家抓紧时间报名</span></a></li>
+			</ul>
+			<div class="clear"></div>
+			<ul>
+				<li class="listPoint"><a href="javascript:;" title="关于组织“青春展风采 激情促腾飞”主题系列活动工作"><span class="text_slice" style="width:145px;">关于组织“青春展风采 激情促腾飞”主题系列活动工作</span></a></li>
+				<li class="listPoint"><a href="javascript:;" title="十五所第十三届运动会即将开始，请大家抓紧时间报名"><span class="text_slice" style="width:145px;">十五所第十三届运动会即将开始，请大家抓紧时间报名</span></a></li>
+			</ul>
+			<div class="clear"></div>
+		</div>
+		<div class="dbList padding_left5">
+			<ul>
+				<li class="listPoint"><a href="javascript:;" title="研发部《部门质量保证文件V2.0-06》发布"><span class="text_slice" style="width:145px;">研发部《部门质量保证文件V2.0-06》发布</span></a></li>
+				<li class="listPoint"><a href="javascript:;" title="关于组织“青春展风采 激情促腾飞”主题系列活动工作"><span class="text_slice" style="width:145px;">关于组织“青春展风采 激情促腾飞”主题系列活动工作</span></a></li>
+			</ul>
+			<div class="clear"></div>
+			<ul>
+				<li class="listPoint"><a href="javascript:;" title="研发部《部门质量保证文件V2.0-06》发布"><span class="text_slice" style="width:145px;">研发部《部门质量保证文件V2.0-06》发布</span></a></li>
+				<li class="listPoint"><a href="javascript:;" title="关于组织“青春展风采 激情促腾飞”主题系列活动工作"><span class="text_slice" style="width:145px;">关于组织“青春展风采 激情促腾飞”主题系列活动工作</span></a></li>
+			</ul>
+			<div class="clear"></div>
+		</div>
+	</div>
+</div>
+</textarea>
+<pre></pre>	
+	JS代码
+<textarea class="code">
+$(function(){
+	$("#tabs9").switchable("#panels9 >div",{ triggers: "li" }).mousewheel(); 
+})
+</textarea>
+<pre></pre>	
+	
+	<div class="tabs-2">
+		<ul class="tabs-2-trigger third" id="tabs10">
+			<li><a href="javascript:;">选项一</a></li>
+			<li><a href="javascript:;">选项二</a></li>
+			<li><a href="javascript:;">选项三</a></li>
+		</ul>
+		<div id="panels10">
+			<div class="dbList padding_left5">
+				<ul>
+					<li class="listPoint"><a href="javascript:;" title="十五所第十三届运动会即将开始，请大家抓紧时间报名"><span class="text_slice" style="width:145px;">十五所第十三届运动会即将开始，请大家抓紧时间报名</span></a></li>
+					<li class="listPoint"><a href="javascript:;" title="研发部《部门质量保证文件V2.0-06》发布"><span class="text_slice" style="width:145px;">研发部《部门质量保证文件V2.0-06》发布</span></a></li>
+				</ul>
+				<div class="clear"></div>
+				<ul>
+					<li class="listPoint"><a href="javascript:;" title="请新同事将网站个人信息补充完整"><span class="text_slice" style="width:145px;">请新同事将网站个人信息补充完整</span></a></li>
+					<li class="listPoint"><a href="javascript:;" title="关于成立“服务器端软件设计”技术沙龙的通知"><span class="text_slice" style="width:145px;">关于成立“服务器端软件设计”技术沙龙的通知</span></a></li>
+				</ul>
+				<div class="clear"></div>
+			</div>
+			<div class="dbList padding_left5">
+				<ul>
+					<li class="listPoint"><a href="javascript:;" title="请新同事将网站个人信息补充完整"><span class="text_slice" style="width:145px;">请新同事将网站个人信息补充完整</span></a></li>
+					<li class="listPoint"><a href="javascript:;" title="关于成立“服务器端软件设计”技术沙龙的通知"><span class="text_slice" style="width:145px;">关于成立“服务器端软件设计”技术沙龙的通知</span></a></li>
+				</ul>
+				<div class="clear"></div>
+				<ul>
+					<li class="listPoint"><a href="javascript:;" title="研发部《部门质量保证文件V2.0-06》发布"><span class="text_slice" style="width:145px;">研发部《部门质量保证文件V2.0-06》发布</span></a></li>
+					<li class="listPoint"><a href="javascript:;" title="关于组织“青春展风采 激情促腾飞”主题系列活动工作"><span class="text_slice" style="width:145px;">关于组织“青春展风采 激情促腾飞”主题系列活动工作</span></a></li>
+				</ul>
+				<div class="clear"></div>
+			</div>
+			<div class="dbList padding_left5">
+				<ul>
+					<li class="listPoint"><a href="javascript:;" title="关于组织“青春展风采 激情促腾飞”主题系列活动工作"><span class="text_slice" style="width:145px;">关于组织“青春展风采 激情促腾飞”主题系列活动工作</span></a></li>
+					<li class="listPoint"><a href="javascript:;" title="十五所第十三届运动会即将开始，请大家抓紧时间报名"><span class="text_slice" style="width:145px;">十五所第十三届运动会即将开始，请大家抓紧时间报名</span></a></li>
+				</ul>
+				<div class="clear"></div>
+				<ul>
+					<li class="listPoint"><a href="javascript:;" title="研发部《部门质量保证文件V2.0-06》发布"><span class="text_slice" style="width:145px;">研发部《部门质量保证文件V2.0-06》发布</span></a></li>
+					<li class="listPoint"><a href="javascript:;" title="请新同事将网站个人信息补充完整"><span class="text_slice" style="width:145px;">请新同事将网站个人信息补充完整</span></a></li>
+				</ul>
+				<div class="clear"></div>
+			</div>
+		</div>
+	</div>
+	HTML代码：
+<textarea class="code">
+<div class="tabs-2">
+	<ul class="tabs-2-trigger third" id="tabs10">
+		<li><a href="javascript:;">选项一</a></li>
+		<li><a href="javascript:;">选项二</a></li>
+		<li><a href="javascript:;">选项三</a></li>
+	</ul>
+	<div id="panels10">
+		<div class="dbList padding_left5">
+			<ul>
+				<li class="listPoint"><a href="javascript:;" title="十五所第十三届运动会即将开始，请大家抓紧时间报名"><span class="text_slice" style="width:145px;">十五所第十三届运动会即将开始，请大家抓紧时间报名</span></a></li>
+				<li class="listPoint"><a href="javascript:;" title="研发部《部门质量保证文件V2.0-06》发布"><span class="text_slice" style="width:145px;">研发部《部门质量保证文件V2.0-06》发布</span></a></li>
+			</ul>
+			<div class="clear"></div>
+			<ul>
+				<li class="listPoint"><a href="javascript:;" title="十五所第十三届运动会即将开始，请大家抓紧时间报名"><span class="text_slice" style="width:145px;">十五所第十三届运动会即将开始，请大家抓紧时间报名</span></a></li>
+				<li class="listPoint"><a href="javascript:;" title="研发部《部门质量保证文件V2.0-06》发布"><span class="text_slice" style="width:145px;">研发部《部门质量保证文件V2.0-06》发布</span></a></li>
+			</ul>
+			<div class="clear"></div>
+		</div>
+		<div class="dbList padding_left5">
+			<ul>
+				<li class="listPoint"><a href="javascript:;" title="请新同事将网站个人信息补充完整"><span class="text_slice" style="width:145px;">请新同事将网站个人信息补充完整</span></a></li>
+				<li class="listPoint"><a href="javascript:;" title="关于成立“服务器端软件设计”技术沙龙的通知"><span class="text_slice" style="width:145px;">关于成立“服务器端软件设计”技术沙龙的通知</span></a></li>
+			</ul>
+			<div class="clear"></div>
+			<ul>
+				<li class="listPoint"><a href="javascript:;" title="请新同事将网站个人信息补充完整"><span class="text_slice" style="width:145px;">请新同事将网站个人信息补充完整</span></a></li>
+				<li class="listPoint"><a href="javascript:;" title="关于成立“服务器端软件设计”技术沙龙的通知"><span class="text_slice" style="width:145px;">关于成立“服务器端软件设计”技术沙龙的通知</span></a></li>
+			</ul>
+			<div class="clear"></div>
+		</div>
+		<div class="dbList padding_left5">
+			<ul>
+				<li class="listPoint"><a href="javascript:;" title="关于组织“青春展风采 激情促腾飞”主题系列活动工作"><span class="text_slice" style="width:145px;">关于组织“青春展风采 激情促腾飞”主题系列活动工作</span></a></li>
+				<li class="listPoint"><a href="javascript:;" title="十五所第十三届运动会即将开始，请大家抓紧时间报名"><span class="text_slice" style="width:145px;">十五所第十三届运动会即将开始，请大家抓紧时间报名</span></a></li>
+			</ul>
+			<div class="clear"></div>
+			<ul>
+				<li class="listPoint"><a href="javascript:;" title="关于组织“青春展风采 激情促腾飞”主题系列活动工作"><span class="text_slice" style="width:145px;">关于组织“青春展风采 激情促腾飞”主题系列活动工作</span></a></li>
+				<li class="listPoint"><a href="javascript:;" title="十五所第十三届运动会即将开始，请大家抓紧时间报名"><span class="text_slice" style="width:145px;">十五所第十三届运动会即将开始，请大家抓紧时间报名</span></a></li>
+			</ul>
+			<div class="clear"></div>
+		</div>
+	</div>
+</div>
+</textarea>
+<pre></pre>		
+	JS代码
+<textarea class="code">
+$(function(){
+	$("#tabs10").switchable("#panels10 >div",{ triggers: "li" }).mousewheel(); 
+})
+</textarea>
+<pre></pre>	
+	</div>
+	
+</body>
+<!--代码高亮start-->
+<script type="text/javascript" src="../hl/highlight.js"></script>
+<script type="text/javascript" src="../hl/lang-xml.js"></script>
+<script type="text/javascript" src="../hl/lang-html.js"></script>
+<link href="../hl/style.css" rel="stylesheet" type="text/css"/>
+<script>
+	$(function(){
+			showCode()
+	})
+	function showCode(){
+		$(".code").each(function(){
+			var code =$(this).val()
+			var hl = new DlHighlight({lang: "html",lineNumbers :false });
+			var formatted = hl.doItNow(code);
+			$(this).next().addClass("DlHighlight").html("<pre>" + formatted + "</pre>")
+		})
+	}
+</script>
+<!--代码高亮end-->
+</html>

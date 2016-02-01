@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="reset.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../jquery-1.4.js"></script>
+<!--富文本框必需start-->
+<link rel="stylesheet" type="text/css" href="js/CLEditor_split/jquery.cleditor.css" />
+<script type="text/javascript" src="js/CLEditor_split/jquery.cleditor.js"></script>
+<!--富文本框必需start-->
+
+<!--富文本框表格与表情图标插件start-->
+<script type="text/javascript" src="js/CLEditor_split/jquery.cleditor.table.js"></script>
+<script type="text/javascript" src="js/CLEditor_split/jquery.cleditor.icon.js"></script>
+<!--富文本框表格与表情图标插件end-->
+<script>
+	function getValue(){
+		alert($("#ta1").val())
+	}
+</script>
+<body>
+	<div class="box2" panelTitle="基本用法">
+	<textarea class="rich" id="ta1">这是具有最常用按钮的富文本框效果。</textarea>
+	<input type="button" value="更改文字格式后查看html" onclick="getValue()"/>
+	<br />
+	要实现上述的富文本框，首先引入脚本
+<textarea class="code">
+<!--富文本框必需start-->
+<link rel="stylesheet" type="text/css" href="js/CLEditor_split/jquery.cleditor.css" />
+<script type="text/javascript" src="js/CLEditor_split/jquery.cleditor.js"></script>
+<!--富文本框必需start-->
+</textarea>
+<pre></pre>	
+	然后只要写一个文本域标签，并加上class="rich"即可。代码如下：
+	<pre class="DlHighlight">&lt;textarea class="rich"&gt; &lt;/textarea&gt;</pre>
+	
+	默认会生成一个宽为500，高为300的富文本框。<br />
+	可以使用editorWidth和editorHeight自定义尺寸。代码如下：
+	<pre class="DlHighlight">&lt;textarea editorWidth="400" editorHeight="150" class="rich"&gt; &lt;/textarea&gt;</pre>
+	
+	<br />
+	要得到富文本框的值，只要得到该textarea的值即可。可以用jquery语法：$("#ta1").val()或javascript语法：document.getElementById("ta1").value
+	</div>
+	 
+	<div class="box2" panelTitle="精简版">
+	富文本框有3中模式：full、normal、min，通过mode属性指定。默认为normal。当mode="min"效果如下：<br />
+	 <textarea class="rich" mode="min" editorWidth="300" editorHeight="150">
+		这是精简版的效果。
+	</textarea>
+	<br />代码如下：
+	<pre class="DlHighlight">&lt;textarea mode="min" editorWidth="300" editorHeight="150" class="rich"&gt; &lt;/textarea&gt;</pre>
+	</div>
+	
+	<div class="box2" panelTitle="完全版">
+	如果mode设为full并引入下面的表情图标和表格插件脚本，就变成了完全版。
+<textarea class="code">
+<!--富文本框表格与表情图标插件start-->
+<script type="text/javascript" src="js/CLEditor_split/jquery.cleditor.table.js"></script>
+<script type="text/javascript" src="js/CLEditor_split/jquery.cleditor.icon.js"></script>
+<!--富文本框表格与表情图标插件end-->
+</textarea>
+<pre></pre>	
+
+	 <textarea class="rich" mode="full">
+		这是完全版效果。注意：要插入表格或表情图标需要将光标置于该文本框内，否则可能会插入到错误的地方。<br />
+		如果用不到表格或表情图标也可以不引用上面的脚本，一样可以正常使用
+	</textarea>
+	</div>
+</body>
+<!--代码高亮start-->
+<script type="text/javascript" src="../hl/highlight.js"></script>
+<script type="text/javascript" src="../hl/lang-xml.js"></script>
+<script type="text/javascript" src="../hl/lang-html.js"></script>
+<link href="../hl/style.css" rel="stylesheet" type="text/css"/>
+<script>
+	$(function(){
+			showCode()
+	})
+	function showCode(){
+		$(".code").each(function(){
+			var code =$(this).val()
+			var hl = new DlHighlight({lang: "html",lineNumbers :false });
+			var formatted = hl.doItNow(code);
+			$(this).next().addClass("DlHighlight").html("<pre>" + formatted + "</pre>")
+		})
+	}
+</script>
+<!--代码高亮end-->
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="reset.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../jquery-1.4.js"></script>
+<!--通用型进度条（分离版）start-->
+<link href="skins/blue/style.css" rel="stylesheet" type="text/css" id="compStyle"/>
+<!--通用型进度条（分离版）end-->
+
+<!--弹出窗口（分离版）start-->
+<script type="text/javascript" src="js/zDialog_split/zDrag.js"></script>
+<script type="text/javascript" src="js/zDialog_split/zDialog.js"></script>
+<!--弹出窗口（分离版）end-->
+<script>
+	function showProgressBar(str){
+		var titleStr="正在加载中...";
+		if(str){
+			titleStr=str;
+		}
+		var diag = new top.Dialog();
+		diag.Width = 360;
+		diag.Height = 70;
+		diag.Title = titleStr;
+		diag.InvokeElementId="progress"
+		diag.show();
+	}
+</script>
+<script>
+	function myTest(){
+		setTimeout("pageForword()",2000)
+	}
+	function pageForword(){
+		window.location="include/chapter3-6-content1.html"
+	}
+</script>
+<body>
+	<script>
+		function changeSkin(){
+			$("#compStyle").attr("href","skins/"+$("#changeSkin").val()+"/style.css");
+			IMAGESPATH='js/zDialog_split/skins/'+$("#changeSkin").val()+'/';
+		}
+	</script>
+	更换风格
+	<select  onchange='changeSkin()' id="changeSkin">
+	    <option value="blue">蓝色</option>
+	    <option value="lightBlue">亮蓝色</option>
+	    <option value="darkBlue">深蓝色</option>
+	    <option value="green">绿色</option>
+		<option value="red">红色</option>
+		<option value="darkYellow">棕黄色</option>
+		<option value="armyGreen">军绿色</option>
+	</select>
+<div class="box2" panelTitle="弹出的进度条">
+	<input type="button" onclick="showProgressBar()" value="点击弹出进度条" /><br /><br />
+	弹出的进度条需要与弹出窗口合用。<br />
+	1.首先引入进度条CSS和弹出窗口脚本
+<textarea class="code">
+<script type="text/javascript" src="../jquery-1.4.js"></script>	
+<!--通用型进度条（分离版）start-->
+<link href="skins/blue/style.css" rel="stylesheet" type="text/css" id="compStyle"/>
+<!--通用型进度条（分离版）end-->
+
+<!--弹出窗口（分离版）start-->
+<script type="text/javascript" src="js/zDialog_split/zDrag.js"></script>
+<script type="text/javascript" src="js/zDialog_split/zDialog.js"></script>
+<!--弹出窗口（分离版）end-->
+</textarea>
+<pre></pre>	
+2.在主页面加入下面代码。如果使用iframe，则与弹窗脚本类似，内页不需要加，只需要在最外层主页加入即可。
+<textarea class="code">
+<!--载进度条start-->
+<div class="progressBg" id="progress" style="display:none;"><div class="progressBar"></div></div>
+<!--载进度条end-->
+</textarea>
+<pre></pre>	
+3.调用showProgressBar()方法。代码如下：
+<textarea class="code">
+<input type="button" onclick="showProgressBar()" value="点击弹出进度条" />
+</textarea>
+<pre></pre>	
+showProgressBar()方法代码如下：
+<textarea class="code">
+function showProgressBar(str){
+	var titleStr="正在加载中...";
+	if(str){
+		titleStr=str;
+	}
+	var diag = new top.Dialog();
+	diag.Width = 360;
+	diag.Height = 70;
+	diag.Title = titleStr;
+	diag.InvokeElementId="progress"
+	diag.show();
+}
+</textarea>
+<pre></pre>	
+如果要自定义窗口的标题，将新标题作为参数即可，例如showProgressBar('页面初始化中...')
+</div>
+
+<div class="box2" panelTitle="进度条用法">
+	在$("document").ready时出现进度条，在window.onload中或页面最底部调用top.Dialog.close()将窗口关闭隐藏进度条<br /><br />
+
+也可用在页面转跳中。点击下面的按钮后，在弹出窗口同时页面开始转跳。如果是本页转跳，则转到新页面窗口自动关闭。如果是iframe内页转跳，
+当新页面从服务器端加载完毕后，在新页面调用top.Dialog.close()将窗口关闭。<br />
+这里让转跳延时2秒来模拟从服务器端加载这个过程。代码如下：
+<textarea class="code">
+<input type="button" onclick='showProgressBar();myTest()' value="点击后等待2秒" />
+</textarea>
+<pre></pre>
+脚本代码
+<textarea class="code">
+function myTest(){
+	setTimeout("pageForword()",2000)
+}
+function pageForword(){
+	window.location="include/chapter3-6-content1.html"
+}
+</textarea>
+<pre></pre>
+
+<input type="button" onclick='showProgressBar();myTest()' value="点击后等待2秒" />	
+</div>
+<!--载进度条start-->
+<div class="progressBg" id="progress" style="display:none;"><div class="progressBar"></div></div>
+<!--载进度条end-->	
+</body>
+<!--代码高亮start-->
+<script type="text/javascript" src="../hl/highlight.js"></script>
+<script type="text/javascript" src="../hl/lang-xml.js"></script>
+<script type="text/javascript" src="../hl/lang-html.js"></script>
+<link href="../hl/style.css" rel="stylesheet" type="text/css"/>
+<script>
+	$(function(){
+			showCode()
+	})
+	function showCode(){
+		$(".code").each(function(){
+			var code =$(this).val()
+			var hl = new DlHighlight({lang: "html",lineNumbers :false });
+			var formatted = hl.doItNow(code);
+			$(this).next().addClass("DlHighlight").html("<pre>" + formatted + "</pre>")
+		})
+	}
+</script>
+<!--代码高亮end-->
+</html>

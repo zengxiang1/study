@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="reset.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../jquery-1.4.js"></script>
+<!--自动完成框(分离版)start-->
+<link href="skins/style.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="js/hintbox_split.js"></script>
+<!--自动完成框(分离版)end-->
+<script type="text/javascript">
+	jQuery(document).ready(function(){
+		jQuery('#input_1').hintbox({
+			url: 'cities.txt'
+		});
+		jQuery('#input_2').hintbox({
+	      url: 'cities.json',
+	      json: true
+	    });	
+		jQuery('#input_3').hintbox({
+			url: 'cities.txt',
+			onItemSelected:function(item){
+				alert("选择了："+item.text())
+			},
+			 onListLoaded: function(list){
+			 	$("#demo1").html("符合数："+list.find('li').size())
+		      }
+		});
+	});
+</script>
+<body>
+	<div class="box2" panelWidth="700" panelTitle="基本用法" >
+		首先引入脚本和CSS
+<textarea class="code">
+<script type="text/javascript" src="../jquery-1.4.js"></script>
+<!--自动完成框(分离版)start-->
+<link href="skins/style.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="js/hintbox_split.js"></script>
+<!--自动完成框(分离版)end-->
+</textarea>
+<pre></pre>	
+
+		写一个文本框
+<textarea class="code">
+<input type="text" id="input_1"/>
+</textarea>
+<pre></pre>	
+
+		使用JS对其处理。把提示信息放在一个文本文件中。
+<textarea class="code">
+jQuery(document).ready(function(){
+	jQuery('#input_1').hintbox({
+		url: 'cities.txt'
+	});
+});
+</textarea>
+<pre></pre>	
+
+	文本文件内容格式
+<textarea class="code">
+北京市
+天津市
+河北省
+山西省
+。。。
+</textarea>
+<pre></pre>	
+	效果：<input type="text" id="input_1"/>（输入省份名的头一个字）
+	</div>
+	<div class="box2" panelWidth="700" panelTitle="提示信息为JSON格式" >
+		除了使用txt文件作为提示信息外，还可用json格式，以流或文件均可。代码如下：
+<textarea class="code">
+jQuery(document).ready(function(){
+    jQuery('#input_2').hintbox({
+      url: 'cities.json',
+      json: true
+    });	
+});
+</textarea>
+<pre></pre>	
+
+	JSON文件内容格式
+<textarea class="code">
+{
+	"list" : [
+		"北京市",
+		"天津市",
+		"河北省",
+		。。。
+		"其他"
+	]
+}
+</textarea>
+<pre></pre>	
+效果：<input type="text" id="input_2"/>（输入省份名的头一个字）		
+	</div>
+	
+	<div class="box2" panelWidth="700" panelTitle="使用事件" >
+		可使用的事件有：onBeforeListLoad、onListLoaded、onItemSelected。例如<br />
+		<input type="text" id="input_3"/><span id="demo1"></span><br />
+		代码
+<textarea class="code">
+jQuery(document).ready(function(){
+	jQuery('#input_3').hintbox({
+		url: 'cities.txt',
+		onItemSelected:function(item){
+			alert("选择了："+item.text())
+		},
+		 onListLoaded: function(list){
+		 	$("#demo1").html("符合数："+list.find('li').size())
+	      }
+	});
+});
+</textarea>
+<pre></pre>			
+	</div>
+</body>
+<!--代码高亮start-->
+<script type="text/javascript" src="../hl/highlight.js"></script>
+<script type="text/javascript" src="../hl/lang-xml.js"></script>
+<script type="text/javascript" src="../hl/lang-html.js"></script>
+<link href="../hl/style.css" rel="stylesheet" type="text/css"/>
+<script>
+	$(function(){
+			showCode()
+	})
+	function showCode(){
+		$(".code").each(function(){
+			var code =$(this).val()
+			var hl = new DlHighlight({lang: "html",lineNumbers :false });
+			var formatted = hl.doItNow(code);
+			$(this).next().addClass("DlHighlight").html("<pre>" + formatted + "</pre>")
+		})
+	}
+</script>
+<!--代码高亮end-->
+</html>
