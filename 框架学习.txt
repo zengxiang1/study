@@ -31,7 +31,14 @@ java.lang.StackOverflowError 内存溢出  无限调用自身
 
 一定使用bean的时候一定不能new 出来  不然会报错
 
-创建 mysql 表的时候最好是不用关键字做表明或者 字段名称
+创建 mysql 表的时候最好是不用关键字做表名或者 字段名称
 
 
 name user invalid  Entity  :applicationContext没配置好
+
+
+
+产生Java.lang.NoSuchMethodError: org.hibernate.SessionFactory.openSession()Lorg/hibernate/classic/Session after update to hibernate 4错误是因为 hibernate 4 和spring3.1不兼容。用低版本的hibernate就行了。
+
+
+hibernate +spring : dao类使用HibernateTemplete（springDAO）
