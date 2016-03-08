@@ -16,6 +16,20 @@ $ 	匹配字符串的结束
 {n,m} 	重复n到m次
 
 
+
+myeclipse     正则表达式修改
+查找   
+ex: good morning sir
+
+good ([a-z]+) sir 
+替换
+
+hello $1 sir
+结果 
+
+hello morning sir
+
+
 ----------反义------------
 \W 	匹配任意不是字母，数字，下划线，汉字的字符
 \S 	匹配任意不是空白符的字符
