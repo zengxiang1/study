@@ -1,0 +1,5 @@
+     mysql                                       oracle
+find_inset(str,strlist)                    instr(strlist, str); str要查找的字符串
+
+
+  select 列表项中不存在的列可以出现在group by的列表项中，但在select列表项中出现的列必须全部出现在group by后面(聚合函数除外)。
