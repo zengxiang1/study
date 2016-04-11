@@ -7,3 +7,6 @@ table——指定表明
 chain——链名
 rules——规则
 target——动作如何进行
+
+
+如果远程连接mysql失败的话，可能是用户表里面的 root 用户 Host不是%所以导致登录不成功
