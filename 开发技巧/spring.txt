@@ -1,0 +1,9 @@
+spring 使用配置文件
+jdbcUrl 可以这样用 jdbc:url:///databaseName
+<context:property-placeholder location="classpath:db.properties">
+
+spring spel
+
+spring asject面向切面编程 前置通知后置通知
+applicationContext.xml
+<context-asject:auto....>

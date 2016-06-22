@@ -10,3 +10,5 @@ target——动作如何进行
 
 
 如果远程连接mysql失败的话，可能是用户表里面的 root 用户 Host不是%所以导致登录不成功
+
+合并多个txt 文件到一个txt文件中 type *.txt >> [fileName].txt

@@ -1,0 +1,28 @@
+//git create branch
+git branch  (branch name)
+
+//git delete branch
+git branch -d
+//git forceing delete branch
+git branch -D
+
+//select branch
+git checkout (branch name)
+
+//git create branch and select branch
+git checkout -b (branch name)
+
+//git set tag for release
+
+git tag "(tag name)"
+
+//git merge 
+1 git checkout master
+2 git merge (branch name)
+
+//git  add to cache or remove cache
+git add --all / git rm --cached (file name)
+
+
+
+
