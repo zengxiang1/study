@@ -1,0 +1,6 @@
+python数据采集
+
+BeautifulSoup
+	获得一个标签的所有属性 标签名.attrs 以json数组的形式返回
+	find 是获得第一个符合要求的标签，findAll是找到所有的标签
+	os.makedirs 可级联建立文件夹

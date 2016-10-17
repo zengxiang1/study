@@ -1,0 +1,1 @@
+windows mbr 修复   命令行下 Bootrec.ext /fixMbr   Bootrec.exe /fixBoot
